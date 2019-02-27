@@ -1,0 +1,30 @@
+{
+  "name": "yui",
+  "version": "1.0.0",
+  "description": "discordbot",
+  "main": "src/Yui.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/Yui.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InkoHX/Yui.git"
+  },
+  "keywords": [
+    "discordbot"
+  ],
+  "author": "InkoHX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InkoHX/Yui/issues"
+  },
+  "homepage": "https://github.com/InkoHX/Yui#readme",
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js",
+    "klasa": "github:dirigeants/klasa"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1"
+  }
+}
