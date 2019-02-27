@@ -62,3 +62,6 @@ config.js
 
 # next.js build output
 .next
+
+# Provider
+src/bwd/provider/
