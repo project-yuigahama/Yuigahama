@@ -1,7 +1,10 @@
-const { Command } = require('klasa')
+const { Command, KlasaMessage } = require('klasa')
 const os = require('os')
 
-module.exports = class extends Command {
+/**
+ * @extends Command
+ */
+module.exports = class BotInfo extends Command {
 
   constructor(...args) {
     super(...args, {
@@ -9,17 +12,20 @@ module.exports = class extends Command {
     })
   }
 
+  /**
+   * 
+   * @param {KlasaMessage} message 
+   */
   async run(message) {
     const info = [
-      `OS:            :: ${this.getOS()}`,
-      `Platform       :: ${os.platform()}`,
+      `Platform       :: ${this.getOS()}`,
       `CPU            :: ${os.cpus()[0].model}`,
       `Memory         :: ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(1)} GB`,
     ].join('\n')
     return message.sendCode('asciidoc', info)
   }
 
-  getOS() {
+  getPlatform() {
     const platform = process.platform
     switch (platform) {
     case 'win32':
