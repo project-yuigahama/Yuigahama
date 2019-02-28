@@ -7,3 +7,7 @@ new Client({
   presence: { activity: { name: 'Yuigahama!help', type: 'PLAYING' } },
   language: 'ja-JP'
 }).login(token)
+
+module.exports = {
+  Utils: require('./lib/util/utils')
+}
