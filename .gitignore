@@ -65,3 +65,4 @@ config.js
 
 # Provider
 src/bwd/provider/
+.vs
