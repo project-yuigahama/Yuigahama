@@ -1,6 +1,6 @@
 const { Command, KlasaMessage } = require('klasa')
 const os = require('os')
-const {Utils} = require('../../../Yui')
+const { Utils } = require('../../../Yui')
 
 /**
  * @extends Command

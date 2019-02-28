@@ -4,8 +4,10 @@
   "description": "discordbot",
   "main": "src/Yui.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/Yui.js"
+    "start": "node src/Yui.js",
+    "test": "eslint .",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "precommit": "npm run lint"
   },
   "repository": {
     "type": "git",
