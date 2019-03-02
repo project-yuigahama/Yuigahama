@@ -10,7 +10,7 @@ module.exports = class extends Command {
   constructor(...args) {
     super(...args, {
       guarded: true,
-      description: 'Generates documentation in different formats.',
+      description: 'さまざまな形式のボットドキュメントを生成します。',
       permissionLevel: 10,
       usage: '<html|markdown|plaintext|json>',
       subcommands: true
@@ -27,7 +27,7 @@ module.exports = class extends Command {
   finish(data, stopwatch, format) {
     const buffer = Buffer.from(data)
     const hash = createHash('sha1').update(data).digest('base64').substr(0, 7)
-    const duration = `Generated in ${stopwatch.stop()}`
+    const duration = `${stopwatch.stop()}でドキュメントの生成が完了しました。`
     return this.msg.channel.sendFile(buffer, `commands_${hash}.${format}`, duration)
   }
 
