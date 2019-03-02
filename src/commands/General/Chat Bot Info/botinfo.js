@@ -9,7 +9,7 @@ module.exports = class BotInfo extends Command {
 
   constructor(...args) {
     super(...args, {
-      description: ''
+      description: 'ボットが稼働している環境を表示します。'
     })
   }
 
