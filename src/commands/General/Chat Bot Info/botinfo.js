@@ -1,4 +1,4 @@
-const { Command, KlasaMessage, Duration } = require('klasa')
+const { Command, KlasaMessage } = require('klasa')
 const os = require('os')
 const { Utils } = require('../../../Yui')
 
@@ -6,7 +6,6 @@ const { Utils } = require('../../../Yui')
  * @extends Command
  */
 module.exports = class BotInfo extends Command {
-
   constructor(...args) {
     super(...args, {
       description: 'ボットが稼働している環境を表示します。'
