@@ -6,7 +6,7 @@ const { createHash } = require('crypto')
 const permissionLevel = 9
 
 module.exports = class extends Command {
-  constructor(...args) {
+  constructor (...args) {
     super(...args, {
       guarded: true,
       description: 'さまざまな形式のボットドキュメントを生成します。',
@@ -16,21 +16,21 @@ module.exports = class extends Command {
     })
   }
 
-  init() {
+  init () {
     this.username = this.client.user.username
     this.avatar = (size) => this.client.user.avatarURL({ format: 'png', size: size })
     this.prefix = this.client.options.prefix
     this.invite = this.client.invite
   }
 
-  finish(data, stopwatch, format) {
+  finish (data, stopwatch, format) {
     const buffer = Buffer.from(data)
     const hash = createHash('sha1').update(data).digest('base64').substr(0, 7)
     const duration = `${stopwatch.stop()}でドキュメントの生成が完了しました。`
     return this.msg.channel.sendFile(buffer, `commands_${hash}.${format}`, duration)
   }
 
-  async buildCommands(type, msg, normalize = false) {
+  async buildCommands (type, msg, normalize = false) {
     this.msg = msg
     const stopwatch = new Stopwatch()
     let categories
@@ -40,7 +40,7 @@ module.exports = class extends Command {
     await Promise.all(
       this.client.commands
         .filter(cmd => !cmd.permissionLevel || (cmd.permissionLevel &&
-					cmd.permissionLevel < permissionLevel))
+cmd.permissionLevel < permissionLevel))
         .map(cmd => {
           if (normalize) {
             if (!categories.includes(cmd.category)) categories.push(cmd.category)
@@ -51,8 +51,8 @@ module.exports = class extends Command {
           if (!commands[cmd.category].hasOwnProperty(cmd.subCategory)) {
             commands[cmd.category][cmd.subCategory] = []
           }
-          const description = typeof cmd.description === 'function' ?
-            cmd.description(msg.language) : cmd.description || 'No description.'
+          const description = typeof cmd.description === 'function'
+            ? cmd.description(msg.language) : cmd.description || 'No description.'
 
           return commands[cmd.category][cmd.subCategory]
             .push({ name: cmd.name, aliases: cmd.aliases, description })
@@ -63,7 +63,7 @@ module.exports = class extends Command {
     return { commands, categories, longest, stopwatch }
   }
 
-  async markdown(msg) {
+  async markdown (msg) {
     const { commands, categories, stopwatch } = await this.buildCommands('markdown', msg)
     const markdown = []
 
@@ -91,7 +91,7 @@ module.exports = class extends Command {
     this.finish(markdown.join('\n'), stopwatch, 'md')
   }
 
-  async html(msg) {
+  async html (msg) {
     const { commands, categories, stopwatch } = await this.buildCommands('html', msg)
     const esc = this.escapeHtml
 
@@ -121,10 +121,10 @@ module.exports = class extends Command {
         html += '<tbody>'
         html += `${commands[categories[cat]][subCategories[subCat]]
           .map(cmd => `<tr><td>${esc(this.prefix + cmd.name)}</td>` +
-					`<td>${esc(cmd.aliases.join(', '))}</td>` +
-					`<td>${esc(cmd.description)}</td></tr>`)
+`<td>${esc(cmd.aliases.join(', '))}</td>` +
+`<td>${esc(cmd.description)}</td></tr>`)
           .join('\n')}`
-				
+
         html += '</tbody></table></div>'
       }
       html += '</div>'
@@ -133,7 +133,7 @@ module.exports = class extends Command {
     this.finish(html, stopwatch, 'html')
   }
 
-  async plaintext(msg) {
+  async plaintext (msg) {
     const { commands, categories, longest, stopwatch } = await this.buildCommands('plaintext', msg)
     const plaintext = []
 
@@ -158,7 +158,7 @@ module.exports = class extends Command {
     this.finish(plaintext.join('\n'), stopwatch, 'txt')
   }
 
-  async json(msg) {
+  async json (msg) {
     const { commands, categories, stopwatch } = await this.buildCommands('json', msg, true)
 
     const meta = {
@@ -172,7 +172,7 @@ module.exports = class extends Command {
     this.finish(JSON.stringify({ commands, meta }), stopwatch, 'json')
   }
 
-  escapeHtml(text) {
+  escapeHtml (text) {
     const map = {
       '&': '&amp;',
       '<': '&lt;',

@@ -1,5 +1,5 @@
-const {Client} = require('klasa')
-const {token} = require('../config')
+const { Client } = require('klasa')
+const { token } = require('../config')
 
 new Client({
   prefix: 'yui!',

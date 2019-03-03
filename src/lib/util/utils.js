@@ -3,16 +3,16 @@ class Utils {
    * @returns {string}
    * @static
    */
-  static getPlatform() {
+  static getPlatform () {
     switch (process.platform) {
-    case 'win32':
-      return 'Windows'
-    case 'linux':
-      return 'Linux'
-    case 'darwin':
-      return 'Mac'
-    default:
-      return process.platform
+      case 'win32':
+        return 'Windows'
+      case 'linux':
+        return 'Linux'
+      case 'darwin':
+        return 'Mac'
+      default:
+        return process.platform
     }
   }
 }

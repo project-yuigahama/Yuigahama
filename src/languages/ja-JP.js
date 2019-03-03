@@ -2,7 +2,7 @@
 const { Language, util } = require('klasa')
 
 module.exports = class extends Language {
-  constructor(...args) {
+  constructor (...args) {
     super(...args)
     this.language = {
       DEFAULT: (key) => `${key} はまだ日本語に翻訳されていません。`,
@@ -176,7 +176,7 @@ module.exports = class extends Language {
     }
   }
 
-  async init() {
+  async init () {
     await super.init()
   }
 }
