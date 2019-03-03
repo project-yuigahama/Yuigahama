@@ -1,4 +1,4 @@
-const { Command, KlasaMessage } = require('klasa')
+const { Command, KlasaMessage, Duration } = require('klasa')
 const os = require('os')
 const { Utils } = require('../../../Yui')
 
@@ -14,11 +14,12 @@ module.exports = class BotInfo extends Command {
   }
 
   /**
-   * 
    * @param {KlasaMessage} message 
    */
   async run(message) {
     const info = [
+      '= サーバー情報 =',
+      '',
       `Platform       :: ${Utils.getPlatform()}`,
       `CPU            :: ${os.cpus()[0].model}`,
       `Memory         :: ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(1)} GB`,
