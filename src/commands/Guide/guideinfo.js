@@ -21,6 +21,7 @@ module.exports = class GuideInfo extends Command {
   async run (message) {
     const memberCount = [
       `Total: ${message.guild.memberCount}`,
+      '',
       `Online: ${message.guild.members.filter(member => member.presence.status === 'online').size}`,
       `Idle: ${message.guild.members.filter(member => member.presence.status === 'idle').size}`,
       `Dnd: ${message.guild.members.filter(member => member.presence.status === 'dnd').size}`,
@@ -30,6 +31,7 @@ module.exports = class GuideInfo extends Command {
 
     const Channels = [
       `Total: ${message.guild.channels.size}`,
+      '',
       `Category: ${message.guild.channels.filter(channel => channel.type === 'category').size}`,
       `Text: ${message.guild.channels.filter(channel => channel.type === 'text').size}`,
       `Voice: ${message.guild.channels.filter(channel => channel.type === 'voice').size}`
@@ -37,6 +39,7 @@ module.exports = class GuideInfo extends Command {
 
     const Emojis = [
       `Total: ${message.guild.emojis.size}`,
+      '',
       `Emoji: ${message.guild.emojis.filter(emoji => emoji.animated === false).size}`,
       `Animation: ${message.guild.emojis.filter(emoji => emoji.animated === true).size}`
     ].join('\n')
@@ -51,8 +54,8 @@ module.exports = class GuideInfo extends Command {
       .addField('Members', memberCount, true)
       .addField('Channels', Channels, true)
       .addField('Emojis', Emojis, true)
-      .addField('Roles', message.guild.roles.map(role => role.name).join(', '), true)
       .addField('Region', message.guild.region.toUpperCase(), true)
+      .addField('Roles', `Total: ${message.guild.roles.size}\n\n${message.guild.roles.map(role => role.name).join(', ')}`, true)
     )
   }
 }
