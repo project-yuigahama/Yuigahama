@@ -1,6 +1,9 @@
 const { Command, KlasaMessage } = require('klasa')
 const {MessageEmbed} = require('discord.js')
 
+/**
+ * @extends Command
+ */
 module.exports = class GuideInfo extends Command {
   constructor(...args) {
     super(...args, {
@@ -24,17 +27,20 @@ module.exports = class GuideInfo extends Command {
       `Offline: ${message.guild.members.filter(member =>  member.presence.status === 'offline').size}`,
       `Bot: ${message.guild.members.filter(member => member.user.bot === true).size}`
     ].join('\n')
+    
     const Channels = [
       `Total: ${message.guild.channels.size}`,
       `Category: ${message.guild.channels.filter(channel => channel.type === 'category').size}`,
       `Text: ${message.guild.channels.filter(channel => channel.type === 'text').size}`,
       `Voice: ${message.guild.channels.filter(channel => channel.type === 'voice').size}`
     ].join('\n')
+
     const Emojis = [
       `Total: ${message.guild.emojis.size}`,
       `Emoji: ${message.guild.emojis.filter(emoji => emoji.animated === false).size}`,
       `Animation: ${message.guild.emojis.filter(emoji => emoji.animated === true).size}`
     ].join('\n')
+
     return message.sendEmbed(new MessageEmbed()
       .setTitle(message.guild.name)
       .setThumbnail(message.guild.iconURL({size: 512}))
