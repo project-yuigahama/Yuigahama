@@ -1,7 +1,7 @@
 const { Command, KlasaMessage } = require('klasa')
 const {MessageEmbed} = require('discord.js')
 
-module.exports = class extends Command {
+module.exports = class GuideInfo extends Command {
   constructor(...args) {
     super(...args, {
       description: 'ギルド(サーバー)の情報を表示します。',
