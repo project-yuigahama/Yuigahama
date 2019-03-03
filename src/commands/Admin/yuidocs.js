@@ -6,7 +6,6 @@ const { createHash } = require('crypto')
 const permissionLevel = 9
 
 module.exports = class extends Command {
-
   constructor(...args) {
     super(...args, {
       guarded: true,
@@ -184,5 +183,4 @@ module.exports = class extends Command {
 
     return text.replace(/[&<>"']/g, (char) => map[char])
   }
-
 }
