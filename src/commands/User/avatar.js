@@ -5,7 +5,6 @@ module.exports = class extends Command {
   constructor (...args) {
     super(...args, {
       enabled: true,
-      runIn: ['text'],
       requiredPermissions: [],
       description: '',
       extendedHelp: 'No extended help available.',
