@@ -5,7 +5,7 @@ const { createHash } = require('crypto')
 // shown in the docs.
 const permissionLevel = 9
 
-module.exports = class extends Command {
+module.exports = class YuiDocs extends Command {
   constructor (...args) {
     super(...args, {
       guarded: true,

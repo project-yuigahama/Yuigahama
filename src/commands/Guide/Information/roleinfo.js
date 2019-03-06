@@ -1,7 +1,7 @@
 const { Command, KlasaMessage } = require('klasa')
 const { Role, MessageEmbed } = require('discord.js')
 
-module.exports = class extends Command {
+module.exports = class RoleInfo extends Command {
   constructor (...args) {
     super(...args, {
       runIn: ['text'],
