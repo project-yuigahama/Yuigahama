@@ -1,5 +1,6 @@
 # ![Yuigahama](https://cdn.discordapp.com/avatars/531097309748920371/36273411d75d79fad6839c54630187ec.png?size=32) Yuigahama
-[Invite Link](https://discordapp.com/oauth2/authorize?client_id=531097309748920371&permissions=52224&scope=bot)  
+[Invite Link](https://discordapp.com/oauth2/authorize?client_id=531097309748920371&permissions=52224&scope=bot)
+
 | TravisCI |
 | :---: |
 | [![Build Status](https://travis-ci.com/InkoHX/Yui.svg?branch=master)](https://travis-ci.com/InkoHX/Yui) |
