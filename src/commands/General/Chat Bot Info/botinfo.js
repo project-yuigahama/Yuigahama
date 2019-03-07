@@ -5,7 +5,7 @@ const { Utils } = require('../../../Yui')
 /**
  * @extends Command
  */
-module.exports = class BotInfo extends Command {
+class BotInfo extends Command {
   constructor (...args) {
     super(...args, {
       description: 'ボットが稼働している環境を表示します。'
@@ -26,3 +26,5 @@ module.exports = class BotInfo extends Command {
     return message.sendCode('asciidoc', info)
   }
 }
+
+module.exports = BotInfo

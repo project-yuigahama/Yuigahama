@@ -1,7 +1,7 @@
 const { Command, KlasaMessage } = require('klasa')
 const { User, MessageAttachment } = require('discord.js')
 
-module.exports = class Avatar extends Command {
+class Avatar extends Command {
   constructor (...args) {
     super(...args, {
       enabled: true,
@@ -20,3 +20,5 @@ module.exports = class Avatar extends Command {
     return message.send(new MessageAttachment(user ? user.avatarURL({ size: 1024 }) : message.author.avatarURL({ size: 1024 })))
   }
 }
+
+module.exports = Avatar

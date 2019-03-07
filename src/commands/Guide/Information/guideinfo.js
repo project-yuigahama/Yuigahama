@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js')
 /**
  * @extends Command
  */
-module.exports = class GuideInfo extends Command {
+class GuideInfo extends Command {
   constructor (...args) {
     super(...args, {
       description: 'ギルド(サーバー)の情報を表示します。',
@@ -59,3 +59,5 @@ module.exports = class GuideInfo extends Command {
     )
   }
 }
+
+module.exports = GuideInfo

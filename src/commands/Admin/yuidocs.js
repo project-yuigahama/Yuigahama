@@ -5,7 +5,7 @@ const { createHash } = require('crypto')
 // shown in the docs.
 const permissionLevel = 9
 
-module.exports = class YuiDocs extends Command {
+class YuiDocs extends Command {
   constructor (...args) {
     super(...args, {
       guarded: true,
@@ -184,3 +184,5 @@ cmd.permissionLevel < permissionLevel))
     return text.replace(/[&<>"']/g, (char) => map[char])
   }
 }
+
+module.exports = YuiDocs
