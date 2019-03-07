@@ -31,10 +31,6 @@
 | Command Name | Aliases  | Description              |
 |--------------|----------|--------------------------|
 | yui!avatar |  | 自身または他のユーザーのアバター画像を表示します。 |
-| Command Name | Aliases  | Description              |
-|--------------|----------|--------------------------|
 | yui!discordjs | djs, djsdocs | Discord.jsのドキュメントを検索します。 |
-| Command Name | Aliases  | Description              |
-|--------------|----------|--------------------------|
 | yui!guideinfo | serverinfo | ギルド(サーバー)の情報を表示します。 |
 | yui!roleinfo |  | 役職の情報を表示します。 |
