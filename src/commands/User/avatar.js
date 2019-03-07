@@ -6,7 +6,7 @@ class Avatar extends Command {
     super(...args, {
       enabled: true,
       requiredPermissions: [],
-      description: '',
+      description: '自身または他のユーザーのアバター画像を表示します。',
       extendedHelp: 'No extended help available.',
       usage: '[user:user]'
     })
