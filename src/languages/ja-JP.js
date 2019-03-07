@@ -130,7 +130,7 @@ module.exports = class extends Language {
         'すべてのユーザーに対応できる100％カスタマイズ可能なフレームワークになることを願っています。利用可能な場合は、頻繁な更新とバグ修正を行います。',
         'もし興味がある場合は、https://klasa.js.org をご覧ください。',
         '',
-        'YuigahamaBot Repository: https://github.com/InkoHX/Yui'
+        'YuigahamaBot Repository: https://github.com/InkoHX/Yuigahama'
       ],
       COMMAND_INFO_DESCRIPTION: 'このボットに関するいくつかの情報を提供します。',
       COMMAND_HELP_DESCRIPTION: 'コマンドリストと説明を表示します。',
