@@ -49,7 +49,7 @@ class DiscordJS extends Command {
    * @private
    * @static
    */
-  async search (message, query, type = 'main', branch = 'master') {
+  async search (message, query, type, branch = 'master') {
     await request(`https://djsdocs.sorta.moe/${type}/${branch}/embed`, {
       qs: {
         q: query
