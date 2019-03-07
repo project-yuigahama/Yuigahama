@@ -10,6 +10,7 @@ class DiscordJS extends Command {
       aliases: ['djs', 'djsdocs'],
       requiredPermissions: ['EMBED_LINKS'],
       description: 'Discord.jsのドキュメントを検索します。',
+      extendedHelp: 'No extended help available.',
       usage: '<commando|rpc|main:default> <query:string> [branch:string]',
       usageDelim: ' ',
       subcommands: true
