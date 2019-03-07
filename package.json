@@ -24,7 +24,8 @@
   "homepage": "https://github.com/InkoHX/Yui#readme",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
-    "klasa": "github:dirigeants/klasa"
+    "klasa": "github:dirigeants/klasa",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "eslint": "^5.15.1",
