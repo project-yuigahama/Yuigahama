@@ -25,10 +25,10 @@
 | yui!blacklist |               | ユーザーやサーバーをブラックリストに登録、解除します。|
 | yui!enable    |               | command/inhibitor/monitor/finalizerを再度有効にするか、一時的に有効にします。再起動するとデフォルトの状態に戻ります。|
 | yui!disable   |               | command/inhibitor/monitor/finalizer/eventを再度無効にするか、一時的に無効にします。再起動するとデフォルトの状態に戻ります。|
-| yui!eval      |               | 任意のJavaScriptを実行します。ボットオーナーのみ使用できます。 |
-| yui!load      |               | ボットからピースを読み込みます。 |
+| yui!eval      | ev            | 任意のJavaScriptを実行します。ボットオーナーのみ使用できます。 |
+| yui!load      | l             | ボットからピースを読み込みます。 |
 | yui!reboot    |               | ボットを再起動します。 |
 | yui!transfer  |               | コアピースをそれぞれのフォルダに転送します。 |
-| yui!reload    |               | ピースを再読み込みします。 |
-| yui!unload    |               | ピースをアンロードします。 |
+| yui!reload    | r             | ピースを再読み込みします。 |
+| yui!unload    | u             | ピースをアンロードします。 |
 | yui!yuidocs   |               | さまざまな形式のボットドキュメントを生成します。 | 
