@@ -44,7 +44,7 @@ class PocketMine extends Command {
           .addField('Pre Release', results[0]['is_pre_release'] ? 'Yes' : 'No', true)
           .addField('Obsolete', results[0]['is_obsolete'] ? 'Yes' : 'No', true)
           .setFooter(results[0]['repo_name'], results[0]['icon_url'] || 'https://poggit.pmmp.io/res/defaultPluginIcon2.png')
-        ) : 'Not Found'
+        ) : message.send('Error')
       }
     )
   }
