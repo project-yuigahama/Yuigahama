@@ -24,6 +24,7 @@
   "homepage": "https://github.com/InkoHX/Yui#readme",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
+    "fuse.js": "^3.4.3",
     "klasa": "github:dirigeants/klasa",
     "request": "^2.88.0"
   },
