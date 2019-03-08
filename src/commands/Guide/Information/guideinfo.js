@@ -7,7 +7,7 @@ const { MessageEmbed } = require('discord.js')
 class GuideInfo extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'ギルド(サーバー)の情報を表示します。',
+      description: 'ギルド(サーバー)の情報を確認出来ます。',
       extendedHelp: 'No extended help available.',
       runIn: ['text'],
       requiredPermissions: ['EMBED_LINKS'],
