@@ -20,17 +20,18 @@ class PocketMine extends Command {
    * @param {KlasaMessage} message
    */
   async run (message, [query]) {
-    await request('https://poggit.pmmp.io/plugins.json',
+    await request('https://poggit.pmmp.io/releases.min.json',
       {
         json: true,
         method: 'GET'
       },
       (e, r, b) => {
         if (!b) return message.sendMessage('Not Found')
-        const results = new FuseJS(b, { keys: ['name'] }).search(query)
-        results.sort((a, b) => {
-          return a.version < b.version ? 1 : -1
-        })
+        const results = new FuseJS(b, { keys: ['name', 'tagline'] }).search(query)
+        // 検索結果が悪くなるのでコメントアウト
+        // results.sort((a, b) => {
+        //   return a.version < b.version ? 1 : -1
+        // })
         return results ? message.sendEmbed(new MessageEmbed()
           .setURL(results[0]['html_url'] || 'https://poggit.pmmp.io')
           .setColor('#EC492C')
