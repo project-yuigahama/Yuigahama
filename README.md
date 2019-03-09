@@ -4,7 +4,7 @@
 
 | TravisCI |
 | :---: |
-| [![Build Status](https://travis-ci.com/InkoHX/Yuigahama.svg?branch=master)](https://travis-ci.com/InkoHX/Yui) |
+| [![Build Status](https://travis-ci.com/InkoHX/Yuigahama.svg?branch=master)](https://travis-ci.com/InkoHX/Yuigahama) |
 
 ## Commands
 
