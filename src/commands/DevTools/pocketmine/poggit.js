@@ -28,7 +28,7 @@ class PocketMine extends Command {
       (e, r, b) => {
         if (!b) return message.sendMessage('Not Found')
         const results = new FuseJS(b, { keys: ['name', 'tagline'] }).search(query)
-        // 検索結果が悪くなるのでコメントアウト
+        // 検索結果が悪くなるのでコメントアウト、別の方法を考え中
         // results.sort((a, b) => {
         //   return a.version < b.version ? 1 : -1
         // })
@@ -43,10 +43,10 @@ class PocketMine extends Command {
           .addField('Downloads', results[0]['downloads'] || 0, true)
           .addField('License', results[0]['license'].toUpperCase() || 'None', true)
           .addField('Keywords', results[0]['keywords'].join(', ') || 'None', true)
-          .addField('Official', results[0]['is_official'] ? 'Yes' : 'No' || 'Error', true)
-          .addField('Outdated', results[0]['is_outdated'] ? 'Yes' : 'No' || 'Error', true)
-          .addField('Pre Release', results[0]['is_pre_release'] ? 'Yes' : 'No' || 'Error', true)
-          .addField('Obsolete', results[0]['is_obsolete'] ? 'Yes' : 'No' || 'Error', true)
+          .addField('Official', results[0]['is_official'] ? 'Yes' : 'No', true)
+          .addField('Outdated', results[0]['is_outdated'] ? 'Yes' : 'No', true)
+          .addField('Pre Release', results[0]['is_pre_release'] ? 'Yes' : 'No', true)
+          .addField('Obsolete', results[0]['is_obsolete'] ? 'Yes' : 'No', true)
           .setFooter(results[0]['repo_name'] || 'Error', results[0]['icon_url'] || 'https://poggit.pmmp.io/res/defaultPluginIcon2.png')
         ) : message.send('Error')
       }
