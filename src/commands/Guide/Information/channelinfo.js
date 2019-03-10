@@ -5,10 +5,9 @@ module.exports = class extends Command {
   constructor (...args) {
     super(...args, {
       runIn: ['text'],
-      requiredPermissions: [],
-      aliases: [],
-      description: '',
-      extendedHelp: 'No extended help available.',
+      requiredPermissions: ['EMBED_LINKS'],
+      description: 'チャンネルの情報を確認出来ます。',
+      extendedHelp: ['テキストチャンネルとボイスチャンネルのみ情報を確認出来ます。'],
       usage: '<channel:channel>'
     })
   }
