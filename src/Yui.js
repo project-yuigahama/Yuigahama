@@ -9,7 +9,7 @@ const client = new Client({
   commandEditing: true
 })
 
-client.login(token)
+client.login(token || process.env.DISCORD_TOKEN)
 
 setInterval(async () => {
   process.title = `Memory: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}/${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)}MB - YuigahamaBot`
