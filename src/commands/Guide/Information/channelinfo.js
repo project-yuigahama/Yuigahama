@@ -1,5 +1,5 @@
 const { Command, KlasaMessage } = require('klasa')
-const { TextChannel, VoiceChannel, DMChannel, MessageEmbed } = require('discord.js')
+const { TextChannel, VoiceChannel, MessageEmbed } = require('discord.js')
 
 module.exports = class extends Command {
   constructor (...args) {
