@@ -1,5 +1,6 @@
+require('dotenv').config()
+
 const { Client } = require('klasa')
-const { token } = require('../config')
 const { version } = require('../package.json')
 const client = new Client({
   prefix: 'yui!',
@@ -10,7 +11,7 @@ const client = new Client({
   commandEditing: true
 })
 
-client.login(token || process.env.DISCORD_TOKEN)
+client.login(process.env.DISCORD_TOKEN)
 
 setInterval(() => {
   const heapUsed = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)
