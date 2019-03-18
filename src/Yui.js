@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const { Client } = require('klasa')
 const { version } = require('../package.json')
+
 const client = new Client({
   prefix: 'yui!',
   regexPrefix: /^yuigahama(@|!)/i,
