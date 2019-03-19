@@ -27,7 +27,7 @@ class Ban extends Command {
       if (member.roles.highest.position >= message.member.roles.highest.position || !member.bannable) return message.sendMessage('このユーザーはBAN出来ません。理由: 自分より上の権限を持ったユーザーかこのボットの権限ではこのユーザーをBAN出来ない為')
     }
     await message.guild.members.ban(user, { days: days, reason: reason })
-    return message.sendMessage(`**${member.displayName}**をBANしました。`)
+    return message.sendMessage(`BANしました。<:SataniaThumbsUp:551707177249800204>`)
   }
 }
 
