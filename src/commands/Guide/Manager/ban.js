@@ -11,7 +11,8 @@ class Ban extends Command {
       permissionLevel: 6,
       requiredPermissions: ['BAN_MEMBERS'],
       descripition: 'ギルドからメンバーをBANします。',
-      usage: '<user:user> [days:int{1,7}] [reason:...string]'
+      usage: '<user:user> [days:int{1,7}] [reason:...string]',
+      usageDelim: ' '
     })
   }
 
