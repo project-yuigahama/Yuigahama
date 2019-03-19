@@ -18,7 +18,7 @@ class PocketMine extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {string[]} query
+   * @param {[string]} usage
    */
   async run (message, [query]) {
     await request('https://poggit.pmmp.io/releases.min.json',

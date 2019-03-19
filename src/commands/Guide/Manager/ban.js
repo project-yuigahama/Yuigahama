@@ -17,7 +17,7 @@ class Ban extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {[GuildMember, number, string]} args
+   * @param {[GuildMember, number, string]} usage
    */
   async run (message, [member, days = 0, reason = 'Not specified']) {
     if (message.author.id === member.id) return message.sendMessage('自分自身をBANする事は出来ません。')

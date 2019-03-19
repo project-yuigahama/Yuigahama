@@ -14,7 +14,7 @@ class Avatar extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {User[]} user
+   * @param {[User]} usage
    */
   async run (message, [user = null]) {
     return message.send(new MessageAttachment(user ? user.avatarURL({ size: 2048 }) : message.author.avatarURL({ size: 2048 })))

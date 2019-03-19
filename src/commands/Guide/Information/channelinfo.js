@@ -14,7 +14,7 @@ module.exports = class extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {TextChannel[]|VoiceChannel[]} channel
+   * @param {[TextChannel|VoiceChannel]} usage
    */
   async run (message, [channel]) {
     if (channel instanceof TextChannel) {

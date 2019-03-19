@@ -19,7 +19,7 @@ class DiscordJS extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {string[]} query
+   * @param {[string, string]} usage
    */
   async main (message, [query, branch = 'stable']) {
     await this.search(message, query, 'main', branch)
@@ -27,7 +27,7 @@ class DiscordJS extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {string[]} query
+   * @param {[string]} usage
    */
   async commando (message, [query]) {
     await this.search(message, query, 'commando')
@@ -35,7 +35,7 @@ class DiscordJS extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {string[]} query
+   * @param {[string]} usage
    */
   async rpc (message, [query]) {
     await this.search(message, query, 'rpc')

@@ -14,7 +14,7 @@ class RoleInfo extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {Role[]} role
+   * @param {[Role]} usage
    */
   async run (message, [role]) {
     const permissions = {

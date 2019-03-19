@@ -16,7 +16,7 @@ class MemberInfo extends Command {
 
   /**
    * @param {KlasaMessage} message
-   * @param {GuildMember[]} member
+   * @param {[GuildMember]} usage
    */
   async run (message, [member]) {
     return message.sendEmbed(new MessageEmbed()
