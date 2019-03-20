@@ -25,12 +25,12 @@
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^7.0.0",
-    "fuse.js": "^3.4.3",
+    "fuse.js": "^3.4.4",
     "klasa": "github:dirigeants/klasa",
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "eslint": "^5.15.1",
+    "eslint": "^5.15.3",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
