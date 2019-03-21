@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const { Client } = require('klasa')
 const { version } = require('../package.json')
+const DBLAPI = require('dblapi.js')
 
 const client = new Client({
   prefix: 'yui!',
@@ -11,6 +12,18 @@ const client = new Client({
   commandLogging: true,
   commandEditing: true
 })
+
+if ('DBL_TOKEN' in process.env) {
+  const DBL = new DBLAPI(process.env.DBL_TOKEN, client)
+
+  DBL.on('error', (error) => {
+    client.emit('DblError', client, error)
+  })
+
+  DBL.on('posted', () => {
+    client.emit('DblPosted', client)
+  })
+}
 
 client.login()
 
