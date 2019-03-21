@@ -1,7 +1,7 @@
 const { Event, Client } = require('klasa')
 
 /**
- * @extends DblError
+ * @extends Event
  */
 class DblError extends Event {
   /**
