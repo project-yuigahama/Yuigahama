@@ -28,7 +28,7 @@
     "dotenv": "^7.0.0",
     "fuse.js": "^3.4.4",
     "klasa": "github:dirigeants/klasa",
-    "request": "^2.88.0"
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^5.15.3",
