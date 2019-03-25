@@ -1,5 +1,8 @@
 const { Command, KlasaMessage } = require('klasa')
 
+/**
+ * @extends Command
+ */
 class Support extends Command {
   constructor (...args) {
     super(...args, {
