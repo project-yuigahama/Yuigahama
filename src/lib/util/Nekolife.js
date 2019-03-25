@@ -6,6 +6,7 @@ class Nekolife {
    * @param {boolean} [v3=false]
    *
    * @throws {Error}
+   * @returns {any}
    */
   async request (endpoint, v3 = false) {
     const base = v3 ? 'https://api.nekos.dev/api/v3/images/' : 'https://nekos.life/api/v2/'
@@ -16,7 +17,64 @@ class Nekolife {
 }
 
 Nekolife.END_POINTS_V2 = {
-  neko: ''
+  neko: 'img/neko',
+  neko_gif: 'img/ngif',
+  fox: 'img/fox_girl',
+  smug: 'img/smug',
+  holo: 'img/holo',
+  avatar: 'img/avatar',
+  wallpaper: 'img/wallpaper',
+  baka: 'img/baka',
+  waifu: 'img/waifu',
+  cat: 'img/meow',
+  dog: 'img/woof',
+  lizard: 'img/lizard',
+  goose: 'img/goose',
+  eightball: 'img/8ball',
+  poke: 'img/poke',
+  tickle: 'img/tickle',
+  kiss: 'img/kiss',
+  slap: 'img/slap',
+  cuddle: 'img/cuddle',
+  hug: 'img/hug',
+  pat: 'img/pat',
+  feed: 'img/feed',
+  nsfw: {
+    femdom: 'img/femdom',
+    classic: 'img/classic',
+    feet: 'img/feet',
+    feet_gif: 'img/feetg',
+    neko: 'img/lewd',
+    neko_gif: 'img/nsfw_neko_gif',
+    kuni: 'img/kuni',
+    boobs: 'img/tits',
+    boobs_gif: 'img/boobs',
+    pussy: 'img/pussy_jpg',
+    pussy_gif: 'img/pussy',
+    cum: 'img/cum_jpg',
+    cum_gif: 'img/cum',
+    spank: 'img/spank',
+    hentai: 'img/hentai',
+    hentai_gif: 'img/Random_hentai_gif',
+    avatar: 'img/nsfw_avatar',
+    solo: 'img/solo',
+    solo_gif: 'img/solog',
+    blowjob: 'img/blowjob',
+    blowjob_gif: 'img/bj',
+    yuri: 'img/yuri',
+    yuri_gif: 'img/les',
+    trap: 'img/trap',
+    anal: 'img/anal',
+    gasm: 'img/gasm',
+    futanari: 'img/futanari',
+    pwank: 'img/pwankg',
+    lewd: 'img/ero',
+    lewd_yuri: 'img/eroyuri',
+    lewd_neko: 'img/eron',
+    lewd_feet: 'img/erofeet',
+    lewd_holo: 'img/hololewd',
+    lewd_fox: 'img/lewdk'
+  }
 }
 
 Nekolife.END_POINTS_V3 = {
