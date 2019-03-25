@@ -10,7 +10,7 @@ const api = new Nekoslife()
 class FoxGirl extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'かわいい狐耳女の子の画像を表示します。',
+      description: '狐耳の女の子画像を送信します。',
       extendedHelp: 'No extended help available.'
     })
   }

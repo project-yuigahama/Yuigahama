@@ -5,7 +5,7 @@ const fetch = require('node-fetch')
 class Cat extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'かわいい猫の画像を表示します。',
+      description: '猫の画像を送信します。',
       extendedHelp: 'No extended help available.'
     })
   }

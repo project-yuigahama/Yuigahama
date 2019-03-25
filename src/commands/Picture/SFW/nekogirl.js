@@ -10,7 +10,7 @@ const api = new Nekoslife()
 class NekoGirl extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'かわいい猫耳女の子の画像を送信します。',
+      description: '猫耳の女の子画像を送信します。',
       extendedHelp: ['--gif を付けるとGIF画像が送信されます。']
     })
   }
