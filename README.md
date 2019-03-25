@@ -5,7 +5,7 @@
 [![GitHub Wiki](https://img.shields.io/badge/GitHub-Wiki-brightgreen.svg)](https://github.com/InkoHX/Yuigahama/wiki)
 
 
-# Setup
+## Setup
 
 ```
 git clone https://github.com/InkoHX/Yuigahama.git
@@ -19,7 +19,8 @@ npm install --production
 npm run start
 ```
 
-# dependencie
+## dependencie
+
 * [dblapi.js](https://github.com/DiscordBotList/dblapi.js)
 * [discord.js](https://github.com/discordjs/discord.js)
 * [dotenv](https://github.com/motdotla/dotenv)
