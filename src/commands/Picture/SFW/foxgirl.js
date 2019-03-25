@@ -19,7 +19,7 @@ class FoxGirl extends Command {
    * @param {KlasaMessage} message
    */
   async run (message) {
-    return message.send(new MessageAttachment((api.request(Nekoslife.END_POINTS_V3.fox, true)['data']['response']['url'])))
+    return message.send(new MessageAttachment((await api.request(Nekoslife.END_POINTS_V3.fox, true))['data']['response']['url']))
   }
 }
 
