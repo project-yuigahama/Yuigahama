@@ -15,7 +15,7 @@ cd Yuigahama
 npm install --production
 
 .env.exampleを.envに書き換え
-.envの DISCORD_TOKEN にボットトークンをペースト
+.envの DISCORD_TOKEN の項目にボットトークンをペースト
 
 npm run start
 ```
