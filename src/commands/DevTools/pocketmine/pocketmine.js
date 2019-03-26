@@ -5,7 +5,7 @@ const fetch = require('node-fetch')
 module.exports = class extends Command {
   constructor (...args) {
     super(...args, {
-      aliases: ['pmmp'],
+      aliases: ['pmmp', 'pocketmine-mp'],
       description: 'PocketMine-MPの最新リリースの詳細を表示します。',
       extendedHelp: 'No extended help available.'
     })
