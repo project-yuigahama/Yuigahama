@@ -6,7 +6,7 @@ class Avatar extends Command {
     super(...args, {
       enabled: true,
       requiredPermissions: ['ATTACH_FILES'],
-      description: '自身または他のユーザーのアバター画像を表示します。',
+      description: '自身または他のユーザーのアバター画像を送信します。',
       extendedHelp: 'No extended help available.',
       usage: '[user:user]'
     })
