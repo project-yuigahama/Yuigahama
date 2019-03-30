@@ -1,5 +1,6 @@
 const { Command, KlasaMessage } = require('klasa')
 const { MessageAttachment } = require('discord.js')
+const YuigahamaError = require('../../../lib/error/YuigahamaError')
 const fetch = require('node-fetch')
 
 class Cat extends Command {
@@ -18,7 +19,7 @@ class Cat extends Command {
       .then(res => res.json())
       .then(body => body.file)
       .catch(() => null)
-    if (!body) throw new Error()
+    if (!body) throw new YuigahamaError('Request failed')
 
     return message.send(new MessageAttachment(body))
   }

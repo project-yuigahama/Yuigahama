@@ -1,5 +1,6 @@
 const { Command, KlasaMessage } = require('klasa')
 const { MessageAttachment } = require('discord.js')
+const YuigahamaError = require('../../../lib/error/YuigahamaError')
 const fetch = require('node-fetch')
 
 /**
@@ -21,7 +22,7 @@ class Dog extends Command {
       .then(res => res.json())
       .then(body => body.message)
       .catch(() => null)
-    if (!body) return new Error()
+    if (!body) return new YuigahamaError('Request failed')
 
     return message.send(new MessageAttachment(body))
   }
