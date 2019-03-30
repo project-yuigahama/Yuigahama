@@ -7,7 +7,7 @@ class DblPosted extends Event {
   /**
    * @param {Client} client
    */
-  async run (client) {
+  run (client) {
     client.console.debug('Server count posted!')
   }
 }

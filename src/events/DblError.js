@@ -8,7 +8,8 @@ class DblError extends Event {
    * @param {Client} client
    * @param {Error} error
    */
-  async run (client, error) {
+  run (client, error) {
+    if (!error) return
     client.console.error(error)
   }
 }
