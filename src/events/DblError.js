@@ -1,16 +1,15 @@
-const { Event, Client } = require('klasa')
+const { Event } = require('klasa')
 
 /**
  * @extends Event
  */
 class DblError extends Event {
   /**
-   * @param {Client} client
    * @param {Error} error
    */
-  run (client, error) {
+  run (error) {
     if (!error) return
-    client.console.error(error)
+    this.client.console.error(error)
   }
 }
 

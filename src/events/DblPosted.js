@@ -1,14 +1,11 @@
-const { Event, Client } = require('klasa')
+const { Event } = require('klasa')
 
 /**
  * @extends Event
  */
 class DblPosted extends Event {
-  /**
-   * @param {Client} client
-   */
-  run (client) {
-    client.console.debug('Server count posted!')
+  run () {
+    this.client.console.log('Server count posted!')
   }
 }
 
