@@ -1,7 +1,7 @@
 const { Event } = require('klasa')
 const { makeCrashReport } = require('../lib/error/Reporter')
 
-module.exports = class extends Event {
+class uncaughtException extends Event {
   constructor (...args) {
     super(...args, { emitter: process })
     if (this.client.options.production) this.unload()
@@ -20,3 +20,5 @@ module.exports = class extends Event {
     }
   }
 }
+
+module.exports = uncaughtException
