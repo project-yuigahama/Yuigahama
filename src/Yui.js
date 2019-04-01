@@ -33,5 +33,6 @@ setInterval(() => {
 
 module.exports = {
   Utils: require('./lib/util/utils'),
-  Nekoslife: require('./lib/util/Nekolife')
+  Nekoslife: require('./lib/util/Nekolife'),
+  YuigahamaVersion: version
 }
