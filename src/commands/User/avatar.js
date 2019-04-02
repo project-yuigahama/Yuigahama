@@ -4,7 +4,6 @@ const { User, MessageAttachment } = require('discord.js')
 class Avatar extends Command {
   constructor (...args) {
     super(...args, {
-      enabled: true,
       requiredPermissions: ['ATTACH_FILES'],
       description: '自身または他のユーザーのアバター画像を送信します。',
       extendedHelp: 'No extended help available.',
