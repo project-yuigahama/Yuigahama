@@ -8,7 +8,7 @@ class CommandUnknown extends Event {
    * @param {int} prefixLength
    */
   run (message, commandText, prefix, prefixLength) {
-    message.sendMessage(`\`${commandText}\` は存在しないコマンドです。誤字、脱字が無いか \`yuigahama!help\` で確認して下さい。 https://tenor.com/view/anime-panic-what-to-do-omg-worried-gif-13451210`)
+    message.sendMessage(`\`${commandText}\` は存在しないコマンドです。誤字、脱字が無いか \`yuigahama!help\` で確認して下さい。\nhttps://tenor.com/view/do-not-cry-anime-gif-7999979`)
   }
 }
 
