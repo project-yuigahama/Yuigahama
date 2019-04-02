@@ -5,7 +5,7 @@ const { Event } = require('klasa')
  */
 class DblPosted extends Event {
   run () {
-    this.client.console.log('Server count posted!')
+    this.client.console.debug('Server count posted!')
   }
 }
 
