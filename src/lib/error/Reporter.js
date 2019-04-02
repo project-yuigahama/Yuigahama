@@ -13,25 +13,25 @@ class Reporter {
   static makeErrorReport (error, client) {
     return [
       '=== Yuigahama Error Report ===',
-      `Date: ${timestamp.display()}`,
+      `Date                                :: ${timestamp.display()}`,
       '',
       '=== Error ===',
       `${error.stack}`,
       '',
       '=== Bot ===',
-      `Websoket    :: ${Math.round(client.ws.ping)}ms`,
-      `Ready at    :: ${client.ready ? timestamp.display(client.readyTimestamp) : 'None'}`,
+      `Average ping of all WebSocketShards :: ${Math.round(client.ws.ping)}ms`,
+      `Ready at                            :: ${client.ready ? timestamp.display(client.readyTimestamp) : 'None'}`,
       '',
       '=== System ===',
-      `OS          :: ${getPlatform()}`,
-      `CPU:        :: ${os.cpus()[0].model}`,
-      `Memory      :: ${Math.round(process.memoryUsage().rss / 1024 / 1024 * 100) / 100}/${(os.totalmem() / 1024 / 1024).toFixed(2)}MB`,
+      `OS                                  :: ${getPlatform()}`,
+      `CPU                                 :: ${os.cpus()[0].model}`,
+      `Memory                              :: ${Math.round(process.memoryUsage().rss / 1024 / 1024 * 100) / 100}/${(os.totalmem() / 1024 / 1024).toFixed(2)}MB`,
       '',
       '=== Versions ===',
-      `Yuigahama   :: v${YuigahamaVersion}`,
-      `Klasa       :: v${KlasaVersion}`,
-      `Discord.js  :: v${discordVersion}`,
-      `Node.js     :: v${process.versions.node}`
+      `Yuigahama                           :: v${YuigahamaVersion}`,
+      `Klasa                               :: v${KlasaVersion}`,
+      `Discord.js                          :: v${discordVersion}`,
+      `Node.js                             :: v${process.versions.node}`
     ].join('\n')
   }
 
@@ -44,25 +44,25 @@ class Reporter {
   static makeCrashReport (error, client) {
     return [
       '=== Yuigahama Crash Report ===',
-      `Date: ${timestamp.display()}`,
+      `Date                                :: ${timestamp.display()}`,
       '',
       '=== Error ===',
       `${error.stack}`,
       '',
       '=== Bot ===',
-      `Websoket    :: ${Math.round(client.ws.ping)}ms`,
-      `Ready at    :: ${client.ready ? timestamp.display(client.readyTimestamp) : 'None'}`,
+      `Average ping of all WebSocketShards :: ${Math.round(client.ws.ping)}ms`,
+      `Ready at                            :: ${client.ready ? timestamp.display(client.readyTimestamp) : 'None'}`,
       '',
       '=== System ===',
-      `OS          :: ${getPlatform()}`,
-      `CPU:        :: ${os.cpus()[0].model}`,
-      `Memory      :: ${Math.round(process.memoryUsage().rss / 1024 / 1024 * 100) / 100}/${(os.totalmem() / 1024 / 1024).toFixed(2)}MB`,
+      `OS                                  :: ${getPlatform()}`,
+      `CPU                                 :: ${os.cpus()[0].model}`,
+      `Memory                              :: ${Math.round(process.memoryUsage().rss / 1024 / 1024 * 100) / 100}/${(os.totalmem() / 1024 / 1024).toFixed(2)}MB`,
       '',
       '=== Versions ===',
-      `Yuigahama   :: v${YuigahamaVersion}`,
-      `Klasa       :: v${KlasaVersion}`,
-      `Discord.js  :: v${discordVersion}`,
-      `Node.js     :: v${process.versions.node}`
+      `Yuigahama                           :: v${YuigahamaVersion}`,
+      `Klasa                               :: v${KlasaVersion}`,
+      `Discord.js                          :: v${discordVersion}`,
+      `Node.js                             :: v${process.versions.node}`
     ].join('\n')
   }
 }
