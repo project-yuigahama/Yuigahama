@@ -11,6 +11,7 @@ class Hentai extends Command {
   constructor (...args) {
     super(...args, {
       nsfw: true,
+      requiredPermissions: ['ATTACH_FILES'],
       description: 'いやらしい画像を送信します。',
       extendedHelp: ['--gif を付けるとGIF画像が送信されます。']
     })

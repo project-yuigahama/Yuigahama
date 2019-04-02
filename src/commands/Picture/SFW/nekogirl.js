@@ -10,6 +10,7 @@ const api = new Nekoslife()
 class NekoGirl extends Command {
   constructor (...args) {
     super(...args, {
+      requiredPermissions: ['ATTACH_FILES'],
       description: '猫耳の女の子画像を送信します。',
       extendedHelp: ['--gif を付けるとGIF画像が送信されます。']
     })

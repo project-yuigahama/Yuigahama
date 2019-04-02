@@ -11,6 +11,7 @@ class LewdFox extends Command {
   constructor (...args) {
     super(...args, {
       nsfw: true,
+      requiredPermissions: ['ATTACH_FILES'],
       description: 'いやらしい狐耳の女の子画像を送信します。',
       extendedHelp: 'No extended help available.'
     })

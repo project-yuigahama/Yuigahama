@@ -6,6 +6,7 @@ const fetch = require('node-fetch')
 class Cat extends Command {
   constructor (...args) {
     super(...args, {
+      requiredPermissions: ['ATTACH_FILES'],
       description: '猫の画像を送信します。',
       extendedHelp: 'No extended help available.'
     })
