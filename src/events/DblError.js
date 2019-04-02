@@ -9,7 +9,7 @@ class DblError extends Event {
    */
   run (error) {
     if (!error) return
-    this.client.console.error(error)
+    this.client.emit('error', error.stack || error)
   }
 }
 
