@@ -1,6 +1,9 @@
 const { Event } = require('klasa')
 const { makeCrashReport } = require('../lib/error/Reporter')
 
+/**
+ * @extends Event
+ */
 class uncaughtException extends Event {
   constructor (...args) {
     super(...args, { emitter: process })

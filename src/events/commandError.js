@@ -1,6 +1,9 @@
 const { Event, KlasaMessage, Command } = require('klasa')
 const { makeErrorReport } = require('../lib/error/Reporter')
 
+/**
+ * @extends Event
+ */
 class commandError extends Event {
   /**
    * @param {KlasaMessage} message

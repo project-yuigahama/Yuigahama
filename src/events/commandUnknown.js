@@ -1,5 +1,8 @@
 const { Event, KlasaMessage } = require('klasa')
 
+/**
+ * @extends Event
+ */
 class CommandUnknown extends Event {
   /**
    * @param {KlasaMessage} message
