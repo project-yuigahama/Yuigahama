@@ -19,8 +19,9 @@ class guildCreate extends Event {
       .addField('Donate', '[Click here](https://www.paypal.me/inkohxdev)', true)
       .setFooter('Developed by InkoHX', this.client.application.owner.avatarURL())
       .setTimestamp()
-    ))
+    )).catch(() => this.client.emit('error', 'DMを作成出来ませんでした。'))
     this.client.user.setActivity({ name: `${this.client.options.prefix}help | ${this.client.guilds.size} guilds`, type: 'WATCHING' })
+    this.client.console.log(`${guild.name} に参加しました。`)
   }
 }
 
