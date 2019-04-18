@@ -7,6 +7,7 @@ class FireStore extends Provider {
     super(...args)
     this.db = null
   }
+
   async init () {
     await firebase.initializeApp({
       databaseURL: process.env.DATABASE_URL,
