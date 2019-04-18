@@ -16,24 +16,28 @@ class FireStore extends Provider {
     this.db = firebase.firestore()
   }
 
-  hasTable (table) {
-    return this.db.collection(table).get().then(col => Boolean(col.size))
+  async hasTable (table) {
+    const col = await this.db.collection(table).get()
+    return Boolean(col.size)
   }
 
   createTable (table) {
     return this.db.collection(table)
   }
 
-  getKeys (table) {
-    return this.db.collection(table).get().then(snaps => snaps.docs.map(snap => snap.id))
+  async getKeys (table) {
+    const snaps = await this.db.collection(table).get()
+    return snaps.docs.map(snap => snap.id)
   }
 
-  get (table, id) {
-    return this.db.collection(table).doc(id).get().then(snap => this.packData(snap.data(), snap.id))
+  async get (table, id) {
+    const snap = await this.db.collection(table).doc(id).get()
+    return this.packData(snap.data(), snap.id)
   }
 
-  has (table, id) {
-    return this.db.collection(table).doc(id).get().then(data => data.exists)
+  async has (table, id) {
+    const data = await this.db.collection(table).doc(id).get()
+    return data.exists
   }
 
   create (table, id, doc = {}) {
