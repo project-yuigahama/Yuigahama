@@ -66,3 +66,6 @@ src/bwd/provider/
 
 # JetBrains IDE
 .idea/
+
+# Firebase
+resources/serviceAccount.json

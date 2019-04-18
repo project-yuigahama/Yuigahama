@@ -10,7 +10,10 @@ const client = new Client({
   presence: { activity: { name: 'Yuigahama!help', type: 'PLAYING' } },
   language: 'ja-JP',
   commandLogging: true,
-  commandEditing: true
+  commandEditing: true,
+  providers: {
+    default: 'json' // FireStoreを使う時は FireStore に変更して環境変数にDATABASE_URL="データベースURL"を設定し resources/serviceAccount.jsonにダウンロードした秘密鍵を貼り付ける。
+  }
 })
 
 if ('DBL_TOKEN' in process.env) {
