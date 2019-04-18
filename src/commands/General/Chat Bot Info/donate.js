@@ -15,7 +15,7 @@ class Donate extends Command {
    * @param {KlasaMessage} message
    */
   async run (message) {
-    return message.sendMessage('https://www.paypal.me/inkohxdev')
+    return message.sendMessage('https://paypal.me/pools/c/8e04hFkdhp')
   }
 }
 

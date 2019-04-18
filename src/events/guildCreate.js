@@ -16,7 +16,7 @@ class guildCreate extends Event {
       .setDescription(`${this.client.user.tag} を追加してくれてありがとうございます！`)
       .addField('Yuigahama Repository', '[Click here](https://github.com/klasabots/Yuigahama)', true)
       .addField('Yuigahama Wiki', '[Click here](https://github.com/klasabots/Yuigahama/wiki)', true)
-      .addField('Donate', '[Click here](https://www.paypal.me/inkohxdev)', true)
+      .addField('Donate', '[Click here](https://paypal.me/pools/c/8e04hFkdhp)', true)
       .setFooter('Developed by InkoHX', this.client.application.owner.avatarURL())
       .setTimestamp()
     )).catch(() => this.client.emit('error', 'DMを作成出来ませんでした。'))
