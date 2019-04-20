@@ -10,16 +10,13 @@ class FireStore extends Provider {
   }
 
   async init () {
-    const file = fs.existsSync(`${process.cwd()}/resources/serviceAccount.json`)
-      ? firebase.credential.cert(`${process.cwd()}/resources/serviceAccount.json`)
-      : null
-
-    await firebase.initializeApp({
-      databaseURL: process.env.DATABASE_URL,
-      credential: file
-    })
-
-    this.db = firebase.firestore()
+    if (this.client.providers.name === 'FireStore') {
+      await firebase.initializeApp({
+        databaseURL: process.env.DATABASE_URL,
+        credential: firebase.credential.cert(`${process.cwd()}/resources/serviceAccount.json`)
+      })
+      this.db = firebase.firestore()
+    }
   }
 
   async hasTable (table) {
