@@ -46,9 +46,9 @@ class DiscordJS extends Command {
    * @param {string} query
    * @param {string} type
    * @param {string} branch
+   * @returns {Promise<KlasaMessage|KlasaMessage[]>}
    *
    * @private
-   * @static
    */
   async search (message, query, type, branch = 'master') {
     const body = await fetch(`https://djsdocs.sorta.moe/${type}/${branch}/embed?q=${encodeURIComponent(query)}`)
