@@ -1,7 +1,6 @@
 // Copyright (c) 2017-2019 dirigeants. All rights reserved. MIT license.
 const { Provider } = require('klasa')
 const firebase = require('firebase-admin')
-const fs = require('fs')
 
 class FireStore extends Provider {
   constructor (...args) {
