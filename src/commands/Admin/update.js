@@ -1,5 +1,8 @@
 const { Command, util, KlasaMessage } = require('klasa')
 
+/**
+ * @extends Command
+ */
 class Update extends Command {
   constructor (...args) {
     super(...args, {
