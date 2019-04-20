@@ -20,7 +20,7 @@ class Update extends Command {
     try {
       const { stdout } = await util.exec('git pull origin master')
       const cleaned = util.clean(stdout)
-      msg = await message.sendMessage(cleaned)
+      msg = await message.sendCode('prolog', cleaned)
       if (!cleaned.startsWith('Already up to date.')) {
         await util.exec('npm install')
         process.exit()
