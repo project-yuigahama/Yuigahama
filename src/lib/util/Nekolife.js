@@ -8,8 +8,10 @@ class Nekolife {
    *
    * @throws {Error}
    * @returns {any}
+   *
+   * @static
    */
-  async request (endpoint, v3 = false) {
+  static async request (endpoint, v3 = false) {
     const base = v3 ? 'https://api.nekos.dev/api/v3/images/' : 'https://nekos.life/api/v2/'
     const body = await fetch(base + endpoint).then(res => res.json()).catch(() => null)
     if (!body) throw new YuigahamaError('Request failed')
