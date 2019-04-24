@@ -59,7 +59,7 @@ class RoleInfo extends Command {
       .addField('ID', role.id, true)
       .addField('Color', role.hexColor, true)
       .addField('Hoisted', role.hoist ? 'Yes' : 'No', true)
-      .addField('Mentionable', role.mentionable ? 'Yes' : 'No', true)
+      .addField('Mentionable', role.mentionable ? ':o:' : ':x:', true)
       .addField('Permissions', allPermissions, true)
     )
   }
