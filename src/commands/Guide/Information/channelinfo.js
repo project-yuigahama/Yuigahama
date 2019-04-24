@@ -38,6 +38,6 @@ module.exports = class extends Command {
         .addField('Limit', channel.userLimit ? channel.userLimit : 'Infinity', true)
       )
     }
-    return message.sendMessage('そのチャンネルはサポートしていません。<:BlobFearSweat:528112258794913803>')
+    return message.sendMessage('そのチャンネルはサポートしていません。')
   }
 }
