@@ -1,7 +1,7 @@
 const { Argument, KlasaMessage, Possible } = require('klasa')
 const { MessageAttachment } = require('discord.js')
 
-class File extends Argument {
+class Attachment extends Argument {
   constructor (...args) {
     super(...args, {
       aliases: ['file']
@@ -21,4 +21,4 @@ class File extends Argument {
   }
 }
 
-module.exports = File
+module.exports = Attachment
