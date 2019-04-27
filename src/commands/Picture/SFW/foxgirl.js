@@ -9,8 +9,7 @@ class FoxGirl extends Command {
   constructor (...args) {
     super(...args, {
       requiredPermissions: ['ATTACH_FILES'],
-      description: '狐耳の女の子画像を送信します。',
-      extendedHelp: 'No extended help available.'
+      description: '狐耳の女の子画像を送信します。'
     })
   }
 

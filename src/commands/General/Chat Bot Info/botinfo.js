@@ -8,8 +8,7 @@ const { Utils: { getPlatform } } = require('../../../Yui')
 class BotInfo extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'ボットが稼働している環境を表示します。',
-      extendedHelp: 'No extended help available.'
+      description: 'ボットが稼働している環境を表示します。'
     })
   }
 

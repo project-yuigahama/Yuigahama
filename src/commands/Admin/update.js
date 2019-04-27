@@ -8,8 +8,7 @@ class Update extends Command {
     super(...args, {
       guarded: true,
       permissionLevel: 10,
-      description: 'masterブランチと同期してデータを更新します。',
-      extendedHelp: 'No extended help available.'
+      description: 'masterブランチと同期してデータを更新します。'
     })
   }
 

@@ -10,7 +10,6 @@ class YuiDocs extends Command {
     super(...args, {
       guarded: true,
       description: 'さまざまな形式のボットドキュメントを生成します。',
-      extendedHelp: 'No extended help available.',
       requiredPermissions: ['ATTACH_FILES'],
       permissionLevel: 10,
       usage: '<html|markdown|plaintext|json>',

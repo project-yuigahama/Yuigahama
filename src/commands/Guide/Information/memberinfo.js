@@ -8,7 +8,6 @@ class MemberInfo extends Command {
   constructor (...args) {
     super(...args, {
       description: 'ギルドメンバーの情報を確認出来ます。',
-      extendedHelp: 'No extended help available.',
       runIn: ['text'],
       usage: '<member:member>'
     })

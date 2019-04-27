@@ -10,8 +10,7 @@ class LewdFox extends Command {
     super(...args, {
       nsfw: true,
       requiredPermissions: ['ATTACH_FILES'],
-      description: 'いやらしい狐耳の女の子画像を送信します。',
-      extendedHelp: 'No extended help available.'
+      description: 'いやらしい狐耳の女の子画像を送信します。'
     })
   }
 

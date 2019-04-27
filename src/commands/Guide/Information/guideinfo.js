@@ -8,7 +8,6 @@ class GuideInfo extends Command {
   constructor (...args) {
     super(...args, {
       description: 'ギルド(サーバー)の情報を確認出来ます。',
-      extendedHelp: 'No extended help available.',
       runIn: ['text'],
       requiredPermissions: ['EMBED_LINKS'],
       aliases: ['serverinfo']

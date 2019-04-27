@@ -10,8 +10,7 @@ class Dog extends Command {
   constructor (...args) {
     super(...args, {
       requiredPermissions: ['ATTACH_FILES'],
-      description: '犬の画像を送信します。',
-      extendedHelp: 'No extended help available.'
+      description: '犬の画像を送信します。'
     })
   }
 
