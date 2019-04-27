@@ -12,6 +12,7 @@ class guildMemberAdd extends Event {
     const settings = member.guild.settings
     if (settings.channels.JoinLog !== null) {
       const channel = member.guild.channels.get(settings.channels.JoinLog)
+      if (typeof channel === 'undefined') return
       channel.send(new MessageEmbed()
         .setColor('GREEN')
         .setTitle(`${member.user.tag} has joined the server.`)

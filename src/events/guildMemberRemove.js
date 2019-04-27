@@ -12,6 +12,7 @@ class guildMemberAdd extends Event {
     const settings = member.guild.settings
     if (member.guild.settings.channels.QuitLog !== null) {
       const channel = member.guild.channels.get(member.guild.settings.channels.QuitLog)
+      if (typeof channel === 'undefined') return
       channel.send(new MessageEmbed()
         .setColor('RED')
         .setTitle(`${member.user.tag} has left the server.`)
