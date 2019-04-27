@@ -175,7 +175,8 @@ module.exports = class extends Language {
       TEXT_PROMPT_ABORT_OPTIONS: ['中断', '停止', '取り消し'],
       // ===
       MEMBER_JOIN: (name) => `${name} がサーバーに参加しました。`,
-      MEMBER_QUIT: (name) => `${name} がサーバーから退出しました。`
+      MEMBER_QUIT: (name) => `${name} がサーバーから退出しました。`,
+      COMMAND_DONATE_DESCRIPTION: '寄付ページのURLを送信します。'
     }
   }
 

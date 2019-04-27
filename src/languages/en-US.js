@@ -5,7 +5,8 @@ module.exports = class extends Language {
     super(...args)
     this.language = {
       MEMBER_JOIN: (name) => `${name} has joined the server.`,
-      MEMBER_QUIT: (name) => `${name} has left the server.`
+      MEMBER_QUIT: (name) => `${name} has left the server.`,
+      COMMAND_DONATE_DESCRIPTION: 'Send donation page URL.'
     }
   }
 

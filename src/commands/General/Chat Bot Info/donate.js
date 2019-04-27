@@ -6,7 +6,7 @@ const { Command, KlasaMessage } = require('klasa')
 class Donate extends Command {
   constructor (...args) {
     super(...args, {
-      description: '寄付ページを送信します。',
+      description: language => language.get('COMMAND_DONATE_DESCRIPTION'),
       extendedHelp: 'No extended help available.'
     })
   }
