@@ -6,7 +6,6 @@ const { Command, util, KlasaMessage } = require('klasa')
 class Update extends Command {
   constructor (...args) {
     super(...args, {
-      runIn: ['dm'],
       guarded: true,
       permissionLevel: 10,
       description: 'masterブランチと同期してデータを更新します。',

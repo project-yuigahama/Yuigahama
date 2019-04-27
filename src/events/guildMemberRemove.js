@@ -14,7 +14,7 @@ class guildMemberAdd extends Event {
       const channel = member.guild.channels.get(member.guild.settings.channels.QuitLog)
       channel.send(new MessageEmbed()
         .setColor('RED')
-        .setTitle(`${member.user.tag} has left the server!`)
+        .setTitle(`${member.user.tag} has left the server...`)
         .setThumbnail(member.user.avatarURL({ size: 2048 }))
         .setDescription(settings.channels.QuitMessage)
         .setTimestamp()
