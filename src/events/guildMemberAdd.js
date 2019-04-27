@@ -14,7 +14,7 @@ class guildMemberAdd extends Event {
       const channel = member.guild.channels.get(settings.channels.JoinLog)
       channel.send(new MessageEmbed()
         .setColor('GREEN')
-        .setTitle(`${member.user.tag} has joined the server!`)
+        .setTitle(`${member.user.tag} has joined the server.`)
         .setThumbnail(member.user.avatarURL({ size: 2048 }))
         .setDescription(settings.channels.JoinMessage)
         .setTimestamp()
