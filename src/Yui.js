@@ -4,6 +4,11 @@ const { Client } = require('klasa')
 const { version } = require('../package.json')
 const DBLAPI = require('dblapi.js')
 
+Client.defaultGuildSchema.add('channels', folder => folder
+  .add('JoinLog', 'TextChannel')
+  .add('QuitLog', 'TextChannel')
+)
+
 const client = new Client({
   prefix: 'yui!',
   regexPrefix: /^yuigahama(@|!)/i,
