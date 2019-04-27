@@ -15,7 +15,7 @@ class guildMemberAdd extends Event {
       if (typeof channel === 'undefined') return
       channel.send(new MessageEmbed()
         .setColor('RED')
-        .setTitle(`${member.user.tag} has left the server.`)
+        .setTitle(member.guild.language.get('MEMBER_QUIT', member.user.tag))
         .setThumbnail(member.user.avatarURL({ size: 2048 }))
         .setDescription(settings.channels.QuitMessage)
         .setTimestamp()

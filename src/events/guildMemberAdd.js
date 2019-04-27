@@ -15,7 +15,7 @@ class guildMemberAdd extends Event {
       if (typeof channel === 'undefined') return
       channel.send(new MessageEmbed()
         .setColor('GREEN')
-        .setTitle(`${member.user.tag} has joined the server.`)
+        .setTitle(member.guild.language.get('MEMBER_JOIN', member.user.tag))
         .setThumbnail(member.user.avatarURL({ size: 2048 }))
         .setDescription(settings.channels.JoinMessage)
         .setTimestamp()

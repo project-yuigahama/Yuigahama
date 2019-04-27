@@ -172,7 +172,10 @@ module.exports = class extends Language {
       ],
       COMMAND_STATS_DESCRIPTION: 'ボットの詳細と、統計情報を表示します。',
       MESSAGE_PROMPT_TIMEOUT: 'プロンプトがタイムアウトしました。',
-      TEXT_PROMPT_ABORT_OPTIONS: ['中断', '停止', '取り消し']
+      TEXT_PROMPT_ABORT_OPTIONS: ['中断', '停止', '取り消し'],
+      // ===
+      MEMBER_JOIN: (name) => `${name} がサーバーに参加しました。`,
+      MEMBER_QUIT: (name) => `${name} がサーバーから退出しました。`
     }
   }
 
