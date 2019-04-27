@@ -10,13 +10,13 @@ class guildMemberAdd extends Event {
    */
   run (member) {
     const settings = member.guild.settings
-    if (settings.channels.JoinLog !== null) {
-      const channel = member.guild.channels.get(settings.channels.JoinLog)
+    if (member.guild.settings.channels.QuitLog !== null) {
+      const channel = member.guild.channels.get(member.guild.settings.channels.QuitLog)
       channel.send(new MessageEmbed()
-        .setColor('GREEN')
-        .setTitle(`${member.user.tag} has joined the server!`)
+        .setColor('RED')
+        .setTitle(`${member.user.tag} has left the server!`)
         .setThumbnail(member.user.avatarURL({ size: 2048 }))
-        .setDescription(settings.channels.JoinMessage)
+        .setDescription(settings.channels.QuitMessage)
         .setTimestamp()
       )
     }

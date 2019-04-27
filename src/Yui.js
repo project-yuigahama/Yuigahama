@@ -6,7 +6,9 @@ const DBLAPI = require('dblapi.js')
 
 Client.defaultGuildSchema.add('channels', folder => folder
   .add('JoinLog', 'TextChannel')
+  .add('JoinMessage', 'string', { default: 'Welcome' })
   .add('QuitLog', 'TextChannel')
+  .add('QuitMessage', 'string', { default: 'Bye...' })
 )
 
 const client = new Client({
