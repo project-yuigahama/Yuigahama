@@ -1,6 +1,9 @@
 const { Event } = require('klasa')
 const { GuildMember, MessageEmbed } = require('discord.js')
 
+/**
+ * @extends Event
+ */
 class guildMemberAdd extends Event {
   /**
    * @param {GuildMember} member
