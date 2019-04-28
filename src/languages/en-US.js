@@ -9,7 +9,7 @@ module.exports = class extends Language {
       COMMAND_DONATE_DESCRIPTION: 'Send donation page URL.',
       COMMAND_KICK_DESCRIPTION: 'Kick member from the guild.',
       COMMAND_KICK_FAIL_POSITION: 'You can not process this member.',
-      COMMAND_KICK_FAIL_KICKABLE: 'I am not able to kick this member, sorry.',
+      COMMAND_KICK_FAIL_KICKABLE: 'I am not able to kick this member, Sorry.',
       COMMAND_KICK_DONE: (name) => `${name} has been kicked from the guild.`
     }
   }
