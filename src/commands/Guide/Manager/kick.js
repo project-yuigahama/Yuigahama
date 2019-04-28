@@ -22,7 +22,7 @@ class Kick extends Command {
    */
   async run (message, [member, reason = 'Not specified']) {
     if (member.roles.highest.position >= message.member.roles.highest.position) return message.sendMessage(message.language.get('COMMAND_KICK_FAIL_POSITION'))
-    else if (member.kickable) return message.sendMessage(message.language.get('COMMAND_KICK_FAIL_KICKABLE'))
+    else if (!member.kickable) return message.sendMessage(message.language.get('COMMAND_KICK_FAIL_KICKABLE'))
     await member.kick(reason)
     return message.sendMessage(message.language.get('COMMAND_KICK_DONE', member.user.username))
   }
