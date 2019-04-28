@@ -4,6 +4,10 @@ const { Client } = require('klasa')
 const { version } = require('../package.json')
 const DBLAPI = require('dblapi.js')
 
+Client.defaultPermissionLevels
+  .add(4, ({ guild, member }) => guild && member.permissions.has('KICK_MEMBERS'), { fetch: true })
+  .add(5, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'), { fetch: true })
+
 Client.defaultGuildSchema.add('channels', folder => folder
   .add('JoinLog', 'TextChannel')
   .add('JoinMessage', 'string', { default: 'Welcome' })

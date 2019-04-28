@@ -176,7 +176,11 @@ module.exports = class extends Language {
       // ===
       MEMBER_JOIN: (name) => `${name} がサーバーに参加しました。`,
       MEMBER_QUIT: (name) => `${name} がサーバーから退出しました。`,
-      COMMAND_DONATE_DESCRIPTION: '寄付ページのURLを送信します。'
+      COMMAND_DONATE_DESCRIPTION: '寄付ページのURLを送信します。',
+      COMMAND_KICK_DESCRIPTION: 'ギルドからメンバーを追放します。',
+      COMMAND_KICK_FAIL_POSITION: 'あなたはこのメンバーに対して処理を実行する事が出来ません。',
+      COMMAND_KICK_FAIL_KICKABLE: '私はこのメンバーを追放する事が出来ません。ごめんさい',
+      COMMAND_KICK_DONE: (name) => `${name} をギルドから追放しました。`
     }
   }
 
