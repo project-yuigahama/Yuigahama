@@ -14,7 +14,7 @@ class Support extends Command {
    * @param {KlasaMessage} message
    */
   async run (message) {
-    return message.sendMessage('None')
+    return message.sendMessage('https://discord.gg/JJhtTvG')
   }
 }
 
