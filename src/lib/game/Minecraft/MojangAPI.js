@@ -10,8 +10,6 @@ class MojangAPI {
     this.uuid = null
     this.nameHistory = null
     this.profile = null
-
-    this.getUUID()
   }
 
   /**
@@ -41,7 +39,7 @@ class MojangAPI {
   async getNameHistory (force = false) {
     if (this.nameHistory && force === false) return this.nameHistory
 
-    const data = await fetch(`https://api.mojang.com/user/profiles/${this.getUUID()}/names`)
+    const data = await fetch(`https://api.mojang.com/user/profiles/${await this.getUUID()}/names`)
       .then(res => res.json())
       .catch(() => null)
     if (data === null) throw new YuigahamaError('Request failed')
@@ -59,7 +57,7 @@ class MojangAPI {
   async getProfile (force = false) {
     if (this.profile && force === false) return this.profile
 
-    const data = await fetch(`https://sessionserver.mojang.com/session/minecraft/profile/${this.uuid}`)
+    const data = await fetch(`https://sessionserver.mojang.com/session/minecraft/profile/${await this.getUUID()}`)
       .then(res => res.json())
       .catch(() => null)
     if (data === null) throw new YuigahamaError('Request failed')
