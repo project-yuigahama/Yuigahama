@@ -13,21 +13,20 @@ class MojangAPI {
   }
 
   /**
-   * @returns {string}
+   * @returns {string|null}
    *
    * @throws {YuigahamaError}
    */
-  async getUUID (force = false) {
-    if (this.uuid && force === false) return this.uuid
+  async getUUID () {
+    if (this.uuid !== null) return this.uuid
 
     const data = await fetch(`https://api.mojang.com/users/profiles/minecraft/${encodeURIComponent(this.name)}`)
       .then(res => res.json())
-      .then(json => json.id)
       .catch(() => null)
-    if (data === null) throw new YuigahamaError('Request failed')
-    this.uuid = data
+    if (data === null) return null
+    this.uuid = data.id
 
-    return data
+    return data.id
   }
 
   /**
@@ -37,12 +36,14 @@ class MojangAPI {
    * @throws {YuigahamaError}
    */
   async getNameHistory (force = false) {
-    if (this.nameHistory && force === false) return this.nameHistory
+    if (this.nameHistory !== null && force === false) return this.nameHistory
+    const uuid = await this.getUUID()
+    if (uuid === null) return { message: 'Could not get UUID. The player name may be wrong.' }
 
-    const data = await fetch(`https://api.mojang.com/user/profiles/${await this.getUUID()}/names`)
+    const data = await fetch(`https://api.mojang.com/user/profiles/${uuid}/names`)
       .then(res => res.json())
       .catch(() => null)
-    if (data === null) throw new YuigahamaError('Request failed')
+    if (data === null) return { message: 'Request failed. Please wait for a while and try again.' }
     this.nameHistory = data
 
     return data
@@ -55,18 +56,20 @@ class MojangAPI {
    * @throws {YuigahamaError}
    */
   async getProfile (force = false) {
-    if (this.profile && force === false) return this.profile
+    if (this.profile !== null && force === false) return this.profile
+    const uuid = await this.getUUID()
+    if (uuid === null) return { message: 'Could not get UUID. The player name may be wrong.' }
 
-    const data = await fetch(`https://sessionserver.mojang.com/session/minecraft/profile/${await this.getUUID()}`)
+    const data = await fetch(`https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`)
       .then(res => res.json())
       .catch(() => null)
-    if (data === null) throw new YuigahamaError('Request failed')
+    if (data === null) return { message: 'Request failed. Please wait for a while and try again.' }
 
     return data
   }
 
   /**
-   * @returns {Object}
+   * @returns {Object[]}
    *
    * @throws {YuigahamaError}
    */
