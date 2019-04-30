@@ -3,10 +3,11 @@ const { Command, KlasaMessage } = require('klasa')
 /**
  * @extends Command
  */
-class Support extends Command {
+class OfficalGuild extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'このボットの公式ギルドの招待URLを送信します。'
+      runIn: ['dm'],
+      description: language => language.get('COMMAND_OFFICIAL_GUILD_DESCRIPITON')
     })
   }
 
@@ -18,4 +19,4 @@ class Support extends Command {
   }
 }
 
-module.exports = Support
+module.exports = OfficalGuild
