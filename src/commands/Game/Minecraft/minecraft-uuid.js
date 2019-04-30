@@ -1,7 +1,10 @@
 const { Command, KlasaMessage } = require('klasa')
 const { Game: { MojangAPI } } = require('../../../Yui')
 
-module.exports = class extends Command {
+/**
+ * @extends Command
+ */
+class MinecraftUUID extends Command {
   constructor (...args) {
     super(...args, {
       description: language => language.get('COMMAND_MINECRAFT_UUID_DESCRIPITON'),
@@ -20,3 +23,5 @@ module.exports = class extends Command {
     return message.sendCode('bash', await API.getUUID() || message.language('COMMAND_MINECRAFT_UUID_FAIL'))
   }
 }
+
+module.exports = MinecraftUUID
