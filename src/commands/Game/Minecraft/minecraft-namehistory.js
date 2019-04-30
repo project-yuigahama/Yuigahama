@@ -10,7 +10,7 @@ class MinecraftNameHistory extends Command {
     super(...args, {
       description: language => language.get('COMMAND_MINECRAFT_NAMEHISTORY_DESCRIPTION'),
       usage: '<name:string>',
-      aliases: ['mc-namehistory'],
+      aliases: ['mc-namehistory', 'mc-nh'],
       requiredPermissions: ['MANAGE_MESSAGES']
     })
   }
