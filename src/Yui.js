@@ -45,7 +45,10 @@ setInterval(() => {
 }, 1000)
 
 module.exports = {
+  YuigahamaVersion: version,
   Utils: require('./lib/util/utils'),
   Nekoslife: require('./lib/util/Nekolife'),
-  YuigahamaVersion: version
+  Game: {
+    MojangAPI: require('./lib/game/Minecraft/MojangAPI')
+  }
 }
