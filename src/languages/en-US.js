@@ -13,7 +13,7 @@ module.exports = class extends Language {
       COMMAND_KICK_DONE: (name) => `${name} has been kicked from the guild.`,
       COMMAND_MINECRAFT_UUID_DESCRIPTION: 'Get UUID from player name.',
       COMMAND_MINECRAFT_UUID_FAIL: 'Could not get UUID. The player name may be wrong.',
-      COMMAND_MINECRAFT_NAMEHISTORY_DESCRIPTION: 'Send player\'s name history.',
+      COMMAND_MINECRAFT_NAMEHISTORY_DESCRIPTION: 'Send player name history.',
       COMMAND_OFFICIAL_GUILD_DESCRIPTION: 'Send the official guild invite URL.'
     }
   }
