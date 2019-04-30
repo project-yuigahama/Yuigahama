@@ -7,7 +7,7 @@ const { Game: { MojangAPI } } = require('../../../Yui')
 class MinecraftUUID extends Command {
   constructor (...args) {
     super(...args, {
-      description: language => language.get('COMMAND_MINECRAFT_UUID_DESCRIPITON'),
+      description: language => language.get('COMMAND_MINECRAFT_UUID_DESCRIPTION'),
       usage: '<name:string>',
       aliases: ['mc-uuid']
     })

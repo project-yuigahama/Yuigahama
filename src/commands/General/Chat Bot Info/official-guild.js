@@ -7,7 +7,7 @@ class OfficalGuild extends Command {
   constructor (...args) {
     super(...args, {
       runIn: ['dm'],
-      description: language => language.get('COMMAND_OFFICIAL_GUILD_DESCRIPITON')
+      description: language => language.get('COMMAND_OFFICIAL_GUILD_DESCRIPTION')
     })
   }
 
