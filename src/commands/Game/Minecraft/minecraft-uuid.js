@@ -5,7 +5,8 @@ module.exports = class extends Command {
   constructor (...args) {
     super(...args, {
       description: language => language.get('COMMAND_MINECRAFT_UUID_DESCRIPITON'),
-      usage: '<name:string>'
+      usage: '<name:string>',
+      aliases: ['mc-uuid']
     })
   }
 
