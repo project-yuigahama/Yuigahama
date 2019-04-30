@@ -14,7 +14,6 @@ class MinecraftUUID extends Command {
   }
 
   /**
-   *
    * @param {KlasaMessage} message
    * @param {[string]} usage
    */
