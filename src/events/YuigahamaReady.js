@@ -11,7 +11,7 @@ class YuigahamaReady extends Event {
   }
 
   async run () {
-    this.client.user.setActivity({ name: `yuigahama@help | ${this.client.guilds.size} guilds`, type: 'WATCHING' })
+    this.client.user.setActivity({ name: `yuigahama@help | ${this.client.guilds.size} guilds`, type: 'PLAYING' })
   }
 }
 
