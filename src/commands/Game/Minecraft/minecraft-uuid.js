@@ -20,7 +20,7 @@ class MinecraftUUID extends Command {
    */
   async run (message, [name]) {
     const API = new MojangAPI(name)
-    return message.sendCode('bash', await API.getUUID() || message.language('COMMAND_MINECRAFT_UUID_FAIL'))
+    return message.sendCode('bash', await API.getUUID() || message.language.get('COMMAND_MINECRAFT_UUID_FAIL'))
   }
 }
 
