@@ -183,6 +183,7 @@ module.exports = class extends Language {
       COMMAND_KICK_DONE: (name) => `${name} をギルドから追放しました。`,
       COMMAND_MINECRAFT_UUID_DESCRIPTION: 'プレイヤー名からUUIDを取得します。',
       COMMAND_MINECRAFT_UUID_FAIL: 'UUIDを取得できませんでした。 プレイヤー名が間違っている可能性があります。',
+      COMMAND_MINECRAFT_NAMEHISTORY_DESCRIPTION: 'プレイヤーが使用していた名前履歴を送信します。',
       COMMAND_OFFICIAL_GUILD_DESCRIPTION: '公式ギルドの招待URLを送信します。'
     }
   }
