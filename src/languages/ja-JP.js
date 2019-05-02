@@ -204,7 +204,11 @@ module.exports = class extends Language {
       COMMAND_UPDATE_DESCRIPTION: 'masterブランチと同期してデータを更新します。',
       COMMAND_IMAGE_EXTENDED_HELP: '--gif を付けるとGIF画像が送信されます。',
       COMMAND_CHANNEL_INFO_EXTENDED_HELP: 'テキストチャンネルとボイスチャンネルのみ情報を確認出来ます。',
-      NOT_CHANNEL_SUPPORT: 'そのチャンネルはサポートしていません。'
+      NOT_CHANNEL_SUPPORT: 'そのチャンネルはサポートしていません。',
+      // Argument
+      ARGUMENT_ROLE_FAIL: (name) => `${name} は役職名、役職メンションまたは役職IDである必要があります。`,
+      ARGUMENT_ROLE_FOUND: (roles) => `もしかして... \`${roles.map(role => role.name).join('`, `')}\``,
+      ARGUMENT_ATTACHMENT_NOT_FOUND: (name) => `${name} はファイルである必要があります。`
     }
   }
 

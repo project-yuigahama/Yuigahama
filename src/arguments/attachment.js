@@ -16,7 +16,7 @@ class Attachment extends Argument {
    */
   run (_args, possible, message) {
     // eslint-disable-next-line no-throw-literal
-    if (!(message.attachments.first() instanceof MessageAttachment)) throw `${possible.name} はファイルである必要があります。`
+    if (!(message.attachments.first() instanceof MessageAttachment)) throw message.language.get('ARGUMENT_ATTACHMENT_NOT_FOUND', possible.name)
     return message.attachments.first()
   }
 }

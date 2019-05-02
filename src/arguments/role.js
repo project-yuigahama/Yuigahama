@@ -31,9 +31,11 @@ module.exports = class extends Argument {
     }
 
     switch (querySearch.length) {
-      case 0: throw `${possible.name} は役職名、役職メンションまたは役職IDである必要があります。`
+      case 0: throw msg.language.get('ARGUMENT_ROLE_FAIL', possible.name)
       case 1: return querySearch[0]
-      default: throw `似た名前の役職が他に見つかりました。しっかりと入力して下さい。 \`${querySearch.map(role => role.name).join('`, `')}\``
+      default:
+        if (querySearch[0].name.toLowerCase() === arg.toLowerCase()) return querySearch[0]
+        throw msg.language.get('ARGUMENT_ROLE_FOUND', querySearch)
     }
   }
 }

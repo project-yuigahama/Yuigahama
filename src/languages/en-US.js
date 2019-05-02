@@ -36,7 +36,11 @@ module.exports = class extends Language {
       COMMAND_UPDATE_DESCRIPTION: 'Update data in sync with the master branch.',
       COMMAND_IMAGE_EXTENDED_HELP: 'If you add --gif, a GIF image will be sent.',
       COMMAND_CHANNEL_INFO_EXTENDED_HELP: 'Only text and voice channels can be checked.',
-      NOT_CHANNEL_SUPPORT: 'The channel is not supported.'
+      NOT_CHANNEL_SUPPORT: 'The channel is not supported.',
+      // Argument
+      ARGUMENT_ROLE_FAIL: (name) => `${name} must be a valid name, id or role mention.`,
+      ARGUMENT_ROLE_FOUND: (roles) => `Found multiple matches: \`${roles.map(role => role.name).join('`, `')}\``,
+      ARGUMENT_ATTACHMENT_FOUND: (name) => `${name} must be a file.`
     }
   }
 
