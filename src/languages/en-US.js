@@ -32,7 +32,9 @@ module.exports = class extends Language {
       COMMAND_GUILD_INFO_DESCRIPTION: 'You can check the information of the guild.',
       COMMAND_MEMBER_INFO_DESCRIPTION: 'You can check the information of guild members.',
       COMMAND_ROLE_INFO_DESCRIPTION: 'You can check the position information.',
-      COMMAND_UPDATE_DESCRIPTION: 'Update data in sync with the master branch.'
+      COMMAND_UPDATE_DESCRIPTION: 'Update data in sync with the master branch.',
+      COMMAND_IMAGE_EXTENDED_HELP: 'If you add --gif, a GIF image will be sent.',
+      COMMAND_CHANNEL_INFO_EXTENDED_HELP: 'Only text and voice channels can be checked.'
     }
   }
 
