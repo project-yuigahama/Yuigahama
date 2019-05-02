@@ -184,7 +184,24 @@ module.exports = class extends Language {
       COMMAND_MINECRAFT_UUID_DESCRIPTION: 'プレイヤー名からUUIDを取得します。',
       COMMAND_MINECRAFT_UUID_FAIL: 'UUIDを取得できませんでした。 プレイヤー名が間違っている可能性があります。',
       COMMAND_MINECRAFT_NAMEHISTORY_DESCRIPTION: 'プレイヤーが使用していた名前履歴を送信します。',
-      COMMAND_OFFICIAL_GUILD_DESCRIPTION: '公式ギルドの招待URLを送信します。'
+      COMMAND_OFFICIAL_GUILD_DESCRIPTION: '公式ギルドの招待URLを送信します。',
+      COMMAND_FOXGIRL_DESCRIPTION: '狐耳の女の子画像を送信します。',
+      COMMAND_NEKOGIRL_DESCRIPTION: '猫耳の女の子画像を送信します。',
+      COMMAND_DOG_DESCRIPITON: 'かわいい犬の画像を送信します。',
+      COMMAND_CAT_DESCRIPTION: 'かわいい猫の画像を送信します。',
+      COMMAND_LEWD_FOXGIRL_DESCRIPTION: 'いやらしい狐耳の女の子画像を送信します。',
+      COMMAND_LEWD_NEKOGIRL_DESCRIPTION: 'いやらしい猫耳の女の子画像を送信します。',
+      COMMAND_HENTAI_DESCRIPTION: 'いやらしい画像を送信します。',
+      COMMAND_AVATAR_DESCRIPTION: '自身または他のユーザーのアバター画像を送信します。',
+      COMMAND_BOTINFO_DESCRIPTION: 'ボットが稼働している環境を表示します。',
+      COMMAND_POCKETMINE_DESCRIPTION: 'PocketMine-MPの最新リリースの詳細を表示します。',
+      COMMAND_POGGIT_DESCRIPTION: 'PoggitからPocketMine-MPのプラグインを検索します。',
+      COMMAND_DISCORDJS_DESCRIPTION: 'Discord.jsのドキュメントを検索します。',
+      COMMAND_CHANNEL_INFO_DESCRIPTION: 'チャンネルの情報を確認出来ます。',
+      COMMAND_GUILD_INFO_DESCRIPTION: 'ギルド(サーバー)の情報を確認出来ます。',
+      COMMAND_MEMBER_INFO_DESCRIPTION: 'ギルドメンバーの情報を確認出来ます。',
+      COMMAND_ROLE_INFO_DESCRIPTION: '役職の情報を確認出来ます。',
+      COMMAND_UPDATE_DESCRIPTION: 'masterブランチと同期してデータを更新します。'
     }
   }
 
