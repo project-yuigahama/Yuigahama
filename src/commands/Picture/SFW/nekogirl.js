@@ -9,8 +9,8 @@ class NekoGirl extends Command {
   constructor (...args) {
     super(...args, {
       requiredPermissions: ['ATTACH_FILES'],
-      description: '猫耳の女の子画像を送信します。',
-      extendedHelp: ['--gif を付けるとGIF画像が送信されます。']
+      description: language => language.get('COMMAND_NEKOGIRL_DESCRIPTION'),
+      extendedHelp: language => language.get('COMMAND_IMAGE_EXTENDED_HELP')
     })
   }
 

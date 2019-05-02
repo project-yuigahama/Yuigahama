@@ -10,8 +10,8 @@ class LewdNeko extends Command {
     super(...args, {
       nsfw: true,
       requiredPermissions: ['ATTACH_FILES'],
-      description: 'いやらしい猫耳の女の子画像を送信します。',
-      extendedHelp: ['--gif を付けるとGIF画像が送信されます。']
+      description: language => language.get('COMMAND_LEWD_NEKOGIRL_DESCRIPTION'),
+      extendedHelp: language => language.get('COMMAND_IMAGE_EXTENDED_HELP')
     })
   }
 

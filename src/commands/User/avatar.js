@@ -5,7 +5,7 @@ class Avatar extends Command {
   constructor (...args) {
     super(...args, {
       requiredPermissions: ['ATTACH_FILES'],
-      description: '自身または他のユーザーのアバター画像を送信します。',
+      description: language => language.get('COMMAND_AVATAR_DESCRIPTION'),
       usage: '[user:user]'
     })
   }

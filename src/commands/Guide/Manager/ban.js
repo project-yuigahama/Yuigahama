@@ -9,7 +9,7 @@ class Ban extends Command {
       runIn: ['text'],
       permissionLevel: 5,
       requiredPermissions: ['BAN_MEMBERS'],
-      descripition: 'ギルドからメンバーをBANします。',
+      description: language => language.get('COMMAND_BAN_DESCRIPTION'),
       usage: '<user:user> [days:int{1,7}] [reason:...string]',
       usageDelim: ' '
     })

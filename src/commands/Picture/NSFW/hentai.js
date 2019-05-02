@@ -10,8 +10,8 @@ class Hentai extends Command {
     super(...args, {
       nsfw: true,
       requiredPermissions: ['ATTACH_FILES'],
-      description: 'いやらしい画像を送信します。',
-      extendedHelp: ['--gif を付けるとGIF画像が送信されます。']
+      description: language => language.get('COMMAND_HENTAI_DESCRIPTION'),
+      extendedHelp: language => language.get('COMMAND_IMAGE_EXTENDED_HELP')
     })
   }
 

@@ -6,8 +6,8 @@ module.exports = class extends Command {
     super(...args, {
       runIn: ['text'],
       requiredPermissions: ['EMBED_LINKS'],
-      description: 'チャンネルの情報を確認出来ます。',
-      extendedHelp: ['テキストチャンネルとボイスチャンネルのみ情報を確認出来ます。'],
+      description: language => language.get('COMMAND_CHANNEL_INFO_DESCRIPTION'),
+      extendedHelp: language => language.get('COMMAND_CHANNEL_INFO_EXTENDED_HELP'),
       usage: '<channel:channel>'
     })
   }
@@ -38,6 +38,6 @@ module.exports = class extends Command {
         .addField('Limit', channel.userLimit ? channel.userLimit : 'Infinity', true)
       )
     }
-    return message.sendMessage('そのチャンネルはサポートしていません。')
+    return message.sendLocale('NOT_CHANNEL_SUPPORT')
   }
 }

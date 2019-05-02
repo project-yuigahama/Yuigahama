@@ -6,7 +6,7 @@ module.exports = class extends Command {
   constructor (...args) {
     super(...args, {
       aliases: ['pmmp', 'pocketmine-mp'],
-      description: 'PocketMine-MPの最新リリースの詳細を表示します。'
+      description: language => language.get('COMMAND_POCKETMINE_DESCRIPTION')
     })
   }
 

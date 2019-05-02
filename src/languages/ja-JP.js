@@ -203,7 +203,8 @@ module.exports = class extends Language {
       COMMAND_ROLE_INFO_DESCRIPTION: '役職の情報を確認出来ます。',
       COMMAND_UPDATE_DESCRIPTION: 'masterブランチと同期してデータを更新します。',
       COMMAND_IMAGE_EXTENDED_HELP: '--gif を付けるとGIF画像が送信されます。',
-      COMMAND_CHANNEL_INFO_EXTENDED_HELP: 'テキストチャンネルとボイスチャンネルのみ情報を確認出来ます。'
+      COMMAND_CHANNEL_INFO_EXTENDED_HELP: 'テキストチャンネルとボイスチャンネルのみ情報を確認出来ます。',
+      NOT_CHANNEL_SUPPORT: 'そのチャンネルはサポートしていません。'
     }
   }
 

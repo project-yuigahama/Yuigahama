@@ -10,7 +10,7 @@ class Dog extends Command {
   constructor (...args) {
     super(...args, {
       requiredPermissions: ['ATTACH_FILES'],
-      description: '犬の画像を送信します。'
+      description: language => language.get('COMMAND_DOG_DESCRIPITON')
     })
   }
 

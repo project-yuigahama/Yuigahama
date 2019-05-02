@@ -7,7 +7,7 @@ const { GuildMember, MessageEmbed } = require('discord.js')
 class MemberInfo extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'ギルドメンバーの情報を確認出来ます。',
+      description: language => language.get('COMMAND_MEMBER_INFO_DESCRIPTION'),
       runIn: ['text'],
       usage: '<member:member>'
     })

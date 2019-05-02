@@ -9,7 +9,7 @@ class DiscordJS extends Command {
     super(...args, {
       aliases: ['djs', 'djsdocs'],
       requiredPermissions: ['EMBED_LINKS'],
-      description: 'Discord.jsのドキュメントを検索します。',
+      description: language => language.get('COMMAND_DISCORDJS_DESCRIPTION'),
       usage: '<commando|rpc|main:default> <query:string> [branch:string]',
       usageDelim: ' ',
       subcommands: true

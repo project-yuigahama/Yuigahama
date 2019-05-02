@@ -9,8 +9,8 @@ const FuseJS = require('fuse.js')
 class PocketMine extends Command {
   constructor (...args) {
     super(...args, {
-      description: 'Poggitからプラグインを検索します。',
-      extendedHelp: '古いバージョンのものが検索結果に出る可能性があります。注意して下さい。',
+      description: language => language.get('COMMAND_POGGIT_DESCRIPTION'),
+      extendedHelp: language => language.get('COMMAND_POGGIT_EXTENDED_HELP'),
       usage: '<query:...string>',
       cooldown: 5
     })

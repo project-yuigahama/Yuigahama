@@ -8,7 +8,7 @@ class Update extends Command {
     super(...args, {
       guarded: true,
       permissionLevel: 10,
-      description: 'masterブランチと同期してデータを更新します。'
+      description: language => language.get('COMMAND_UPDATE_DESCRIPTION')
     })
   }
 

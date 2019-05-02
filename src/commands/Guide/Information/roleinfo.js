@@ -6,7 +6,7 @@ class RoleInfo extends Command {
     super(...args, {
       runIn: ['text'],
       requiredPermissions: ['EMBED_LINKS'],
-      description: '役職の情報を確認出来ます。',
+      description: language => language.get('COMMAND_ROLE_INFO_DESCRIPTION'),
       usage: '<role:role>'
     })
   }

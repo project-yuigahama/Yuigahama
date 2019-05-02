@@ -7,7 +7,7 @@ class Cat extends Command {
   constructor (...args) {
     super(...args, {
       requiredPermissions: ['ATTACH_FILES'],
-      description: '猫の画像を送信します。'
+      description: language => language.get('COMMAND_CAT_DESCRIPTION')
     })
   }
 

@@ -27,6 +27,7 @@ module.exports = class extends Language {
       COMMAND_BOTINFO_DESCRIPTION: 'Shows the environment in which the bot is running.',
       COMMAND_POCKETMINE_DESCRIPTION: 'View the details of the latest PocketMine-MP release.',
       COMMAND_POGGIT_DESCRIPTION: 'Search for PocketMine-MP plugins from Poggit.',
+      COMMAND_POGGIT_EXTENDED_HELP: 'Older versions of plug-ins may appear in the search results. be careful.',
       COMMAND_DISCORDJS_DESCRIPTION: 'Search the document of Discord.js.',
       COMMAND_CHANNEL_INFO_DESCRIPTION: 'You can check the channel information.',
       COMMAND_GUILD_INFO_DESCRIPTION: 'You can check the information of the guild.',
@@ -34,7 +35,8 @@ module.exports = class extends Language {
       COMMAND_ROLE_INFO_DESCRIPTION: 'You can check the position information.',
       COMMAND_UPDATE_DESCRIPTION: 'Update data in sync with the master branch.',
       COMMAND_IMAGE_EXTENDED_HELP: 'If you add --gif, a GIF image will be sent.',
-      COMMAND_CHANNEL_INFO_EXTENDED_HELP: 'Only text and voice channels can be checked.'
+      COMMAND_CHANNEL_INFO_EXTENDED_HELP: 'Only text and voice channels can be checked.',
+      NOT_CHANNEL_SUPPORT: 'The channel is not supported.'
     }
   }
 

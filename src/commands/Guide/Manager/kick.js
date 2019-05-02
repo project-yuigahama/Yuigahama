@@ -10,7 +10,7 @@ class Kick extends Command {
       runIn: ['text'],
       permissionLevel: 4,
       requiredPermissions: ['KICK_MEMBERS'],
-      descripition: language => language.get('COMMAND_KICK_DESCRIPTION'),
+      description: language => language.get('COMMAND_KICK_DESCRIPTION'),
       usage: '<member:member> [reason:...string]',
       usageDelim: ' '
     })
