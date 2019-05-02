@@ -1,4 +1,4 @@
-const { Command, KlasaMessage, RichDisplay } = require('klasa')
+const { Command, KlasaMessage, RichDisplay, Timestamp } = require('klasa')
 const { MessageEmbed, Util } = require('discord.js')
 const { Game: { MojangAPI } } = require('../../../Yui')
 
@@ -26,7 +26,7 @@ class MinecraftNameHistory extends Command {
     if (data.message) return message.sendMessage(data.message)
 
     const Display = new RichDisplay()
-    data.forEach((value) => Display.addPage(new MessageEmbed().addField(Util.escapeMarkdown(value.name), value.changedToAt ? `Updated:  ${new Date(value.changedToAt).toDateString()}` : 'Initial name', true).setTitle(`${name} - Name History`).setColor('RANDOM')))
+    data.forEach((value) => Display.addPage(new MessageEmbed().addField(Util.escapeMarkdown(value.name), value.changedToAt ? `Updated:  ${new Timestamp('YYYY-MM-DD HH:mm:ss').display(value.changedToAt)}` : 'Initial name', true).setTitle(`${name} - Name History`).setColor('RANDOM')))
 
     return Display.run(await message.send('Loading...'))
   }
