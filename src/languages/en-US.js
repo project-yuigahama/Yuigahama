@@ -43,7 +43,14 @@ module.exports = class extends Language {
       // Argument
       ARGUMENT_ROLE_FAIL: (name) => `${name} must be a valid name, id or role mention.`,
       ARGUMENT_ROLE_FOUND: (roles) => `Found multiple matches: \`${roles.map(role => role.name).join('`, `')}\``,
-      ARGUMENT_ATTACHMENT_FOUND: (name) => `${name} must be a file.`
+      ARGUMENT_ATTACHMENT_FOUND: (name) => `${name} must be a file.`,
+      COMMAND_BOTINFO_STATUS: (platform, model, memory) => [
+        '= Machine Information =',
+        '',
+        `Platform       :: ${platform}`,
+        `CPU            :: ${model}`,
+        `Memory         :: ${memory} GB`
+      ]
     }
   }
 

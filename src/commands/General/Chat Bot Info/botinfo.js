@@ -16,14 +16,7 @@ class BotInfo extends Command {
    * @param {KlasaMessage} message
    */
   async run (message) {
-    const info = [
-      '= サーバー情報 =',
-      '',
-      `Platform       :: ${getPlatform()}`,
-      `CPU            :: ${os.cpus()[0].model}`,
-      `Memory         :: ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(1)} GB`
-    ].join('\n')
-    return message.sendCode('asciidoc', info)
+    return message.sendCode('asciidoc', message.language.get('COMMAND_BOTINFO_STATUS', getPlatform(), os.cpus()[0].model, (os.totalmem() / 1024 / 1024 / 1024).toFixed(1)))
   }
 }
 

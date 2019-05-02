@@ -212,7 +212,14 @@ module.exports = class extends Language {
       // Argument
       ARGUMENT_ROLE_FAIL: (name) => `${name} は役職名、役職メンションまたは役職IDである必要があります。`,
       ARGUMENT_ROLE_FOUND: (roles) => `もしかして... \`${roles.map(role => role.name).join('`, `')}\``,
-      ARGUMENT_ATTACHMENT_NOT_FOUND: (name) => `${name} はファイルである必要があります。`
+      ARGUMENT_ATTACHMENT_NOT_FOUND: (name) => `${name} はファイルである必要があります。`,
+      COMMAND_BOTINFO_STATUS: (platform, model, memory) => [
+        '= マシン情報 =',
+        '',
+        `Platform       :: ${platform}`,
+        `CPU            :: ${model}`,
+        `Memory         :: ${memory} GB`
+      ]
     }
   }
 
