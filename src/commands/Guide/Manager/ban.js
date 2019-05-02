@@ -21,11 +21,14 @@ class Ban extends Command {
    */
   async run (message, [user, days = 0, reason = 'Not specified']) {
     const member = await message.guild.members.fetch(user).catch(() => null)
-    if (!member) {
-      if (member.roles.highest.position >= message.member.roles.highest.position || !member.bannable) return message.sendMessage('このユーザーはBAN出来ません。理由: 自分より上の権限を持ったユーザーかこのボットの権限ではこのユーザーをBAN出来ない為')
+    if (member !== null) {
+      if (member.roles.highest.position >= message.member.roles.highest.position) return message.sendLocale('COMMAND_BAN_FAIL_POSITION')
+      else if (!member.bannable) return message.sendLocale('COMMAND_BAN_FAIL_BANNABLE')
     }
+
     await message.guild.members.ban(user, { days: days, reason: reason })
-    return message.sendMessage(`${user.tag}をBANしました。`)
+
+    return message.sendLocale('COMMAND_BAN_DONE', user.tag)
   }
 }
 
