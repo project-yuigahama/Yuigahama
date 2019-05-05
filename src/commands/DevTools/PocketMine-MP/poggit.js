@@ -26,7 +26,7 @@ class PocketMine extends Command {
       .catch(() => null)
     if (!body) throw new Error('Not found')
     const results = new FuseJS(body, { keys: ['name', 'tagline'] }).search(query)
-    return results ? message.sendEmbed(new MessageEmbed()
+    return typeof results === 'undefined' ? message.sendEmbed(new MessageEmbed()
       .setURL(results[0]['html_url'] || 'https://poggit.pmmp.io')
       .setColor('#EC492C')
       .setAuthor('Poggit Search', 'https://poggit.pmmp.io/res/poggit.png', 'https://poggit.pmmp.io')
@@ -42,7 +42,7 @@ class PocketMine extends Command {
       .addField('Pre Release', results[0]['is_pre_release'] ? 'Yes' : 'No', true)
       .addField('Obsolete', results[0]['is_obsolete'] ? 'Yes' : 'No', true)
       .setFooter(results[0]['repo_name'] || 'Error', results[0]['icon_url'] || 'https://poggit.pmmp.io/res/defaultPluginIcon2.png')
-    ) : message.send('Error')
+    ) : message.send('Could not be located.')
   }
 }
 

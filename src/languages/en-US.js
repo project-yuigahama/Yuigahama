@@ -31,6 +31,7 @@ module.exports = class extends Language {
       COMMAND_POCKETMINE_DESCRIPTION: 'View the details of the latest PocketMine-MP release.',
       COMMAND_POGGIT_DESCRIPTION: 'Search for PocketMine-MP plugins from Poggit.',
       COMMAND_POGGIT_EXTENDED_HELP: 'Older versions of plug-ins may appear in the search results. be careful.',
+      COMMAND_POGGIT_NOT_FOUND: 'Could not be located.',
       COMMAND_DISCORDJS_DESCRIPTION: 'Search the document of Discord.js.',
       COMMAND_CHANNEL_INFO_DESCRIPTION: 'You can check the channel information.',
       COMMAND_GUILD_INFO_DESCRIPTION: 'You can check the information of the guild.',

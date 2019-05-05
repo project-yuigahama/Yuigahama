@@ -200,6 +200,8 @@ module.exports = class extends Language {
       COMMAND_BOTINFO_DESCRIPTION: 'ボットが稼働している環境を表示します。',
       COMMAND_POCKETMINE_DESCRIPTION: 'PocketMine-MPの最新リリースの詳細を表示します。',
       COMMAND_POGGIT_DESCRIPTION: 'PoggitからPocketMine-MPのプラグインを検索します。',
+      COMMAND_POGGIT_EXTENDED_HELP: '古いバージョンのプラグインが検索結果に表示されることがあります。 注意してください。',
+      COMMAND_POGGIT_NOT_FOUND: '見つかりませんでした。',
       COMMAND_DISCORDJS_DESCRIPTION: 'Discord.jsのドキュメントを検索します。',
       COMMAND_CHANNEL_INFO_DESCRIPTION: 'チャンネルの情報を確認出来ます。',
       COMMAND_GUILD_INFO_DESCRIPTION: 'ギルド(サーバー)の情報を確認出来ます。',
