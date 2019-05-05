@@ -1,4 +1,5 @@
 # YuigahamaBot
+
 [![Discord Bots](https://discordbots.org/api/widget/531097309748920371.svg)](https://discordbots.org/bot/531097309748920371)
 
 [![Build Status](https://travis-ci.org/project-yuigahama/Yuigahama.svg?branch=master)](https://travis-ci.org/project-yuigahama/Yuigahama)
@@ -10,7 +11,7 @@
 
 ## Setup
 
-```
+```bash
 git clone https://github.com/InkoHX/Yuigahama.git
 cd Yuigahama
 
