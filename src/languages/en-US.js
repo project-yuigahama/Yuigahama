@@ -51,7 +51,9 @@ module.exports = class extends Language {
         `Platform       :: ${platform}`,
         `CPU            :: ${model}`,
         `Memory         :: ${memory} GB`
-      ]
+      ],
+      COMMAND_HUG_DESCRIPTION: 'Hug to other memebr.',
+      COMMAND_HUG: (author, member) => `${author} hugs you ${member}`
     }
   }
 

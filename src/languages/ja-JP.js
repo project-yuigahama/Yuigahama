@@ -221,7 +221,9 @@ module.exports = class extends Language {
         `Platform       :: ${platform}`,
         `CPU            :: ${model}`,
         `Memory         :: ${memory} GB`
-      ]
+      ],
+      COMMAND_HUG_DESCRIPTION: '他のメンバーにハグします！',
+      COMMAND_HUG: (author, member) => `${author}が${member}にハグしてます。`
     }
   }
 
