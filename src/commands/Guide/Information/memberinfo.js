@@ -22,7 +22,7 @@ class MemberInfo extends Command {
       .setColor(member.displayHexColor)
       .setFooter('Guide Joined At')
       .setTimestamp(member.joinedTimestamp)
-      .setThumbnail(member.user.avatarURL({ size: 512 }))
+      .setThumbnail(member.user.avatarURL({ size: 512, format: 'png' }))
       .addField('Display Name', member.displayName, true)
       .addField('Nickname', member.nickname ? member.nickname : 'None', true)
       .addField('Bannable', member.bannable ? ':white_check_mark:' : ':x:', true)

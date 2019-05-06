@@ -46,7 +46,7 @@ class GuideInfo extends Command {
 
     return message.sendEmbed(new MessageEmbed()
       .setTitle(message.guild.name)
-      .setThumbnail(message.guild.iconURL({ size: 512 }))
+      .setThumbnail(message.guild.iconURL({ size: 512, format: 'png' }))
       .setTimestamp(message.guild.createdAt)
       .setFooter('Created At')
       .addField('Guide ID', message.guild.id, true)

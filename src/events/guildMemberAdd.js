@@ -16,7 +16,7 @@ class guildMemberAdd extends Event {
       channel.send(new MessageEmbed()
         .setColor('GREEN')
         .setTitle(member.guild.language.get('MEMBER_JOIN', member.user.tag))
-        .setThumbnail(member.user.avatarURL({ size: 2048 }))
+        .setThumbnail(member.user.avatarURL({ size: 2048, format: 'png' }))
         .setDescription(settings.channels.JoinMessage)
         .setTimestamp()
       )
