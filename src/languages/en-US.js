@@ -53,7 +53,8 @@ module.exports = class extends Language {
         `Memory         :: ${memory} GB`
       ],
       COMMAND_HUG_DESCRIPTION: 'Hug to other memebr.',
-      COMMAND_HUG: (author, member) => `${author} hugs you ${member}`
+      COMMAND_HUG: (author, member) => `${author} hugs you ${member}`,
+      COMMAND_EXEC_DESCRIPTION: 'Execute commands in the terminal'
     }
   }
 

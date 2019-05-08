@@ -223,7 +223,8 @@ module.exports = class extends Language {
         `Memory         :: ${memory} GB`
       ],
       COMMAND_HUG_DESCRIPTION: '他のメンバーにハグします！',
-      COMMAND_HUG: (author, member) => `${author}が${member}にハグしてます。`
+      COMMAND_HUG: (author, member) => `${author}が${member}にハグしてます。`,
+      COMMAND_EXEC_DESCRIPTION: 'ターミナルでコマンドを実行します。'
     }
   }
 
