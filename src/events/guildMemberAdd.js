@@ -10,12 +10,18 @@ class guildMemberAdd extends Event {
    */
   run (member) {
     const settings = member.guild.settings
+    const guild = member.guild
+
+    if (settings.mod.Role !== null && guild.roles.has(settings.mod.Role) === true) {
+      member.roles.add(settings.mod.Role, 'AutoRole')
+    }
+
     if (settings.channels.JoinLog !== null) {
-      const channel = member.guild.channels.get(settings.channels.JoinLog)
+      const channel = guild.channels.get(settings.channels.JoinLog)
       if (typeof channel === 'undefined') return
       channel.send(new MessageEmbed()
         .setColor('GREEN')
-        .setTitle(member.guild.language.get('MEMBER_JOIN', member.user.tag))
+        .setTitle(guild.language.get('MEMBER_JOIN', member.user.tag))
         .setThumbnail(member.user.avatarURL({ size: 2048, format: 'png' }))
         .setDescription(settings.channels.JoinMessage)
         .setTimestamp()
