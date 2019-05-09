@@ -16,8 +16,7 @@ Client.defaultGuildSchema
     .add('QuitMessage', 'string', { default: 'Bye...' })
   )
   .add('mod', folder => folder
-    .add('AutoRole', 'boolean', { default: false })
-    .add('Role', 'role')
+    .add('AutoRole', 'role')
   )
 
 const client = new Client({
