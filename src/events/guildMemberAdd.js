@@ -12,8 +12,8 @@ class guildMemberAdd extends Event {
     const settings = member.guild.settings
     const guild = member.guild
 
-    if (settings.mod.Role !== null && guild.roles.has(settings.mod.Role) === true) {
-      member.roles.add(settings.mod.Role, 'AutoRole')
+    if (settings.mod.AutoRole !== null && guild.roles.has(settings.mod.AutoRole) === true) {
+      member.roles.add(settings.mod.AutoRole, 'AutoRole')
     }
 
     if (settings.channels.JoinLog !== null) {
