@@ -19,6 +19,7 @@ module.exports = class extends Language {
       COMMAND_MINECRAFT_UUID_FAIL: 'Could not get UUID. The player name may be wrong.',
       COMMAND_MINECRAFT_NAMEHISTORY_DESCRIPTION: 'Send player name history.',
       COMMAND_OFFICIAL_GUILD_DESCRIPTION: 'Send the official guild invite URL.',
+      COMMAND_YUIGAHAMA_DESCRIPTION: 'Send Yuigahama images.',
       COMMAND_FOXGIRL_DESCRIPTION: 'Send fox girl images.',
       COMMAND_NEKOGIRL_DESCRIPTION: 'Send neko girl images.',
       COMMAND_DOG_DESCRIPITON: 'Send dog images.',

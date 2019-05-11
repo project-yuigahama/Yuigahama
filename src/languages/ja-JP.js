@@ -189,6 +189,7 @@ module.exports = class extends Language {
       COMMAND_MINECRAFT_UUID_FAIL: 'UUIDを取得できませんでした。 プレイヤー名が間違っている可能性があります。',
       COMMAND_MINECRAFT_NAMEHISTORY_DESCRIPTION: 'プレイヤーが使用していた名前履歴を送信します。',
       COMMAND_OFFICIAL_GUILD_DESCRIPTION: '公式ギルドの招待URLを送信します。',
+      COMMAND_YUIGAHAMA_DESCRIPTION: '由比ヶ浜結衣の画像を送信します。',
       COMMAND_FOXGIRL_DESCRIPTION: '狐耳の女の子画像を送信します。',
       COMMAND_NEKOGIRL_DESCRIPTION: '猫耳の女の子画像を送信します。',
       COMMAND_DOG_DESCRIPITON: 'かわいい犬の画像を送信します。',
