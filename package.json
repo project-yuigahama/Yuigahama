@@ -29,7 +29,7 @@
     "firebase-admin": "^7.3.0",
     "fuse.js": "^3.4.4",
     "klasa": "github:dirigeants/klasa",
-    "node-fetch": "^2.4.1"
+    "node-fetch": "^2.5.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
