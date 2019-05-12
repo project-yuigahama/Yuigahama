@@ -11,8 +11,8 @@ class Reporter {
    * @returns {string}
    */
   static makeErrorReport (error, client) {
-    if (error instanceof Error) return
-    if (client instanceof KlasaClient) return
+    if (!(error instanceof Error)) return
+    if (!(client instanceof KlasaClient)) return
     return [
       '=== Yuigahama Error Report ===',
       `Date                                :: ${timestamp.display()}`,
@@ -44,8 +44,8 @@ class Reporter {
    * @returns {string}
    */
   static makeCrashReport (error, client) {
-    if (error instanceof Error) return
-    if (client instanceof KlasaClient) return
+    if (!(error instanceof Error)) return
+    if (!(client instanceof KlasaClient)) return
     return [
       '=== Yuigahama Crash Report ===',
       `Date                                :: ${timestamp.display()}`,
