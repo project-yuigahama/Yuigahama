@@ -53,6 +53,9 @@ module.exports = {
   Utils: require('./lib/util/utils'),
   Nekoslife: require('./lib/util/Nekolife'),
   Game: {
-    MojangAPI: require('./lib/game/Minecraft/MojangAPI')
+    MojangAPI: require('./lib/game/Minecraft/MojangAPI'),
+    FortniteAPI: require('./lib/game/Fortnite/FortniteAPI'),
+    FortniteStoreAPI: require('./lib/game/Fortnite/FortniteStoreAPI'),
+    FortniteUserAPI: require('./lib/game/Fortnite/FortniteUserAPI')
   }
 }
