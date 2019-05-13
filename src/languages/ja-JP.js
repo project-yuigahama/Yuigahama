@@ -225,7 +225,8 @@ module.exports = class extends Language {
       ],
       COMMAND_HUG_DESCRIPTION: '他のメンバーにハグします！',
       COMMAND_HUG: (author, member) => `${author}が${member}にハグしてます。`,
-      COMMAND_EXEC_DESCRIPTION: 'ターミナルでコマンドを実行します。'
+      COMMAND_EXEC_DESCRIPTION: 'ターミナルでコマンドを実行します。',
+      COMMAND_FORTNITE_DESCRIPTION: 'Fortniteに関するさまざまな情報を確認できます。'
     }
   }
 
