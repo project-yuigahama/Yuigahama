@@ -24,6 +24,7 @@ class FortniteUserAPI {
       .then(res => res.json())
       .catch(() => null)
     if (data === null) throw new YuigahamaError('Request failed.')
+    if (data.success === false) return null
     this.userdata = data
 
     return data
@@ -35,6 +36,7 @@ class FortniteUserAPI {
   async getUserId () {
     if (this.userdata.uid !== null) return this.userdata.uid
     const data = await this.getUser(true)
+    if (data === null) return null
     return data.uid
   }
 
@@ -44,6 +46,7 @@ class FortniteUserAPI {
   async getPlatforms () {
     if (this.userdata.platforms !== null) return this.userdata.uid
     const data = await this.getUser(true)
+    if (data === null) return null
     return data.platforms
   }
 
@@ -53,6 +56,7 @@ class FortniteUserAPI {
   async getSeasons () {
     if (this.userdata.seasons !== null) return this.userdata.seasons
     const data = await this.getUser(true)
+    if (data === null) return null
     return data.seasons
   }
 
@@ -63,6 +67,7 @@ class FortniteUserAPI {
       .then(res => res.json())
       .catch(() => null)
     if (data === null) throw new YuigahamaError('Request failed.')
+    if (data.success === false) return null
     this.stats = data
 
     return data
@@ -75,6 +80,7 @@ class FortniteUserAPI {
       .then(res => res.json())
       .catch(() => null)
     if (data === null) throw new YuigahamaError('Request failed.')
+    if (data.success === false) return null
     this.matches = data
 
     return data
