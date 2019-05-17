@@ -31,10 +31,20 @@ class FortniteUserAPI {
   }
 
   /**
+   * @returns {string|null}
+   */
+  async getUsername () {
+    if (this.userdata !== null) return this.userdata.username
+    const data = await this.getUser(true)
+    if (data === null) return null
+    return data.username
+  }
+
+  /**
    * @returns {string}
    */
   async getUserId () {
-    if (this.userdata.uid !== null) return this.userdata.uid
+    if (this.userdata !== null) return this.userdata.uid
     const data = await this.getUser(true)
     if (data === null) return null
     return data.uid
@@ -44,9 +54,9 @@ class FortniteUserAPI {
    * @returns {any[]}
    */
   async getPlatforms () {
-    if (this.userdata.platforms !== null) return this.userdata.uid
+    if (this.userdata !== null) return this.userdata.platforms
     const data = await this.getUser(true)
-    if (data === null) return null
+    if (data === null || data.platforms === null) return null
     return data.platforms
   }
 
@@ -54,7 +64,7 @@ class FortniteUserAPI {
    * @returns {any[]}
    */
   async getSeasons () {
-    if (this.userdata.seasons !== null) return this.userdata.seasons
+    if (this.userdata !== null) return this.userdata.seasons
     const data = await this.getUser(true)
     if (data === null) return null
     return data.seasons
