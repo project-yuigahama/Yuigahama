@@ -56,7 +56,8 @@ module.exports = class extends Language {
       COMMAND_HUG_DESCRIPTION: 'Hug to other memebr.',
       COMMAND_HUG: (author, member) => `${author} hugs you ${member}`,
       COMMAND_EXEC_DESCRIPTION: 'Execute commands in the terminal',
-      COMMAND_FORTNITE_DESCRIPTION: 'You can check various information about Fortnite.'
+      COMMAND_FORTNITE_DESCRIPTION: 'You can check various information about Fortnite.',
+      COMMAND_MOJANG_STATUS: 'Display the status of various Mojang services.'
     }
   }
 
