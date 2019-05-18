@@ -2,7 +2,7 @@ const { Command, KlasaMessage } = require('klasa')
 const { MessageEmbed } = require('discord.js')
 const { Game: { MojangAPI } } = require('../../../Yui')
 
-module.exports = class extends Command {
+class MojangStatus extends Command {
   constructor (...args) {
     super(...args, {
       description: language => language.get('COMMAND_MOJANG_STATUS'),
@@ -43,3 +43,5 @@ module.exports = class extends Command {
     }
   }
 }
+
+module.exports = MojangStatus
