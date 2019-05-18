@@ -34,11 +34,12 @@ module.exports = class extends Command {
    * @param {string} string
    */
   toEmoji (string) {
-    if (typeof string !== 'string') return ':x:'
+    if (typeof string !== 'string') return ':question:'
     switch (string) {
       case 'green': return ':green_heart:'
       case 'yellow': return ':yellow_heart:'
       case 'red': return ':heart:'
+      default: return ':question:'
     }
   }
 }
