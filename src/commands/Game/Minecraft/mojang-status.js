@@ -18,7 +18,7 @@ class MojangStatus extends Command {
 
     return message.sendEmbed(new MessageEmbed()
       .setColor('GREEN')
-      .setTitle('MojangAPI Status')
+      .setTitle('Status of Mojang services.')
       .addField('Mojang.com', this.toEmoji(data[7]['mojang.com']), true)
       .addField('Public API', this.toEmoji(data[5]['api.mojang.com']), true)
       .addField('Minecraft.net', this.toEmoji(data[0]['minecraft.net']), true)
