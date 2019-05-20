@@ -14,6 +14,19 @@ class PocketMine extends Command {
       usage: '<query:...string>',
       cooldown: 5
     })
+
+    this.options = {
+      shouldSort: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: [
+        'name',
+        'tagline'
+      ]
+    }
   }
 
   /**
@@ -25,7 +38,7 @@ class PocketMine extends Command {
       .then(res => res.json())
       .catch(() => null)
     if (!body) throw new Error('Not found')
-    const results = new FuseJS(body, { keys: ['name', 'tagline'] }).search(query)
+    const results = new FuseJS(body, this.options).search(query)
     return typeof results !== 'undefined' ? message.sendEmbed(new MessageEmbed()
       .setURL(results[0]['html_url'] || 'https://poggit.pmmp.io')
       .setColor('#EC492C')
