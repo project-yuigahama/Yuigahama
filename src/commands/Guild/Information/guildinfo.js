@@ -49,7 +49,7 @@ class GuideInfo extends Command {
       .setThumbnail(message.guild.iconURL({ size: 512, format: 'png' }))
       .setTimestamp(message.guild.createdAt)
       .setFooter('Created At')
-      .addField('Guide ID', message.guild.id, true)
+      .addField('Guild ID', message.guild.id, true)
       .addField('Owner', message.guild.owner.user.tag, true)
       .addField('Members', memberCount, true)
       .addField('Channels', Channels, true)
