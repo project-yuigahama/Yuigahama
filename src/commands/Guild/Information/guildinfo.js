@@ -55,7 +55,7 @@ class GuideInfo extends Command {
       .addField('Channels', Channels, true)
       .addField('Emojis', Emojis, true)
       .addField('Region', message.guild.region.toUpperCase(), true)
-      .addField('Roles', `Total: ${message.guild.roles.size}\n\n${message.guild.roles.map(role => role.name).join(', ')}`, true)
+      .addField('Roles', `Total: ${message.guild.roles.size}\n\n${message.guild.roles.filter(role => role.name !== '@everyone').map(role => role.name).join(', ')}`, true)
     )
   }
 }

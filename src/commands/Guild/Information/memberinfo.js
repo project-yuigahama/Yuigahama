@@ -29,7 +29,7 @@ class MemberInfo extends Command {
       .addField('Kickable', member.kickable ? ':white_check_mark:' : ':x:', true)
       .addField('Last Message ID', member.lastMessageID ? member.lastMessageID : 'None', true)
       .addField('Last Pin At', member.lastPinTimestamp ? new Timestamp('YYYY-MM-DD HH:mm:ss').display(member.lastPinTimestamp) : 'None', true)
-      .addField('Roles', member.roles.map(role => role.name).join(', '), true)
+      .addField('Roles', member.roles.filter(role => role.name !== '@everyone').map(role => role.name).join(', '), true)
     )
   }
 }
