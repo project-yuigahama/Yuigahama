@@ -33,7 +33,11 @@ class Fortnite extends Command {
 
     const UserData = await User.getStats()
     if (UserData !== null) {
-      Display.addPage(new MessageEmbed().addField(`${UserName} - Devices`, UserData.devices.join('\n'), true).setColor('RANDOM'))
+      Display.addPage(new MessageEmbed()
+        .setTitle(`${UserName} - Devices`)
+        .setColor('RANDOM')
+        .setDescription(typeof UserData.devices !== 'undefined' ? UserData.devices.join('\n') : 'None')
+      )
 
       const defaultModes = UserData['overallData']['defaultModes']
       Display.addPage(new MessageEmbed()
@@ -44,7 +48,7 @@ class Fortnite extends Command {
         .addField('Win', defaultModes['placetop1'] || 0, true)
         .addField('Score', defaultModes['score'] || 0, true)
         .addField('Matches Played', defaultModes['matchesplayed'] || 0, true)
-        .addField('Playlists', defaultModes['includedPlaylists'] ? defaultModes['includedPlaylists'].join('\n') : 'None', true)
+        .addField('Playlists', typeof defaultModes['includedPlaylists'] !== 'undefined' ? defaultModes['includedPlaylists'].join('\n') : 'None', true)
       )
 
       const ltmModes = UserData['overallData']['ltmModes']
@@ -56,7 +60,7 @@ class Fortnite extends Command {
         .addField('Players out lived', ltmModes['playersoutlived'] || 0, true)
         .addField('Score', ltmModes['score'] || 0, true)
         .addField('Kills', ltmModes['kills'] || 0, true)
-        .addField('Playlists', ltmModes['includedPlaylists'] ? ltmModes['includedPlaylists'].join('\n') : 'None', true)
+        .addField('Playlists', typeof ltmModes['includedPlaylists'] !== 'undefined' ? ltmModes['includedPlaylists'].join('\n') : 'None', true)
       )
 
       const TeamModes = UserData['overallData']['largeTeamModes']
@@ -68,7 +72,7 @@ class Fortnite extends Command {
         .addField('Kills', TeamModes['kills'] || 0, true)
         .addField('Players out lived', ltmModes['playersoutlived'] || 0, true)
         .addField('Score', ltmModes['score'] || 0, true)
-        .addField('Playlists', TeamModes['includedPlaylists'] ? TeamModes['includedPlaylists'].join('\n') : 'None', true)
+        .addField('Playlists', typeof TeamModes['includedPlaylists'] !== 'undefined' ? TeamModes['includedPlaylists'].join('\n') : 'None', true)
       )
     }
 
