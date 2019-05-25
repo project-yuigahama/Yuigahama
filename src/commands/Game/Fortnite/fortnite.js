@@ -34,8 +34,8 @@ class Fortnite extends Command {
     const UserData = await User.getStats()
     if (UserData !== null) {
       Display.addPage(new MessageEmbed().addField(`${UserName} - Devices`, UserData.devices.join('\n'), true))
-      const defaultModes = UserData['overallData']['defaultModes']
 
+      const defaultModes = UserData['overallData']['defaultModes']
       Display.addPage(new MessageEmbed()
         .setTitle(`${UserName} - default Modes`)
         .addField('Players out lived', defaultModes['playersoutlived'], true)
@@ -44,6 +44,26 @@ class Fortnite extends Command {
         .addField('Score', defaultModes['score'], true)
         .addField('Play', defaultModes['matchesplayed'], true)
         .addField('Playlists', defaultModes['includedPlaylists'].join('\n'), true)
+      )
+
+      const ltmModes = UserData['overallData']['ltmModes']
+      Display.addPage(new MessageEmbed()
+        .setTitle(`${UserName} - ltmModes`)
+        .addField('Play', ltmModes['matchesplayed'], true)
+        .addField('Win', ltmModes['placetop1'], true)
+        .addField('Players out lived', ltmModes['playersoutlived'], true)
+        .addField('Score', ltmModes['score'], true)
+        .addField('Kills', ltmModes['kills'], true)
+        .addField('Playlists', ltmModes['includedPlaylists'].join('\n'), true)
+      )
+
+      const TeamModes = UserData['overallData']['largeTeamModes']
+      Display.addPage(new MessageEmbed()
+        .setTitle(`${UserName} - TeamModes`)
+        .addField('Win', TeamModes['placetop1'], true)
+        .addField('Play', TeamModes['matchesplayed'], true)
+        .addField('Kills', TeamModes['kills'], true)
+        .addField('Playlists', TeamModes['includedPlaylists'].join('\n'), true)
       )
     }
 
