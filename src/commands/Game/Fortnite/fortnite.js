@@ -26,17 +26,18 @@ class Fortnite extends Command {
 
     const UserName = await User.getUsername()
     if (UserName === null) return message.sendMessage('User not found.')
-    const Display = new RichDisplay(new MessageEmbed().setTitle(`${UserName} - Status`).setColor('RANDOM'))
+    const Display = new RichDisplay()
 
     const Platforms = await User.getPlatforms()
-    if (Platforms !== null) Display.addPage(new MessageEmbed().addField(`${UserName} - Platforms`, Platforms.join('\n'), true))
+    if (Platforms !== null) Display.addPage(new MessageEmbed().addField(`${UserName} - Platforms`, Platforms.join('\n'), true).setColor('RANDOM'))
 
     const UserData = await User.getStats()
     if (UserData !== null) {
-      Display.addPage(new MessageEmbed().addField(`${UserName} - Devices`, UserData.devices.join('\n'), true))
+      Display.addPage(new MessageEmbed().addField(`${UserName} - Devices`, UserData.devices.join('\n'), true).setColor('RANDOM'))
 
       const defaultModes = UserData['overallData']['defaultModes']
       Display.addPage(new MessageEmbed()
+        .setColor('RANDOM')
         .setTitle(`${UserName} - default Modes`)
         .addField('Players out lived', defaultModes['playersoutlived'], true)
         .addField('Kills', defaultModes['kills'], true)
@@ -48,6 +49,7 @@ class Fortnite extends Command {
 
       const ltmModes = UserData['overallData']['ltmModes']
       Display.addPage(new MessageEmbed()
+        .setColor('RANDOM')
         .setTitle(`${UserName} - ltmModes`)
         .addField('Play', ltmModes['matchesplayed'], true)
         .addField('Win', ltmModes['placetop1'], true)
@@ -59,6 +61,7 @@ class Fortnite extends Command {
 
       const TeamModes = UserData['overallData']['largeTeamModes']
       Display.addPage(new MessageEmbed()
+        .setColor('RANDOM')
         .setTitle(`${UserName} - TeamModes`)
         .addField('Win', TeamModes['placetop1'], true)
         .addField('Play', TeamModes['matchesplayed'], true)
