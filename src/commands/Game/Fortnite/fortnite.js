@@ -22,20 +22,32 @@ class Fortnite extends Command {
    */
   async user (message, [string]) {
     if (typeof string !== 'string') return message.sendMessage('')
-    const Embed = new MessageEmbed().setColor('RANDOM')
     const User = new FortniteUserAPI(string)
 
     const UserName = await User.getUsername()
     if (UserName === null) return message.sendMessage('User not found.')
-    Embed.setTitle(`${UserName} - Status`)
+    const Display = new RichDisplay(new MessageEmbed().setTitle(`${UserName} - Status`).setColor('RANDOM'))
 
     const Platforms = await User.getPlatforms()
-    if (Platforms !== null) Embed.addField('Platforms', Platforms.join('\n'), true)
+    if (Platforms !== null) Display.addPage(new MessageEmbed().addField(`${UserName} - Platforms`, Platforms.join('\n'), true))
 
     const UserData = await User.getStats()
-    if (UserData !== null) Embed.addField('Devices', UserData.devices.join('\n'), true)
+    if (UserData !== null) {
+      Display.addPage(new MessageEmbed().addField(`${UserName} - Devices`, UserData.devices.join('\n'), true))
+      const defaultModes = UserData['overallData']['defaultModes']
 
-    return message.sendEmbed(Embed)
+      Display.addPage(new MessageEmbed()
+        .setTitle(`${UserName} - default Modes`)
+        .addField('Players out lived', defaultModes['playersoutlived'], true)
+        .addField('Kills', defaultModes['kills'], true)
+        .addField('Win', defaultModes['placetop1'], true)
+        .addField('Score', defaultModes['score'], true)
+        .addField('Play', defaultModes['matchesplayed'], true)
+        .addField('Playlists', defaultModes['includedPlaylists'].join('\n'), true)
+      )
+    }
+
+    return Display.run(await message.send('Loading'))
   }
 
   /**
