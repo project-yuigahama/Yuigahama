@@ -19,6 +19,8 @@ class GuideInfo extends Command {
    * @param {KlasaMessage} message
    */
   async run (message) {
+    await message.guild.fetch()
+
     const memberCount = [
       `Total: ${message.guild.memberCount}`,
       '',
