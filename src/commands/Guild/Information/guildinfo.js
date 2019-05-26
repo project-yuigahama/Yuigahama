@@ -50,7 +50,7 @@ class GuideInfo extends Command {
       .setTimestamp(message.guild.createdAt)
       .setFooter('Created At')
       .addField('Guild ID', message.guild.id, true)
-      .addField('Owner', message.guild.owner.user.tag || 'None', true)
+      .addField('Owner', message.guild.owner.user !== null ? message.guild.owner.user.tag : 'None', true)
       .addField('Members', memberCount, true)
       .addField('Channels', Channels, true)
       .addField('Emojis', Emojis, true)
