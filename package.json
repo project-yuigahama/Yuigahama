@@ -27,8 +27,10 @@
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^7.0.0",
     "firebase-admin": "^7.3.0",
+    "fs-nextra": "^0.4.5",
     "fuse.js": "^3.4.4",
     "klasa": "github:dirigeants/klasa",
+    "level": "^5.0.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
