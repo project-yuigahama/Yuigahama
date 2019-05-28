@@ -1,4 +1,3 @@
-/* eslint-disable promise/param-names */
 // Copyright (c) 2017-2019 dirigeants. All rights reserved. MIT license.
 const { Provider, util: { mergeObjects } } = require('klasa')
 const { Collection } = require('discord.js')
@@ -71,18 +70,20 @@ module.exports = class extends Provider {
     return data
   }
 
-  getKeys (table) {
+  async getKeys (table) {
     const db = this.tables.get(table)
-    if (!db) return Promise.reject(new Error(`The table ${table} does not exist.`))
-    return new Promise((res) => {
+    if (!db) throw new Error(`The table ${table} does not exist.`)
+    const data = await new Promise((resolve) => {
       const output = []
       const stream = db.keyStream()
         .on('data', key => output.push(key))
         .once('end', () => {
           stream.removeAllListeners()
-          res(output)
+          resolve(output)
         })
     })
+
+    return data
   }
 
   get (table, id) {
