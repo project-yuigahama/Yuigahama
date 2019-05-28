@@ -54,7 +54,7 @@ module.exports = class extends Provider {
       const output = []
       stream.on('data', (data) => {
         if (filter.length) {
-          let json = JSON.parse(data.value)
+          const json = JSON.parse(data.value)
           if (filter.includes(json.id)) output.push(json)
         } else {
           output.push(JSON.parse(data.value))
