@@ -47,21 +47,28 @@ module.exports = class extends Provider {
 
   /* Document methods */
 
-  getAll (table, filter = []) {
+  async getAll (table, filter = []) {
     const db = this.tables.get(table)
-    if (!db) return Promise.reject(new Error(`The table ${table} does not exist.`))
-    return new Promise((res) => {
+    if (!db) throw new Error(`The table ${table} does not exist.`)
+    const stream = db.createReadStream()
+    const data = await new Promise((resolve) => {
       const output = []
-      const stream = db.createReadStream()
-        .on('data', filter.length ? (data) => {
-          data = JSON.parse(data)
-          if (filter.includes(data.id)) output.push(data)
-        } : (data) => output.push(JSON.parse(data.value)))
-        .once('end', () => {
-          stream.removeAllListeners()
-          res(output)
-        })
+      stream.on('data', (data) => {
+        if (filter.length) {
+          let json = JSON.parse(data.value)
+          if (filter.includes(json.id)) output.push(json)
+        } else {
+          output.push(JSON.parse(data.value))
+        }
+      })
+
+      stream.once('end', () => {
+        stream.removeAllListeners()
+        resolve(output)
+      })
     })
+
+    return data
   }
 
   getKeys (table) {
