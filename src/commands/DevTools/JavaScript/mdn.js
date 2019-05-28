@@ -23,7 +23,7 @@ class MDN extends Command {
 
     const Display = new RichDisplay()
     const Documents = data['documents']
-    if (!Documents) return message.sendMessage(`Information matching \`${query}\` could not be found.`)
+    if (!Documents || Documents.length === 0) return message.sendMessage(`Information matching \`${query}\` could not be found.`)
     Documents.forEach((value) => {
       Display.addPage(new MessageEmbed()
         .setColor('RANDOM')
