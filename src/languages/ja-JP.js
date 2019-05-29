@@ -228,7 +228,9 @@ module.exports = class extends Language {
       COMMAND_EXEC_DESCRIPTION: 'ターミナルでコマンドを実行します。',
       COMMAND_FORTNITE_DESCRIPTION: 'Fortniteに関するさまざまな情報を確認できます。',
       COMMAND_MOJANG_STATUS: 'さまざまなMojangサービスの状態を表示します。',
-      COMMAND_MDN_DESCRIPTION: 'MDN Web docs を検索することができます。'
+      COMMAND_MDN_DESCRIPTION: 'MDN Web docs を検索することができます。',
+      COMMAND_TOP_INVITE_DESCRIPTION: '招待回数ランキングを表示します。',
+      COMMAND_TOP_INVITE_NOT_FOUND: '招待リンクが一つもありません。'
     }
   }
 
