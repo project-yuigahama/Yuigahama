@@ -32,7 +32,8 @@ const client = new Client({
     commands: {
       autoAliases: false
     }
-  }
+  },
+  disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE']
 })
 
 if ('DBL_TOKEN' in process.env) {
