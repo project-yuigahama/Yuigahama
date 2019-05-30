@@ -28,10 +28,10 @@ class NPM extends Command {
     data.forEach(value => {
       Display.addPage(new MessageEmbed()
         .setTitle(`${value.name} - v${value.version}`)
-        .setDescription(value.description)
-        .addField('Keywords', value.keywords.join(', '), true)
-        .addField('Date', value.date, true)
-        .addField('Author', value.author.name, true)
+        .setDescription(value.description || 'None')
+        .addField('Keywords', value.keywords ? value.keywords.join(', ') : 'None', true)
+        .addField('Date', this.timestamp.display(value.date), true)
+        .addField('Author', value.author ? value.author.name : 'None', true)
       )
     })
 
@@ -59,7 +59,7 @@ class NPM extends Command {
       .addField('Author', data.author ? data.author.name : '???', true)
       .addField('Creation Date', this.timestamp.display(data['time']['created']), true)
       .addField('Modification Date', this.timestamp.display(data['time']['modified']), true)
-      .addField('Keywords', data.keywords && data.keywords.length !== 0 ? data['keywords'].join(', ') : 'None', true)
+      .addField('Keywords', data.keywords ? data['keywords'].join(', ') : 'None', true)
       .addField('License', data['license'] || 'None', true)
       .addField('Homepage', data['homepage'] || 'None', true)
     )
