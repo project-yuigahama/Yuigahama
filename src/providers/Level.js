@@ -1,4 +1,3 @@
-/* eslint-disable promise/param-names */
 // Copyright (c) 2017-2019 dirigeants. All rights reserved. MIT license.
 const { Provider, util: { mergeObjects } } = require('klasa')
 const { Collection } = require('discord.js')
@@ -47,35 +46,44 @@ module.exports = class extends Provider {
 
   /* Document methods */
 
-  getAll (table, filter = []) {
+  async getAll (table, filter = []) {
     const db = this.tables.get(table)
-    if (!db) return Promise.reject(new Error(`The table ${table} does not exist.`))
-    return new Promise((res) => {
+    if (!db) throw new Error(`The table ${table} does not exist.`)
+    const stream = db.createReadStream()
+    const data = await new Promise((resolve) => {
       const output = []
-      const stream = db.createReadStream()
-        .on('data', filter.length ? (data) => {
-          data = JSON.parse(data)
-          if (filter.includes(data.id)) output.push(data)
-        } : (data) => output.push(JSON.parse(data.value)))
-        .once('end', () => {
-          stream.removeAllListeners()
-          res(output)
-        })
+      stream.on('data', (data) => {
+        if (filter.length) {
+          const json = JSON.parse(data.value)
+          if (filter.includes(json.id)) output.push(json)
+        } else {
+          output.push(JSON.parse(data.value))
+        }
+      })
+
+      stream.once('end', () => {
+        stream.removeAllListeners()
+        resolve(output)
+      })
     })
+
+    return data
   }
 
-  getKeys (table) {
+  async getKeys (table) {
     const db = this.tables.get(table)
-    if (!db) return Promise.reject(new Error(`The table ${table} does not exist.`))
-    return new Promise((res) => {
+    if (!db) throw new Error(`The table ${table} does not exist.`)
+    const data = await new Promise((resolve) => {
       const output = []
       const stream = db.keyStream()
         .on('data', key => output.push(key))
         .once('end', () => {
           stream.removeAllListeners()
-          res(output)
+          resolve(output)
         })
     })
+
+    return data
   }
 
   get (table, id) {
