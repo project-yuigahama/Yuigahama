@@ -27,6 +27,11 @@ const client = new Client({
   commandEditing: true,
   providers: {
     default: 'Level' // FireStoreを使う時は FireStore に変更して環境変数にDATABASE_URL="データベースURL"を設定し resources/serviceAccount.jsonにダウンロードした秘密鍵を貼り付ける。
+  },
+  pieceDefaults: {
+    commands: {
+      autoAliases: false
+    }
   }
 })
 
