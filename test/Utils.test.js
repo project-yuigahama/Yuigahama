@@ -4,8 +4,7 @@ const describe = require('mocha').describe
 const it = require('mocha').it
 
 describe('Utils', () => {
-  it('getPlatform() : string', (done) => {
+  it('getPlatform() : string', () => {
     assert.strictEqual(typeof utils.getPlatform(), 'string')
-    done()
   })
 })
