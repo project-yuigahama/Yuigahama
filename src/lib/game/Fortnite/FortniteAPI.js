@@ -11,6 +11,9 @@ class FortniteAPI {
     return data
   }
 
+  /**
+   * @deprecated
+   */
   static async getWeapons () {
     const data = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get')
       .then(res => res.json())
@@ -29,6 +32,9 @@ class FortniteAPI {
     return data
   }
 
+  /**
+   * @deprecated
+   */
   static async getStatus () {
     const data = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status')
       .then(res => res.json())
