@@ -4,10 +4,29 @@ const { Collection } = require('discord.js')
 const { resolve } = require('path')
 const fs = require('fs-nextra')
 const Level = require('level')
+
+/**
+ * @extends Provider
+ * @license https://github.com/dirigeants/klasa-pieces/blob/master/LICENSE
+ * @copyright dirigeants
+ */
 class LevelDB extends Provider {
+  /**
+   * @param  {...any} args
+   *
+   * @property {string} baseDir
+   * @property {Collection} tables
+   */
   constructor (...args) {
     super(...args)
+    /**
+     * @type {string}
+     */
     this.baseDir = resolve(this.client.userBaseDirectory, 'bwd', 'provider', 'level')
+
+    /**
+     * @type {Collection}
+     */
     this.tables = new Collection()
   }
 
@@ -149,8 +168,7 @@ class LevelDB extends Provider {
    * @returns {*}
    */
   async update (table, id, data) {
-    return this.get(table, id)
-      .then(existent => this.create(table, id, mergeObjects(existent || { id }, this.parseUpdateInput(data))))
+    return this.get(table, id).then(existent => this.create(table, id, mergeObjects(existent || { id }, this.parseUpdateInput(data))))
   }
 
   /**
