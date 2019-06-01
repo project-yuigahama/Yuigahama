@@ -14,9 +14,7 @@ class FortniteStoreAPI {
       if (data === null) throw new YuigahamaError('Request failed.')
 
       return data
-    } else {
-      throw new YuigahamaError('Language is not supported.')
-    }
+    } else throw new YuigahamaError('Language is not supported.')
   }
 
   /**
