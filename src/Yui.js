@@ -1,5 +1,9 @@
 require('dotenv').config()
 
+if (process.env.NODE_ENV === 'development') {
+  process.exit(1)
+}
+
 const { Client } = require('klasa')
 const { version } = require('../package.json')
 const DBLAPI = require('dblapi.js')

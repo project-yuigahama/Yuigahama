@@ -4,10 +4,10 @@
   "description": "discordbot",
   "main": "src/Yui.js",
   "scripts": {
-    "start": "node src/Yui.js",
-    "test": "eslint .",
-    "lint": "eslint --ext .js --ignore-path .gitignore . --fix",
-    "precommit": "eslint --ext .js --ignore-path .gitignore ."
+    "start": "cross-env NODE_ENV=production node src/Yui.js",
+    "test": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . && mocha",
+    "lint": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . --fix",
+    "precommit": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -26,19 +26,21 @@
     "dblapi.js": "^2.3.0",
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^7.0.0",
-    "firebase-admin": "^7.3.0",
+    "firebase-admin": "^7.4.0",
     "fs-nextra": "^0.4.5",
-    "fuse.js": "^3.4.4",
+    "fuse.js": "^3.4.5",
     "klasa": "github:dirigeants/klasa",
     "level": "^5.0.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^6.1.4"
   }
 }
