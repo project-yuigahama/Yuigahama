@@ -7,9 +7,7 @@ describe('Nekoslife', () => {
   describe('V3', () => {
     it('Check the endpoint: Safe For Work', async () => {
       Object.values(Nekoslife.END_POINTS_V3).forEach((value) => {
-        if (typeof value === 'string') {
-          return Nekoslife.request(value, true).then(data => assert.strictEqual(typeof data, 'object')).catch(error => assert.fail(error.message))
-        }
+        if (typeof value === 'string') return Nekoslife.request(value, true).then(data => assert.strictEqual(typeof data, 'object')).catch(error => assert.fail(error.message))
       })
     })
 
@@ -23,9 +21,7 @@ describe('Nekoslife', () => {
   describe('V2', () => {
     it('Check the endpoint: Safe For Work', async () => {
       Object.values(Nekoslife.END_POINTS_V2).forEach((value) => {
-        if (typeof value === 'string') {
-          return Nekoslife.request(value).then(data => assert.strictEqual(typeof data, 'object')).catch(error => assert.fail(error.message))
-        }
+        if (typeof value === 'string') return Nekoslife.request(value).then(data => assert.strictEqual(typeof data, 'object')).catch(error => assert.fail(error.message))
       })
     })
 
