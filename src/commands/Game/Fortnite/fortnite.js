@@ -1,6 +1,6 @@
 const { Command, KlasaMessage, RichDisplay } = require('klasa')
 const { MessageEmbed, Util } = require('discord.js')
-const { Game: { FortniteAPI, FortniteUserAPI } } = require('../../../Yui')
+const { Game: { FortniteAPI, FortniteUserAPI, FortniteStoreAPI } } = require('../../../Yui')
 
 /**
  * @extends Command
@@ -9,11 +9,35 @@ class Fortnite extends Command {
   constructor (...args) {
     super(...args, {
       description: language => language.get('COMMAND_FORTNITE_DESCRIPTION'),
-      usage: '<news|challenges|user> [string:...string]',
+      usage: '<news|challenges|user|upcoming> [string:...string]',
       requiredPermissions: ['MANAGE_MESSAGES'],
       subcommands: true,
       usageDelim: ' '
     })
+  }
+
+  /**
+   * @param {KlasaMessage} message
+   */
+  async upcoming (message) {
+    const data = await FortniteStoreAPI.getUpcomingItem()
+    const Display = new RichDisplay()
+    data.items.forEach((value) => {
+      Display.addPage(new MessageEmbed()
+        .setThumbnail(data.vbucks)
+        .setTitle(`${value.name} - ${value.item.rarity}`)
+        .setImage(value.item.images.information)
+        .setDescription(value.description)
+        .addField('ItemId', value.itemid, true)
+        .addField('Cost', value.cost, true)
+        .addField('Captial', value.item.captial, true)
+        .addField('Type', value.item.type, true)
+        .addField('Obtained', value.item.obtained, true)
+        .addField('Obtained Type', value.item.obtained_type, true)
+      )
+    })
+
+    return Display.run(message)
   }
 
   /**
@@ -76,7 +100,7 @@ class Fortnite extends Command {
       )
     }
 
-    return Display.run(await message.send('Loading'))
+    return Display.run(message)
   }
 
   /**
@@ -96,7 +120,7 @@ class Fortnite extends Command {
       )
     })
 
-    return Display.run(await message.send('Getting news...'))
+    return Display.run(message)
   }
 
   /**
@@ -117,7 +141,7 @@ class Fortnite extends Command {
       )
     })
 
-    return Display.run(await message.send('Getting challenges...'))
+    return Display.run(message)
   }
 }
 
