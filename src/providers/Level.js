@@ -4,8 +4,7 @@ const { Collection } = require('discord.js')
 const { resolve } = require('path')
 const fs = require('fs-nextra')
 const Level = require('level')
-
-module.exports = class extends Provider {
+class LevelDB extends Provider {
   constructor (...args) {
     super(...args)
     this.baseDir = resolve(this.client.userBaseDirectory, 'bwd', 'provider', 'level')
@@ -15,26 +14,42 @@ module.exports = class extends Provider {
   /**
    * Closes the DB
    */
-  shutdown () {
+  async shutdown () {
     for (const db of this.tables.values()) db.close()
   }
 
+  /**
+   * Init the DB
+   */
   async init () {
     await fs.ensureDir(this.baseDir)
     const files = await fs.readdir(this.baseDir)
     for (const file of files) this.createTable(file)
   }
 
-  /* Table methods */
-
-  hasTable (table) {
+  /**
+   * @param {string} table
+   *
+   * @returns {boolean}
+   */
+  async hasTable (table) {
     return this.tables.has(table)
   }
 
-  createTable (table) {
+  /**
+   * @param {string} table
+   *
+   * @returns {*}
+   */
+  async createTable (table) {
     return this.tables.set(table, new Level(resolve(this.baseDir, table)))
   }
 
+  /**
+   * @param {string} table
+   *
+   * @returns {*}
+   */
   async deleteTable (table) {
     if (this.tables.has(table)) {
       await this.tables.get(table).close()
@@ -44,8 +59,12 @@ module.exports = class extends Provider {
     return Promise.resolve()
   }
 
-  /* Document methods */
-
+  /**
+   * @param {string} table
+   * @param {Array<string} filter
+   *
+   * @returns {Array<Object<string,*>>}
+   */
   async getAll (table, filter = []) {
     const db = this.tables.get(table)
     if (!db) throw new Error(`The table ${table} does not exist.`)
@@ -70,6 +89,11 @@ module.exports = class extends Provider {
     return data
   }
 
+  /**
+   * @param {string} table
+   *
+   * @returns {string[]}
+   */
   async getKeys (table) {
     const db = this.tables.get(table)
     if (!db) throw new Error(`The table ${table} does not exist.`)
@@ -86,29 +110,68 @@ module.exports = class extends Provider {
     return data
   }
 
-  get (table, id) {
+  /**
+   * @param {string} table
+   * @param {string} id
+   *
+   * @returns {Object<string, *>}
+   */
+  async get (table, id) {
     return this.tables.get(table).get(id).then(JSON.parse).catch(() => null)
   }
 
-  has (table, id) {
+  /**
+   * @param {string} table
+   * @param {string} id
+   *
+   * @returns {boolean}
+   */
+  async has (table, id) {
     return this.tables.get(table).has(id)
   }
 
-  create (table, id, data = {}) {
+  /**
+   * @param {string} table
+   * @param {string} id
+   * @param {ProviderResolvable} data
+   *
+   * @returns {*}
+   */
+  async create (table, id, data = {}) {
     return this.tables.get(table).put(id, JSON.stringify({ id, ...this.parseUpdateInput(data) }))
   }
 
-  update (table, id, data) {
+  /**
+   * @param {string} table
+   * @param {string} id
+   * @param {ProviderResolvable} data
+   *
+   * @returns {*}
+   */
+  async update (table, id, data) {
     return this.get(table, id)
       .then(existent => this.create(table, id, mergeObjects(existent || { id }, this.parseUpdateInput(data))))
   }
 
-  replace (table, id, data) {
+  /**
+   * @param {string} table
+   * @param {string} id
+   * @param {ProviderResolvable} data
+   *
+   * @returns {*}
+   */
+  async replace (table, id, data) {
     return this.create(table, id, data)
   }
 
-  delete (table, id) {
+  /**
+   * @param {string} table
+   * @param {string} id
+   */
+  async delete (table, id) {
     return this.get(table, id)
       .then(db => db.del(id))
   }
 }
+
+module.exports = LevelDB
