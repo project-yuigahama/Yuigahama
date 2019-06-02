@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/project-yuigahama/Yuigahama.svg?branch=master)](https://travis-ci.org/project-yuigahama/Yuigahama)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2c27e30554a54614bce2a1ece507b02c)](https://www.codacy.com/app/InkoHX/Yuigahama?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=InkoHX/Yuigahama&amp;utm_campaign=Badge_Grade)
+[![HitCount](http://hits.dwyl.io/project-yuigahama/Yuigahama.svg)](http://hits.dwyl.io/project-yuigahama/Yuigahama)
 
 ---------------------------------------------------
 
