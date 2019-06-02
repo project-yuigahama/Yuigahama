@@ -49,7 +49,7 @@ class LevelDB extends Provider {
   /**
    * @param {string} table
    *
-   * @returns {boolean}
+   * @returns {Promise<boolean>}
    */
   async hasTable (table) {
     return this.tables.has(table)
@@ -58,7 +58,7 @@ class LevelDB extends Provider {
   /**
    * @param {string} table
    *
-   * @returns {*}
+   * @returns {Promise<*>}
    */
   async createTable (table) {
     return this.tables.set(table, new Level(resolve(this.baseDir, table)))
@@ -67,7 +67,7 @@ class LevelDB extends Provider {
   /**
    * @param {string} table
    *
-   * @returns {*}
+   * @returns {Promise<*>}
    */
   async deleteTable (table) {
     if (this.tables.has(table)) {
@@ -82,7 +82,7 @@ class LevelDB extends Provider {
    * @param {string} table
    * @param {Array<string} filter
    *
-   * @returns {Array<Object<string,*>>}
+   * @returns {Promise<Array<Object<string,*>>>}
    */
   async getAll (table, filter = []) {
     const db = this.tables.get(table)
@@ -111,7 +111,7 @@ class LevelDB extends Provider {
   /**
    * @param {string} table
    *
-   * @returns {string[]}
+   * @returns {Promise<string[]>}
    */
   async getKeys (table) {
     const db = this.tables.get(table)
@@ -133,7 +133,7 @@ class LevelDB extends Provider {
    * @param {string} table
    * @param {string} id
    *
-   * @returns {Object<string, *>}
+   * @returns {Promise<Object<string, *>>}
    */
   async get (table, id) {
     return this.tables.get(table).get(id).then(JSON.parse).catch(() => null)
@@ -143,7 +143,7 @@ class LevelDB extends Provider {
    * @param {string} table
    * @param {string} id
    *
-   * @returns {boolean}
+   * @returns {Promise<boolean>}
    */
   async has (table, id) {
     return this.tables.get(table).has(id)
@@ -152,9 +152,9 @@ class LevelDB extends Provider {
   /**
    * @param {string} table
    * @param {string} id
-   * @param {ProviderResolvable} data
+   * @param {*} data
    *
-   * @returns {*}
+   * @returns {Promise<*>}
    */
   async create (table, id, data = {}) {
     return this.tables.get(table).put(id, JSON.stringify({ id, ...this.parseUpdateInput(data) }))
@@ -163,9 +163,9 @@ class LevelDB extends Provider {
   /**
    * @param {string} table
    * @param {string} id
-   * @param {ProviderResolvable} data
+   * @param {*} data
    *
-   * @returns {*}
+   * @returns {Promise<*>}
    */
   async update (table, id, data) {
     return this.get(table, id).then(existent => this.create(table, id, mergeObjects(existent || { id }, this.parseUpdateInput(data))))
@@ -174,9 +174,9 @@ class LevelDB extends Provider {
   /**
    * @param {string} table
    * @param {string} id
-   * @param {ProviderResolvable} data
+   * @param {*} data
    *
-   * @returns {*}
+   * @returns {Promise<*>}
    */
   async replace (table, id, data) {
     return this.create(table, id, data)
