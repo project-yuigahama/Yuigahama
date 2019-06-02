@@ -33,7 +33,7 @@ class Logger {
    * @returns {KlasaMessage|KlasaMessage[]}
    */
   async sendLog () {
-    this.message.sendEmbed(this.embed)
+    return this.message.sendEmbed(this.embed)
   }
 }
 
