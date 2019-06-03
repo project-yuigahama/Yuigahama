@@ -79,11 +79,8 @@ class ModLogger extends Logger {
     return this
   }
 
-  /**
-   * @returns {Promise<KlasaMessage|KlasaMessage[]>}
-   */
   async sendLog () {
-    return this.channel.sendEmbed(new MessageEmbed()
+    await this.channel.send(new MessageEmbed()
       .setColor(YuiUtil.resolveModTypeColor(this.type))
       .setAuthor(this.moderator.tag, this.moderator.avatarURL())
       .addField('Member', this.target.tag, true)

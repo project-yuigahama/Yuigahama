@@ -6,17 +6,14 @@ class Logger {
    * @param {TextChannel} channel
    */
   constructor (channel) {
-    if (typeof channel === 'undefined') throw new Error('Undefined message.')
-
     /**
-     * @type {KlasaMessage}
+     * @type {TextChannel}
      */
     this.channel = channel
   }
 
   /**
    * @abstract
-   * @returns {Promise<KlasaMessage|KlasaMessage[]>}
    */
   async sendLog () {
     throw new Error(`Missing method 'sendLog' of ${this.constructor.name}`)

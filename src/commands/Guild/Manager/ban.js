@@ -1,4 +1,5 @@
 const { Command, KlasaMessage, KlasaUser } = require('klasa')
+const { ModLogger } = require('../../../Yui')
 
 /**
  * @extends Command
@@ -27,6 +28,17 @@ class Ban extends Command {
     }
 
     await message.guild.members.ban(user, { days: days, reason: reason })
+
+    const logChannelID = message.guild.settings.mod.Logging
+    const logChannel = message.guild.channels.has(logChannelID) ? message.guild.channels.get(logChannelID) : null
+    if (logChannel !== null) {
+      await new ModLogger(logChannel)
+        .setModerator(message.author)
+        .setReason(reason)
+        .setTarget(user)
+        .setType('BAN')
+        .sendLog()
+    }
 
     return message.sendLocale('COMMAND_BAN_DONE', user.tag)
   }

@@ -21,6 +21,7 @@ Client.defaultGuildSchema
   )
   .add('mod', folder => folder
     .add('AutoRole', 'role')
+    .add('Logging', 'TextChannel')
   )
 
 const client = new Client({
@@ -62,6 +63,7 @@ module.exports = {
   YuigahamaVersion: version,
   Utils: require('./lib/util/utils'),
   Nekoslife: require('./lib/util/Nekolife'),
+  ModLogger: require('./lib/structures/ModLogger'),
   Game: {
     MojangAPI: require('./lib/game/Minecraft/MojangAPI'),
     FortniteAPI: require('./lib/game/Fortnite/FortniteAPI'),
