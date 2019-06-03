@@ -81,7 +81,7 @@ class ModLogger extends Logger {
   async sendLog () {
     await this.channel.send(new MessageEmbed()
       .setColor(YuiUtil.resolveModTypeColor(this.type))
-      .setAuthor(this.moderator.tag, this.moderator.avatarURL())
+      .setAuthor(this.moderator.tag, this.moderator.avatarURL({ format: 'png' }))
       .addField('Member', this.target.tag, true)
       .addField('Action', this.type, true)
       .addField('Reason', this.reason, true)
