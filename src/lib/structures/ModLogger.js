@@ -1,6 +1,5 @@
-// @ts-check
 const Logger = require('../util/Logger')
-const { KlasaMessage, KlasaUser } = require('klasa')
+const { KlasaUser } = require('klasa')
 const { MessageEmbed, Util, TextChannel } = require('discord.js')
 const YuiUtil = require('../util/utils')
 
