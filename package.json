@@ -1,7 +1,7 @@
 {
   "name": "yuigahama",
-  "version": "1.0.3",
-  "description": "discordbot",
+  "version": "1.0.4",
+  "description": "Powerful multifunction discord bot",
   "main": "src/Yui.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/Yui.js",
@@ -14,7 +14,9 @@
     "url": "git+https://github.com/InkoHX/Yui.git"
   },
   "keywords": [
-    "discordbot"
+    "discordbot",
+    "discord",
+    "yuigahama"
   ],
   "author": "InkoHX",
   "license": "MIT",
