@@ -1,39 +1,25 @@
 const { KlasaMessage } = require('klasa')
-const { MessageEmbed } = require('discord.js')
+const { TextChannel } = require('discord.js')
 
 class Logger {
   /**
-   * @param {KlasaMessage} message
+   * @param {TextChannel} channel
    */
-  constructor (message) {
-    if (typeof message === 'undefined') throw new Error('Undefined message.')
+  constructor (channel) {
+    if (typeof channel === 'undefined') throw new Error('Undefined message.')
 
     /**
      * @type {KlasaMessage}
      */
-    this.message = message
-
-    /**
-     * @type {MessageEmbed}
-     */
-    this._embed = new MessageEmbed()
-  }
-
-  get embed () {
-    return this._embed
-  }
-
-  set embed (data) {
-    this._embed = data
-
-    return this
+    this.channel = channel
   }
 
   /**
-   * @returns {KlasaMessage|KlasaMessage[]}
+   * @abstract
+   * @returns {Promise<KlasaMessage|KlasaMessage[]>}
    */
   async sendLog () {
-    return this.message.sendEmbed(this.embed)
+    throw new Error(`Missing method 'sendLog' of ${this.constructor.name}`)
   }
 }
 
