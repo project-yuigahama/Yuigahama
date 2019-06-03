@@ -5,8 +5,8 @@ const fetch = require('node-fetch')
 class NPM extends Command {
   constructor (...args) {
     super(...args, {
-      requiredPermissions: [],
-      description: '',
+      requiredPermissions: ['MANAGE_MESSAGES'],
+      description: 'Node Package Manager',
       usage: '<search|registry> <query:...string>',
       usageDelim: ' ',
       subcommands: true
