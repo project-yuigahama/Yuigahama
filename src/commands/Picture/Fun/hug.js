@@ -9,6 +9,7 @@ class LewdFox extends Command {
   constructor (...args) {
     super(...args, {
       runIn: ['text'],
+      requiredPermissions: ['ATTACH_FILES'],
       description: language => language.get('COMMAND_HUG_DESCRIPTION'),
       usage: '<member:member>'
     })
