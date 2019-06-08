@@ -39,7 +39,7 @@ const client = new Client({
     }
   },
   disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE'],
-  shards: 6
+  shardCount: 'auto'
 })
 
 if ('DBL_TOKEN' in process.env) {
