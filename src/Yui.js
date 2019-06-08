@@ -38,7 +38,8 @@ const client = new Client({
       autoAliases: false
     }
   },
-  disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE']
+  disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE'],
+  shards: 6
 })
 
 if ('DBL_TOKEN' in process.env) {
