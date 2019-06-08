@@ -61,7 +61,7 @@ module.exports = class extends Language {
       COMMAND_MDN_DESCRIPTION: 'You can search MDN Web docs.',
       COMMAND_TOP_INVITE_DESCRIPTION: 'Display the invitation ranking.',
       COMMAND_TOP_INVITE_NOT_FOUND: 'There is no invitation link.',
-      IMAGE_FILTER_DELETE_MESSAGE: 'Do not send NSFW images to the SFW channel.'
+      IMAGE_FILTER_DELETE_MESSAGE: 'Please do not send NSFW images to SFW channels.'
     }
   }
 
