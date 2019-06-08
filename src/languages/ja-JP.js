@@ -230,7 +230,8 @@ module.exports = class extends Language {
       COMMAND_MOJANG_STATUS: 'さまざまなMojangサービスの状態を表示します。',
       COMMAND_MDN_DESCRIPTION: 'MDN Web docs を検索することができます。',
       COMMAND_TOP_INVITE_DESCRIPTION: '招待回数ランキングを表示します。',
-      COMMAND_TOP_INVITE_NOT_FOUND: '招待リンクが一つもありません。'
+      COMMAND_TOP_INVITE_NOT_FOUND: '招待リンクが一つもありません。',
+      IMAGE_FILTER_DELETE_MESSAGE: 'NSFWでないチャンネルにNSFW画像を送信しないでください。'
     }
   }
 
