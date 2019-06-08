@@ -15,7 +15,6 @@ class ImageFilter extends Monitor {
    * @param {KlasaMessage} message
    */
   async run (message) {
-    console.log(message.attachments)
     const attachments = message.attachments
     if (attachments.size === 0) return
     if (!(message.guild instanceof KlasaGuild)) return
