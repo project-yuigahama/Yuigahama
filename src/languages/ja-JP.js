@@ -231,7 +231,7 @@ module.exports = class extends Language {
       COMMAND_MDN_DESCRIPTION: 'MDN Web docs を検索することができます。',
       COMMAND_TOP_INVITE_DESCRIPTION: '招待回数ランキングを表示します。',
       COMMAND_TOP_INVITE_NOT_FOUND: '招待リンクが一つもありません。',
-      IMAGE_FILTER_DELETE_MESSAGE: 'NSFWでないチャンネルにNSFW画像を送信しないでください。',
+      IMAGE_FILTER_DELETE_MESSAGE: 'NSFWチャンネルでないSFWチャンネルにNSFW画像を送信しないでください。',
       COMMAND_IMAGE_FILTER_DESCRIPTION: '強力な画像フィルター',
       COMMAND_IMAGE_FILTER_EXTENDED_HELP: '画像フィルターを使用できるのは、管理者によって承認されたサーバーだけです。',
       COMMAND_IMAGE_FILTER_ON: '画像フィルターが有効になりました。',
