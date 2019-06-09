@@ -23,7 +23,7 @@ class Approval extends Command {
     if (guild.settings.get('Approval') === true) return message.sendLocale('COMMAND_APPROVAL_ENABLED_RLREADY')
     await guild.settings.update('Approval', true)
 
-    return message.sendLocale('COMMAND_APPROVAL_ENABLED', guild.name)
+    return message.sendLocale('COMMAND_APPROVAL_ENABLED')
   }
 
   /**
@@ -37,7 +37,7 @@ class Approval extends Command {
     if (guild.settings.get('Approval') === false) return message.sendLocale('COMMAND_APPROVAL_DISABLED_RLREADY')
     await guild.settings.update('Approval', false)
 
-    return message.sendLocale('COMMAND_APPROVAL_DISABLED', guild.name)
+    return message.sendLocale('COMMAND_APPROVAL_DISABLED')
   }
 }
 

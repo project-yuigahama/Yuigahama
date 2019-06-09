@@ -238,8 +238,8 @@ module.exports = class extends Language {
       COMMAND_IMAGE_FILTER_OFF: '画像フィルターが無効になりました。',
       COMMAND_IMAGE_FILTER_FAIL: 'このサーバー承認されていません。',
       COMMAND_APPROVAL_DESCRIPTION: '承認サーバーを設定します。',
-      COMMAND_APPROVAL_ENABLED: (name) => `${name} を承認しました。`,
-      COMMAND_APPROVAL_DISABLED: (name) => `${name} を承認サーバーから外しました。`,
+      COMMAND_APPROVAL_ENABLED: '承認しました。',
+      COMMAND_APPROVAL_DISABLED: '承認を破棄しました。',
       COMMAND_APPROVAL_FAIL: (id) => `${id}はサーバーでないもしくは${this.client.user.tag}を導入していません。`,
       COMMAND_APPROVAL_ENABLED_RLREADY: '既に認証しています。',
       COMMAND_APPROVAL_DISABLED_RLREADY: 'このサーバーは認証されていません。'
