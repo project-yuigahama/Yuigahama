@@ -230,7 +230,19 @@ module.exports = class extends Language {
       COMMAND_MOJANG_STATUS: 'さまざまなMojangサービスの状態を表示します。',
       COMMAND_MDN_DESCRIPTION: 'MDN Web docs を検索することができます。',
       COMMAND_TOP_INVITE_DESCRIPTION: '招待回数ランキングを表示します。',
-      COMMAND_TOP_INVITE_NOT_FOUND: '招待リンクが一つもありません。'
+      COMMAND_TOP_INVITE_NOT_FOUND: '招待リンクが一つもありません。',
+      IMAGE_FILTER_DELETE_MESSAGE: 'NSFWでないチャンネルにNSFW画像を送信しないでください。',
+      COMMAND_IMAGE_FILTER_DESCRIPTION: '強力な画像フィルター',
+      COMMAND_IMAGE_FILTER_EXTENDED_HELP: '画像フィルターを使用できるのは、管理者によって承認されたサーバーだけです。',
+      COMMAND_IMAGE_FILTER_ON: '画像フィルターが有効になりました。',
+      COMMAND_IMAGE_FILTER_OFF: '画像フィルターが無効になりました。',
+      COMMAND_IMAGE_FILTER_FAIL: 'このサーバー承認されていません。',
+      COMMAND_APPROVAL_DESCRIPTION: '承認サーバーを設定します。',
+      COMMAND_APPROVAL_ENABLED: '承認しました。',
+      COMMAND_APPROVAL_DISABLED: '承認を破棄しました。',
+      COMMAND_APPROVAL_FAIL: (id) => `${id}はサーバーでないもしくは${this.client.user.tag}を導入していません。`,
+      COMMAND_APPROVAL_ENABLED_RLREADY: '既に認証しています。',
+      COMMAND_APPROVAL_DISABLED_RLREADY: 'このサーバーは認証されていません。'
     }
   }
 
