@@ -18,7 +18,7 @@ class ImageFilter extends Monitor {
     const attachments = message.attachments
     if (attachments.size === 0) return
     if (!(message.guild instanceof KlasaGuild)) return
-    if (message.guildSettings.get('automod.ImageFilter') === false && message.guildSettings.get('Approval') === false) return
+    if (message.guildSettings.get('automod.ImageFilter') === false || message.guildSettings.get('Approval') === false) return
     if (!(message.channel instanceof TextChannel)) return
     if (message.channel.nsfw === true) return
     const attachment = attachments.first()
