@@ -6,7 +6,8 @@ module.exports = class extends Command {
       runIn: ['text'],
       requiredPermissions: ['MANAGE_MESSAGES'],
       permissionLevel: 6,
-      description: '',
+      description: language => language.get('COMMAND_IMAGE_FILTER_DESCRIPTION'),
+      extendedHelp: language => language.get('COMMAND_IMAGE_FILTER_EXTENDED_HELP'),
       usage: '<on|off>',
       subcommands: true
     })
