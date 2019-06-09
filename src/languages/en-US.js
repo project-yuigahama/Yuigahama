@@ -61,7 +61,18 @@ module.exports = class extends Language {
       COMMAND_MDN_DESCRIPTION: 'You can search MDN Web docs.',
       COMMAND_TOP_INVITE_DESCRIPTION: 'Display the invitation ranking.',
       COMMAND_TOP_INVITE_NOT_FOUND: 'There is no invitation link.',
-      IMAGE_FILTER_DELETE_MESSAGE: 'Please do not send NSFW images to SFW channels.'
+      IMAGE_FILTER_DELETE_MESSAGE: 'Please do not send NSFW images to SFW channels.',
+      COMMAND_IMAGE_FILTER_DESCRIPTION: 'Powerful image filter.',
+      COMMAND_IMAGE_FILTER_EXTENDED_HELP: 'Only the server authorized by the administrator can use the image filter.',
+      COMMAND_IMAGE_FILTER_ON: 'Image filter has been enabled.',
+      COMMAND_IMAGE_FILTER_OFF: 'Image filter has been disabled.',
+      COMMAND_IMAGE_FILTER_FAIL: 'This server has not been approved.',
+      COMMAND_APPROVAL_DESCRIPTION: 'Set up an approval server.',
+      COMMAND_APPROVAL_ENABLED: (name) => `Approved the ${name} server.`,
+      COMMAND_APPROVAL_DISABLED: (name) => `Removed ${name} from the approval server.`,
+      COMMAND_APPROVAL_FAIL: 'It is not a server or YuigahamaBot has not been introduced.',
+      COMMAND_APPROVAL_ENABLED_RLREADY: 'This server has already been approved.',
+      COMMAND_APPROVAL_DISABLED_RLREADY: 'This server has not been approved.'
     }
   }
 

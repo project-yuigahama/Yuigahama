@@ -13,6 +13,8 @@ Client.defaultPermissionLevels
   .add(5, ({ guild, member }) => guild && member.permissions.has('BAN_MEMBERS'), { fetch: true })
 
 Client.defaultGuildSchema
+  .add('Approval', 'boolean', { configurable: false, default: false })
+
   .add('channels', folder => folder
     .add('JoinLog', 'TextChannel')
     .add('JoinMessage', 'string', { default: 'Welcome' })
@@ -22,6 +24,9 @@ Client.defaultGuildSchema
   .add('mod', folder => folder
     .add('AutoRole', 'role')
     .add('Logging', 'TextChannel')
+  )
+  .add('automod', folder => folder
+    .add('ImageFilter', 'boolean', { configurable: false, default: false })
   )
 
 const client = new Client({
