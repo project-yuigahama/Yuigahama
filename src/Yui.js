@@ -44,8 +44,8 @@ const client = new Client({
     }
   },
   consoleEvents: {
-    debug: process.env.NODE_ENV in 'next',
-    verbose: process.env.NODE_ENV in 'next'
+    debug: process.env.NODE_ENV === 'next',
+    verbose: process.env.NODE_ENV === 'next'
   },
   disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE'],
   shardCount: 'auto'
