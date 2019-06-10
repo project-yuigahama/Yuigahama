@@ -31,7 +31,7 @@ Client.defaultGuildSchema
 
 const client = new Client({
   prefix: process.env.NODE_ENV === 'production' ? 'yui!' : 'd!',
-  regexPrefix: process.env.NODE_ENV === 'production' ? /^yuigahama(@|!)/i : null,
+  regexPrefix: process.env.NODE_ENV === 'production' ? /^yuigahama(@|!)/i : /^yui-next(@|!)/i,
   language: 'ja-JP',
   commandLogging: true,
   commandEditing: true,
@@ -42,6 +42,10 @@ const client = new Client({
     commands: {
       autoAliases: false
     }
+  },
+  consoleEvents: {
+    debug: process.env.NODE_ENV in 'next',
+    verbose: process.env.NODE_ENV in 'next'
   },
   disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE'],
   shardCount: 'auto'
