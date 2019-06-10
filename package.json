@@ -5,7 +5,7 @@
   "main": "src/Yui.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/Yui.js",
-    "deploy": "cross-env NODE_ENV=next node src/Yui.js",
+    "dev-next": "cross-env NODE_ENV=next node src/Yui.js",
     "test": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . && mocha",
     "lint": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . --fix",
     "precommit": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore ."
