@@ -5,7 +5,7 @@
   "main": "src/Yui.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/Yui.js",
-    "deploy": "cross-env NODE_ENV=next node src/Yui.js",
+    "deploy": "cross-env NODE_ENV=production node src/Yui.js",
     "test": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . && mocha",
     "lint": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . --fix",
     "precommit": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore ."
@@ -47,5 +47,9 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^6.1.4"
+  },
+  "engines": {
+    "node": ">=10.1.0",
+    "npm": ">=6.9.0"
   }
 }
