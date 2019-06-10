@@ -30,8 +30,8 @@ Client.defaultGuildSchema
   )
 
 const client = new Client({
-  prefix: 'yui!',
-  regexPrefix: /^yuigahama(@|!)/i,
+  prefix: process.env.NODE_ENV === 'production' ? 'yui!' : 'd!',
+  regexPrefix: process.env.NODE_ENV === 'production' ? /^yuigahama(@|!)/i : null,
   language: 'ja-JP',
   commandLogging: true,
   commandEditing: true,
