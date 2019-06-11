@@ -2,6 +2,7 @@ const { Monitor, KlasaMessage, KlasaGuild } = require('klasa')
 const { TextChannel } = require('discord.js')
 const nsfwjs = require('nsfwjs')
 const { Image, createCanvas } = require('canvas')
+const { Utils } = require('../Yui')
 
 class ImageFilter extends Monitor {
   constructor (...args) {
@@ -36,7 +37,7 @@ class ImageFilter extends Monitor {
       this.model.classify(canvas).then((predictions) => {
         const data = predictions[0]
         if (data.className === 'Porn' || data.className === 'Hentai') {
-          if (data.probability > 0.72 && message.deleted === false) {
+          if (data.probability > Utils.getFilterLevel(message.guildSettings.get('automod.FilterLevel')) && message.deleted === false) {
             try {
               message.delete()
             } catch (err) {

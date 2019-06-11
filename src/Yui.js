@@ -25,8 +25,10 @@ Client.defaultGuildSchema
     .add('AutoRole', 'role')
     .add('Logging', 'TextChannel')
   )
+
   .add('automod', folder => folder
     .add('ImageFilter', 'boolean', { configurable: false, default: false })
+    .add('FilterLevel', 'integer', { configurable: false, default: 3 })
   )
 
 const client = new Client({
