@@ -25,13 +25,15 @@ Client.defaultGuildSchema
     .add('AutoRole', 'role')
     .add('Logging', 'TextChannel')
   )
+
   .add('automod', folder => folder
     .add('ImageFilter', 'boolean', { configurable: false, default: false })
+    .add('FilterLevel', 'integer', { configurable: false, default: 3 })
   )
 
 const client = new Client({
-  prefix: 'yui!',
-  regexPrefix: /^yuigahama(@|!)/i,
+  prefix: process.env.NODE_ENV === 'production' ? 'yui!' : 'd!',
+  regexPrefix: process.env.NODE_ENV === 'production' ? /^yuigahama(@|!)/i : /^yui-next(@|!)/i,
   language: 'ja-JP',
   commandLogging: true,
   commandEditing: true,
@@ -42,6 +44,10 @@ const client = new Client({
     commands: {
       autoAliases: false
     }
+  },
+  consoleEvents: {
+    debug: process.env.NODE_ENV === 'next',
+    verbose: process.env.NODE_ENV === 'next'
   },
   disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE'],
   shardCount: 'auto'

@@ -5,6 +5,7 @@
   "main": "src/Yui.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/Yui.js",
+    "dev-next": "cross-env NODE_ENV=next node src/Yui.js",
     "test": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . && mocha",
     "lint": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore . --fix",
     "precommit": "cross-env NODE_ENV=development eslint --ext .js --ignore-path .gitignore ."
@@ -30,7 +31,7 @@
     "cross-env": "^5.2.0",
     "dblapi.js": "^2.3.0",
     "discord.js": "github:discordjs/discord.js",
-    "dotenv": "^7.0.0",
+    "dotenv": "^8.0.0",
     "fs-nextra": "^0.4.5",
     "fuse.js": "^3.4.5",
     "klasa": "github:dirigeants/klasa",
@@ -42,9 +43,13 @@
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^6.1.4"
+  },
+  "engines": {
+    "node": "^10.16.0",
+    "npm": ">=6.9.0"
   }
 }
