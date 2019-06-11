@@ -8,7 +8,8 @@ module.exports = class extends Command {
       permissionLevel: 6,
       description: language => language.get('COMMAND_IMAGE_FILTER_DESCRIPTION'),
       extendedHelp: language => language.get('COMMAND_IMAGE_FILTER_EXTENDED_HELP'),
-      usage: '<on|off>',
+      usage: '<on|off|level> [level:int{1,9}]',
+      usageDelim: ' ',
       subcommands: true
     })
   }
@@ -31,5 +32,16 @@ module.exports = class extends Command {
     await message.guildSettings.update('automod.ImageFilter', false)
 
     return message.sendLocale('COMMAND_IMAGE_FILTER_OFF')
+  }
+
+  /**
+   * @param {KlasaMessage} message
+   * @param {[number]} usage
+   */
+  async level (message, [level]) {
+    if (typeof level !== 'number') return message.sendLocale('COMMAND_IMAGE_FILTER_LEVEL_FAIL')
+    await message.guildSettings.update('automod.FilterLevel', level)
+
+    return message.sendMessage(message.language.get('COMMAND_IMAGE_FILTER_LEVEL_DONE', level))
   }
 }
