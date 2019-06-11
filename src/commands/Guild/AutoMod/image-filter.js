@@ -7,7 +7,7 @@ module.exports = class extends Command {
       requiredPermissions: ['MANAGE_MESSAGES'],
       permissionLevel: 6,
       description: language => language.get('COMMAND_IMAGE_FILTER_DESCRIPTION'),
-      extendedHelp: language => language.get('COMMAND_IMAGE_FILTER_EXTENDED_HELP'),
+      extendedHelp: language => language.get('COMMAND_IMAGE_FILTER_EXTENDED_HELP').join('\n'),
       usage: '<on|off|level> [level:int{1,9}]',
       usageDelim: ' ',
       subcommands: true

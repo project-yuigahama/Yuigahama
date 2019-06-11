@@ -4,6 +4,7 @@ class Approval extends Command {
   constructor (...args) {
     super(...args, {
       runIn: ['text'],
+      guarded: true,
       permissionLevel: 10,
       description: language => language.get('COMMAND_APPROVAL_DESCRIPTION'),
       usage: '<on|off> <id:string>',
