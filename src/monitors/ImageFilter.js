@@ -17,14 +17,14 @@ class ImageFilter extends Monitor {
    */
   async run (message) {
     const attachments = message.attachments
-    if (attachments.size === 0) return
-    if (!(message.guild instanceof KlasaGuild)) return
-    if (message.guildSettings.get('automod.ImageFilter') === false || message.guildSettings.get('Approval') === false) return
-    if (!(message.channel instanceof TextChannel)) return
     if (message.channel.nsfw === true) return
+    if (attachments.size === 0) return
     const attachment = attachments.first()
     if (attachment.url === null || attachment.width === null || attachment.height === null) return
     if (/\.(?:(?:jpe?|pn)g|tif?f|bmp)$/i.test(attachment.name) === false) return
+    if (message.guildSettings.get('automod.ImageFilter') === false || message.guildSettings.get('Approval') === false) return
+    if (!(message.guild instanceof KlasaGuild)) return
+    if (!(message.channel instanceof TextChannel)) return
 
     const width = attachment.width
     const height = attachment.height
