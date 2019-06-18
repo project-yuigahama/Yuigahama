@@ -36,3 +36,7 @@ npm run start
 * [cross-env](https://github.com/kentcdodds/cross-env)
 * [firebase-admin](https://github.com/firebase/firebase-admin-node)
 * [fs-nextra](https://github.com/bdistin/fs-nextra)
+* [nsfwjs](https://github.com/infinitered/nsfwjs)
+* [cross-env](https://github.com/kentcdodds/cross-env)
+* [canvas](https://github.com/Automattic/node-canvas)
+* [@tensorflow/tfjs-node](https://github.com/tensorflow/tfjs-node)
