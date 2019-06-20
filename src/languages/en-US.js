@@ -83,7 +83,8 @@ module.exports = class extends Language {
       COMMAND_APPROVAL_FAIL: 'It is not a server or YuigahamaBot has not been introduced.',
       COMMAND_APPROVAL_ENABLED_RLREADY: 'This server has already been approved.',
       COMMAND_APPROVAL_DISABLED_RLREADY: 'This server has not been approved.',
-      COMMAND_TRUCKERS_MP_DESCRIPTION: 'Display the TruckersMP status.'
+      COMMAND_TRUCKERS_MP_DESCRIPTION: 'Display the TruckersMP status.',
+      COMMAND_EMOJI_INFO_DESCRIPTION: 'Display detailed information of emoji.'
     }
   }
 

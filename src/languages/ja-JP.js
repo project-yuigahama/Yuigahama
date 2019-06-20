@@ -253,7 +253,8 @@ module.exports = class extends Language {
       COMMAND_APPROVAL_FAIL: (id) => `${id}はサーバーでないもしくは${this.client.user.tag}を導入していません。`,
       COMMAND_APPROVAL_ENABLED_RLREADY: '既に認証しています。',
       COMMAND_APPROVAL_DISABLED_RLREADY: 'このサーバーは認証されていません。',
-      COMMAND_TRUCKERS_MP_DESCRIPTION: 'TruckersMPのサーバー情報を表示します。'
+      COMMAND_TRUCKERS_MP_DESCRIPTION: 'TruckersMPのサーバー情報を表示します。',
+      COMMAND_EMOJI_INFO_DESCRIPTION: '絵文字の詳細情報を表示します。'
     }
   }
 
