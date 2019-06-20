@@ -60,7 +60,7 @@ module.exports = class extends Language {
       COMMAND_MOJANG_STATUS: 'Display the status of various Mojang services.',
       COMMAND_MDN_DESCRIPTION: 'You can search MDN Web docs.',
       COMMAND_TOP_INVITE_DESCRIPTION: 'Display the invitation ranking.',
-      COMMAND_TOP_INVITE_NOT_FOUND: 'There is no invitation link.',
+      COMMAND_TOP_INVITE_FAIL: 'There are no invites, or none of them have been used!',
       IMAGE_FILTER_DELETE_MESSAGE: 'Please do not send NSFW images to SFW channels.',
       COMMAND_IMAGE_FILTER_DESCRIPTION: 'Powerful image filter.',
       COMMAND_IMAGE_FILTER_EXTENDED_HELP: [
