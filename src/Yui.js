@@ -56,7 +56,6 @@ const client = new Client({
 if ('DBL_TOKEN' in process.env) {
   const DBL = new DBLAPI(process.env.DBL_TOKEN, client)
   DBL.on('error', error => client.emit('DblError', error))
-  DBL.on('posted', () => client.emit('DblPosted'))
 }
 
 client.login()

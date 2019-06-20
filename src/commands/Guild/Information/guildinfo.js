@@ -51,6 +51,8 @@ class GuideInfo extends Command {
       .setFooter('Created At')
       .addField('Guild ID', message.guild.id, true)
       .addField('Owner', message.guild.owner !== null ? message.guild.owner.user.tag : 'None', true)
+      .addField('Server Boost Level', `Lv.${message.guild.premiumTier}`, true)
+      .addField('Boosters', message.guild.premiumSubscriptionCount || 0, true)
       .addField('Members', memberCount, true)
       .addField('Channels', Channels, true)
       .addField('Emojis', Emojis, true)

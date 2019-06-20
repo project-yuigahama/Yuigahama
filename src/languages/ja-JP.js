@@ -230,7 +230,7 @@ module.exports = class extends Language {
       COMMAND_MOJANG_STATUS: 'さまざまなMojangサービスの状態を表示します。',
       COMMAND_MDN_DESCRIPTION: 'MDN Web docs を検索することができます。',
       COMMAND_TOP_INVITE_DESCRIPTION: '招待回数ランキングを表示します。',
-      COMMAND_TOP_INVITE_NOT_FOUND: '招待リンクが一つもありません。',
+      COMMAND_TOP_INVITE_FAIL: '招待リンクが一つもないか、存在するが一度も使われていません。',
       IMAGE_FILTER_DELETE_MESSAGE: 'NSFWチャンネルでないSFWチャンネルにNSFW画像を送信しないでください。',
       COMMAND_IMAGE_FILTER_DESCRIPTION: '強力な画像フィルター、ポルノ画像や卑猥な画像を削除します。',
       COMMAND_IMAGE_FILTER_EXTENDED_HELP: [
@@ -252,7 +252,9 @@ module.exports = class extends Language {
       COMMAND_APPROVAL_DISABLED: '承認を破棄しました。',
       COMMAND_APPROVAL_FAIL: (id) => `${id}はサーバーでないもしくは${this.client.user.tag}を導入していません。`,
       COMMAND_APPROVAL_ENABLED_RLREADY: '既に認証しています。',
-      COMMAND_APPROVAL_DISABLED_RLREADY: 'このサーバーは認証されていません。'
+      COMMAND_APPROVAL_DISABLED_RLREADY: 'このサーバーは認証されていません。',
+      COMMAND_TRUCKERS_MP_DESCRIPTION: 'TruckersMPのサーバー情報を表示します。',
+      COMMAND_EMOJI_INFO_DESCRIPTION: '絵文字の詳細情報を表示します。'
     }
   }
 

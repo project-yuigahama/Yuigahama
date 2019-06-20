@@ -1,4 +1,4 @@
-const { Command, KlasaMessage, RichDisplay } = require('klasa')
+const { Command, KlasaMessage, RichDisplay, Timestamp } = require('klasa')
 const { MessageEmbed } = require('discord.js')
 
 class TopInvite extends Command {
@@ -15,33 +15,25 @@ class TopInvite extends Command {
    */
   async run (message) {
     const invites = await message.guild.fetchInvites()
-    const inviters = []
-
-    if (invites.size === 0) return message.sendMessage(message.language.get('COMMAND_TOP_INVITE_NOT_FOUND'))
-    invites.map((invite) => {
-      inviters.push({ inviter: invite.inviter ? invite.inviter : null, url: invite.url, uses: invite.uses, createdAt: invite.createdAt })
-    })
-
-    inviters.sort((a, b) => {
-      return a.uses < b.uses
-    })
+    const top = invites.filter(invite => invite.uses > 0).sort((a, b) => b.uses - a.uses).first(10)
+    if (top.length === 0) throw message.language.get('COMMAND_TOP_INVITE_FAIL')
 
     const Display = new RichDisplay()
     let count = 0
 
-    inviters.forEach((value) => {
+    top.map((invite) => {
       count++
       Display.addPage(new MessageEmbed()
         .setColor('RANDOM')
-        .setThumbnail(value.inviter.avatarURL({ format: 'png' }) || 'https://discordapp.com/assets/dd4dbc0016779df1378e7812eabaa04d.png')
-        .setTitle(`${value.inviter !== null ? value.inviter.tag : 'Unknown'} - Top ${count}`)
-        .addField('URL', value.url, true)
-        .addField('Uses', value.uses, true)
-        .setTimestamp(value.createdAt)
+        .setTitle(`Top ${count}`)
+        .addField('Uses', invite.uses, true)
+        .addField('Code', invite.code, true)
+        .addField('Author', invite.inviter !== null ? invite.inviter.tag : 'Deleted', true)
+        .addField('Created At', new Timestamp('YYYY-MM-DD HH:mm:ss').display(invite.createdTimestamp), true)
       )
     })
 
-    return Display.run(await message.send('Loading...'))
+    return Display.run(message)
   }
 }
 

@@ -62,10 +62,9 @@ typings/
 
 # Provider
 src/bwd/provider/
+
+# Visual Studio IDE
 .vs/
 
 # JetBrains IDE
 .idea/
-
-# Firebase
-resources/serviceAccount.json
