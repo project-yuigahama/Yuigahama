@@ -9,8 +9,8 @@ COPY package.json package-lock.json ./
 ENV DISCORD_TOKEN=
 
 RUN apk add --update \
-  && apk add --no-cache --virtual .build-deps git curl build-base python g++ make \
+  && apk add --no-cache --virtual .build-deps git curl build-base python g++ make .gyp \
   && npm install --production \
-  && apk del .build-deps
+  && apk del .build-deps .gyp
 
 CMD ["npm", "start"]
