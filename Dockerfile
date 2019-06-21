@@ -9,9 +9,9 @@ COPY src ./src
 
 RUN apk add --update \
   && apk add --no-cache ca-certificates \
-  && apk add --no-cache --virtual .build-deps git curl build-base python g++ make .gyp \
+  && apk add --no-cache --virtual .build-deps git curl build-base python g++ make \
   && npm install --production \
-  && apk del .build-deps .gyp
+  && apk del .build-deps
 
 ENV DISCORD_TOKEN= \
   DBL_TOKEN= \
