@@ -1,4 +1,4 @@
-const { Command, KlasaMessage } = require('klasa')
+const { Command, KlasaMessage, Timestamp } = require('klasa')
 const { MessageEmbed, GuildEmoji } = require('discord.js')
 
 module.exports = class extends Command {
@@ -22,8 +22,7 @@ module.exports = class extends Command {
       .addField('ID', emoji.id, true)
       .addField('Animated', emoji.animated ? 'Yes' : 'No', true)
       .addField('Deleted', emoji.deleted ? 'Yes' : 'No', true)
-      .setFooter('Created At')
-      .setTimestamp(emoji.createdTimestamp)
+      .addField('Created At', new Timestamp('YYYY-MM-DD HH:mm:ss').display(emoji.createdTimestamp), true)
 
     const author = await emoji.fetchAuthor().catch(() => null)
 
