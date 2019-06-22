@@ -28,7 +28,7 @@ class MinecraftNameHistory extends Command {
     const Display = new RichDisplay()
     data.forEach((value) => Display.addPage(new MessageEmbed().addField(Util.escapeMarkdown(value.name), value.changedToAt ? `Updated:  ${new Timestamp('YYYY-MM-DD HH:mm:ss').display(value.changedToAt)}` : 'Initial name', true).setTitle(`${name} - Name History`).setColor('RANDOM')))
 
-    return Display.run(await message.send('Loading...'))
+    return Display.run(message)
   }
 }
 
