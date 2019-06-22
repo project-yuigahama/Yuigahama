@@ -35,7 +35,7 @@ class NPM extends Command {
       )
     })
 
-    return Display.run(await message.send('Loading...'))
+    return Display.run(message)
   }
 
   /**
