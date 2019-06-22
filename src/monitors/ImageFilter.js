@@ -4,6 +4,9 @@ const nsfwjs = require('nsfwjs')
 const { Image, createCanvas } = require('canvas')
 const { Utils } = require('../Yui')
 
+/**
+ * @extends Monitor
+ */
 class ImageFilter extends Monitor {
   constructor (...args) {
     super(...args, {
