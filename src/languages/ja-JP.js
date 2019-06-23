@@ -254,7 +254,9 @@ module.exports = class extends Language {
       COMMAND_APPROVAL_ENABLED_RLREADY: '既に認証しています。',
       COMMAND_APPROVAL_DISABLED_RLREADY: 'このサーバーは認証されていません。',
       COMMAND_TRUCKERS_MP_DESCRIPTION: 'TruckersMPのサーバー情報を表示します。',
-      COMMAND_EMOJI_INFO_DESCRIPTION: '絵文字の詳細情報を表示します。'
+      COMMAND_EMOJI_INFO_DESCRIPTION: '絵文字の詳細情報を表示します。',
+      EASYPIN_PERMISSION_FAIL: (username) => `${username}, ピン留めするには${this.client.user.toString()}に\`メッセージの管理\`の権限を与えて下さい`,
+      EASYPIN_FAIL: 'ピン留めに失敗しました。ボットの権限を確認して再度実行してみてください。'
     }
   }
 

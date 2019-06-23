@@ -84,7 +84,9 @@ module.exports = class extends Language {
       COMMAND_APPROVAL_ENABLED_RLREADY: 'This server has already been approved.',
       COMMAND_APPROVAL_DISABLED_RLREADY: 'This server has not been approved.',
       COMMAND_TRUCKERS_MP_DESCRIPTION: 'Display the TruckersMP status.',
-      COMMAND_EMOJI_INFO_DESCRIPTION: 'Display detailed information of emoji.'
+      COMMAND_EMOJI_INFO_DESCRIPTION: 'Display detailed information of emoji.',
+      EASYPIN_PERMISSION_FAIL: (username) => `${username}, please give ${this.client.user.toString()} the \`Manage Messages\` permission to pin.`,
+      EASYPIN_FAIL: 'Failed to pin. Check the bots permissions and try again.'
     }
   }
 
