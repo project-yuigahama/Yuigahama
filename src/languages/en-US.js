@@ -86,7 +86,8 @@ module.exports = class extends Language {
       COMMAND_TRUCKERS_MP_DESCRIPTION: 'Display the TruckersMP status.',
       COMMAND_EMOJI_INFO_DESCRIPTION: 'Display detailed information of emoji.',
       EASYPIN_PERMISSION_FAIL: (username) => `${username}, please give ${this.client.user.toString()} the \`Manage Messages\` permission to pin.`,
-      EASYPIN_FAIL: 'Failed to pin. Check the bots permissions and try again.'
+      EASYPIN_FAIL: 'Failed to pin. Check the bots permissions and try again.',
+      AUTOROLE_PERMISSION_ERROR: (guildname) => `Auto role was enabled in ${guildname}, but because I did not have the \`Manage Roles\` permission, I could not give the participating members a role.`
     }
   }
 
