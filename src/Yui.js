@@ -20,6 +20,7 @@ Client.defaultGuildSchema
     .add('JoinMessage', 'string', { default: 'Welcome' })
     .add('QuitLog', 'TextChannel')
     .add('QuitMessage', 'string', { default: 'Bye...' })
+    .add('EasyPin', 'boolean', { default: false })
   )
   .add('mod', folder => folder
     .add('AutoRole', 'role')
