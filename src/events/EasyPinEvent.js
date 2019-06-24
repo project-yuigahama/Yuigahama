@@ -4,7 +4,13 @@ const { MessageReaction, TextChannel } = require('discord.js')
 /**
  * @extends Event
  */
-class messageReactionAdd extends Event {
+class EasyPinEvent extends Event {
+  constructor (...args) {
+    super(...args, {
+      event: 'messageReactionAdd'
+    })
+  }
+
   /**
    * @param {MessageReaction} messageReaction
    * @param {KlasaUser} user
@@ -33,4 +39,4 @@ class messageReactionAdd extends Event {
   }
 }
 
-module.exports = messageReactionAdd
+module.exports = EasyPinEvent
