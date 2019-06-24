@@ -27,7 +27,7 @@ class MemberQuitLogging extends Event {
       .setColor('GREEN')
       .setTitle(guild.language.get('MEMBER_QUIT', member.user.tag))
       .setThumbnail(member.user.avatarURL({ size: 2048, format: 'png' }))
-      .setDescription(guild.settings.has('channels.QuitMessage') ? guild.settings.get('channels.QuitMessage') : 'Bye...')
+      .setDescription(guild.settings.get('channels.QuitMessage'))
       .setTimestamp()
     )
   }

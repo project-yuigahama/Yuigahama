@@ -27,7 +27,7 @@ class MemberJoinLogging extends Event {
       .setColor('GREEN')
       .setTitle(guild.language.get('MEMBER_JOIN', member.user.tag))
       .setThumbnail(member.user.avatarURL({ size: 2048, format: 'png' }))
-      .setDescription(guild.settings.has('channels.JoinMessage') ? guild.settings.get('channels.JoinMessage') : 'Welcome')
+      .setDescription(guild.settings.get('channels.JoinMessage'))
       .setTimestamp()
     )
   }
