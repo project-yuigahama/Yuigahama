@@ -12,7 +12,7 @@ class YuigahamaReady extends Event {
   }
 
   async run () {
-    this.client.user.setActivity({ name: `yuigahama@help | ${this.client.guilds.size} guilds`, type: 'PLAYING' })
+    await this.client.user.setActivity({ name: `yuigahama@help | ${this.client.guilds.size} guilds`, type: 'PLAYING' })
 
     const iconArray = Utils.iconToArray()
     const color = new Colors({ style: 'bold', text: 'magenta' })
