@@ -68,7 +68,7 @@ class Utils {
       ' HNQkqmyf(K:(K(v7!d<::::+RZ! .4-::::~:(I::~::4d',
       ' NgNMMMJl(P(fk+```?b:(dj% ```` W/(c~:~(>:~:::d                             Yahhalo~',
       '     #SK<($Z`jl.`` 4x(HP```````.4J$:::j<:~(+~dd     GitHub: https://github.com/project-yuigahama/Yuigahama',
-      '     EW3:(X!.dHM!```?df!`````.`` ($:~(3:::~X+K              Patron: https://patreon.com/inkohx',
+      '     EW3:(X!.dHM!```?df!`````.`` ($:~(3:::~X+K              Patreon: https://patreon.com/inkohx',
       '   WY~J?n($ ,HyW!````` ````.jMk.`,$((+_:~::dKXd',
       '  gX,(5(vXP(-7Y3```````````(NyW[`JK~._7s:~:?N',
       '   NgjJ(ZZ<ZJir```````````` ?T9_.J>(h, j<:::dd',
