@@ -51,7 +51,7 @@ const client = new Client({
     verbose: process.env.NODE_ENV === 'next'
   },
   disabledEvents: ['TYPING_START', 'PRESENCE_UPDATE'],
-  shardCount: 'auto'
+  shardCount: 2
 })
 
 if ('DBL_TOKEN' in process.env) {
