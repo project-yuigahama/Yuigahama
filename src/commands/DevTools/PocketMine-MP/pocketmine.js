@@ -22,7 +22,7 @@ module.exports = class extends Command {
       .setThumbnail('https://cdn.pocketmine.net/favicon.png')
       .setColor('RANDOM')
       .addField('> PHP', body['php_version'], true)
-      .addField('> API', body['base_version'], true)
+      .addField('> Version', body['base_version'], true)
       .addField('> Build Number', body['build_number'], true)
       .addField('> Minecraft Version', body['mcpe_version'], true)
       .addField('> Dev', body['is_dev'] ? 'Yes' : 'No', true)
