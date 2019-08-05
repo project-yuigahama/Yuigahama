@@ -37,7 +37,7 @@
     "klasa": "github:dirigeants/klasa",
     "level": "^5.0.1",
     "node-fetch": "^2.6.0",
-    "nsfwjs": "^2.0.0"
+    "nsfwjs": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
